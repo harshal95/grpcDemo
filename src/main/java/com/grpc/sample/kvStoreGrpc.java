@@ -14,8 +14,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
         comments = "Source: kvStore.proto")
 public final class kvStoreGrpc {
 
-  public static final String SERVICE_NAME = "kvStore";
   private static final int METHODID_GET = 0;
+
+  public static final String SERVICE_NAME = "kvStore";
   private static final int METHODID_PUT = 1;
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.grpc.sample.KvStore.GetRequest,
@@ -23,6 +24,13 @@ public final class kvStoreGrpc {
   private static volatile io.grpc.MethodDescriptor<com.grpc.sample.KvStore.PutRequest,
           com.grpc.sample.KvStore.PutResponse> getPutMethod;
   private static volatile io.grpc.ServiceDescriptor serviceDescriptor;
+
+  /**
+   * Creates a new async stub that supports all call types for the service
+   */
+  public static kvStoreStub newStub(io.grpc.Channel channel) {
+    return new kvStoreStub(channel);
+  }
 
   private kvStoreGrpc() {
   }
@@ -86,13 +94,6 @@ public final class kvStoreGrpc {
   }
 
   /**
-   * Creates a new async stub that supports all call types for the service
-   */
-  public static kvStoreStub newStub(io.grpc.Channel channel) {
-    return new kvStoreStub(channel);
-  }
-
-  /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static kvStoreBlockingStub newBlockingStub(
@@ -126,12 +127,10 @@ public final class kvStoreGrpc {
   }
 
   /**
-   *
    */
   public static abstract class kvStoreImplBase implements io.grpc.BindableService {
 
     /**
-     *
      */
     public void get(com.grpc.sample.KvStore.GetRequest request,
                     io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.GetResponse> responseObserver) {
@@ -139,7 +138,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public void put(com.grpc.sample.KvStore.PutRequest request,
                     io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.PutResponse> responseObserver) {
@@ -168,7 +166,6 @@ public final class kvStoreGrpc {
   }
 
   /**
-   *
    */
   public static final class kvStoreStub extends io.grpc.stub.AbstractStub<kvStoreStub> {
     private kvStoreStub(io.grpc.Channel channel) {
@@ -187,7 +184,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public void get(com.grpc.sample.KvStore.GetRequest request,
                     io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.GetResponse> responseObserver) {
@@ -196,7 +192,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public void put(com.grpc.sample.KvStore.PutRequest request,
                     io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.PutResponse> responseObserver) {
@@ -206,7 +201,6 @@ public final class kvStoreGrpc {
   }
 
   /**
-   *
    */
   public static final class kvStoreBlockingStub extends io.grpc.stub.AbstractStub<kvStoreBlockingStub> {
     private kvStoreBlockingStub(io.grpc.Channel channel) {
@@ -225,7 +219,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public com.grpc.sample.KvStore.GetResponse get(com.grpc.sample.KvStore.GetRequest request) {
       return blockingUnaryCall(
@@ -233,7 +226,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public com.grpc.sample.KvStore.PutResponse put(com.grpc.sample.KvStore.PutRequest request) {
       return blockingUnaryCall(
@@ -242,7 +234,6 @@ public final class kvStoreGrpc {
   }
 
   /**
-   *
    */
   public static final class kvStoreFutureStub extends io.grpc.stub.AbstractStub<kvStoreFutureStub> {
     private kvStoreFutureStub(io.grpc.Channel channel) {
@@ -261,7 +252,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.GetResponse> get(
             com.grpc.sample.KvStore.GetRequest request) {
@@ -270,7 +260,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.PutResponse> put(
             com.grpc.sample.KvStore.PutRequest request) {
@@ -322,8 +311,7 @@ public final class kvStoreGrpc {
 
   private static abstract class kvStoreBaseDescriptorSupplier
           implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    kvStoreBaseDescriptorSupplier() {
-    }
+    kvStoreBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -338,8 +326,7 @@ public final class kvStoreGrpc {
 
   private static final class kvStoreFileDescriptorSupplier
           extends kvStoreBaseDescriptorSupplier {
-    kvStoreFileDescriptorSupplier() {
-    }
+    kvStoreFileDescriptorSupplier() {}
   }
 
   private static final class kvStoreMethodDescriptorSupplier

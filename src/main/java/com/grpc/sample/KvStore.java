@@ -96,7 +96,6 @@ public final class KvStore {
   getDescriptor() {
     return descriptor;
   }
-
   public interface GetRequestOrBuilder extends
           // @@protoc_insertion_point(interface_extends:GetRequest)
           com.google.protobuf.MessageOrBuilder {
@@ -105,7 +104,6 @@ public final class KvStore {
      * <code>string requestKey = 1;</code>
      */
     java.lang.String getRequestKey();
-
     /**
      * <code>string requestKey = 1;</code>
      */
@@ -116,14 +114,12 @@ public final class KvStore {
      * <code>string requestValue = 2;</code>
      */
     java.lang.String getRequestValue();
-
     /**
      * <code>string requestValue = 2;</code>
      */
     com.google.protobuf.ByteString
     getRequestValueBytes();
   }
-
   public interface GetResponseOrBuilder extends
           // @@protoc_insertion_point(interface_extends:GetResponse)
           com.google.protobuf.MessageOrBuilder {
@@ -132,7 +128,6 @@ public final class KvStore {
      * <code>string responseKey = 1;</code>
      */
     java.lang.String getResponseKey();
-
     /**
      * <code>string responseKey = 1;</code>
      */
@@ -143,7 +138,6 @@ public final class KvStore {
      * <code>string responseValue = 2;</code>
      */
     java.lang.String getResponseValue();
-
     /**
      * <code>string responseValue = 2;</code>
      */
@@ -155,7 +149,6 @@ public final class KvStore {
      */
     int getStatus();
   }
-
   public interface PutRequestOrBuilder extends
           // @@protoc_insertion_point(interface_extends:PutRequest)
           com.google.protobuf.MessageOrBuilder {
@@ -164,7 +157,6 @@ public final class KvStore {
      * <code>string requestKey = 1;</code>
      */
     java.lang.String getRequestKey();
-
     /**
      * <code>string requestKey = 1;</code>
      */
@@ -175,7 +167,6 @@ public final class KvStore {
      * <code>string requestNewValue = 2;</code>
      */
     java.lang.String getRequestNewValue();
-
     /**
      * <code>string requestNewValue = 2;</code>
      */
@@ -186,14 +177,12 @@ public final class KvStore {
      * <code>string requestOldValue = 3;</code>
      */
     java.lang.String getRequestOldValue();
-
     /**
      * <code>string requestOldValue = 3;</code>
      */
     com.google.protobuf.ByteString
     getRequestOldValueBytes();
   }
-
   public interface PutResponseOrBuilder extends
           // @@protoc_insertion_point(interface_extends:PutResponse)
           com.google.protobuf.MessageOrBuilder {
@@ -202,7 +191,6 @@ public final class KvStore {
      * <code>string responseKey = 1;</code>
      */
     java.lang.String getResponseKey();
-
     /**
      * <code>string responseKey = 1;</code>
      */
@@ -213,7 +201,6 @@ public final class KvStore {
      * <code>string responseNewValue = 2;</code>
      */
     java.lang.String getResponseNewValue();
-
     /**
      * <code>string responseNewValue = 2;</code>
      */
@@ -244,6 +231,15 @@ public final class KvStore {
           // @@protoc_insertion_point(message_implements:GetRequest)
           GetRequestOrBuilder {
     public static final int REQUESTKEY_FIELD_NUMBER = 1;
+    // Use GetRequest.newBuilder() to construct.
+    private GetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetRequest() {
+      requestKey_ = "";
+      requestValue_ = "";
+    }
+
     public static final int REQUESTVALUE_FIELD_NUMBER = 2;
     private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(class_scope:GetRequest)
@@ -266,16 +262,6 @@ public final class KvStore {
     private volatile java.lang.Object requestKey_;
     private volatile java.lang.Object requestValue_;
     private byte memoizedIsInitialized = -1;
-
-    // Use GetRequest.newBuilder() to construct.
-    private GetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private GetRequest() {
-      requestKey_ = "";
-      requestValue_ = "";
-    }
 
     private GetRequest(
             com.google.protobuf.CodedInputStream input,
@@ -352,6 +338,16 @@ public final class KvStore {
       return PARSER.parseFrom(data);
     }
 
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
     public static com.grpc.sample.KvStore.GetRequest parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -359,9 +355,42 @@ public final class KvStore {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRequestKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestKey_);
+      }
+      if (!getRequestValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestValue_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
     public static com.grpc.sample.KvStore.GetRequest parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUESTKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestKey().hashCode();
+      hash = (37 * hash) + REQUESTVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static com.grpc.sample.KvStore.GetRequest parseFrom(
@@ -511,16 +540,6 @@ public final class KvStore {
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
       if (!getRequestKeyBytes().isEmpty()) {
@@ -530,23 +549,6 @@ public final class KvStore {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestValue_);
       }
       unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getRequestKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestKey_);
-      }
-      if (!getRequestValueBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestValue_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
     }
 
     @java.lang.Override
@@ -566,22 +568,6 @@ public final class KvStore {
               .equals(other.getRequestValue());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUESTKEY_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestKey().hashCode();
-      hash = (37 * hash) + REQUESTVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestValue().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     @java.lang.Override
@@ -632,26 +618,11 @@ public final class KvStore {
         super(parent);
         maybeForceBuilderInitialization();
       }
-
-      public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.grpc.sample.KvStore.internal_static_GetRequest_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.grpc.sample.KvStore.GetRequest.class, com.grpc.sample.KvStore.GetRequest.Builder.class);
-      }
-
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
-
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -662,9 +633,8 @@ public final class KvStore {
         return this;
       }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
         return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
       }
 
@@ -697,6 +667,20 @@ public final class KvStore {
       }
 
       @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_GetRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.grpc.sample.KvStore.GetRequest.class, com.grpc.sample.KvStore.GetRequest.Builder.class);
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
+      }
+
+      @java.lang.Override
       public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
@@ -722,23 +706,6 @@ public final class KvStore {
         return super.setRepeatedField(field, index, value);
       }
 
-      @java.lang.Override
-      public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.grpc.sample.KvStore.GetRequest) {
-          return mergeFrom((com.grpc.sample.KvStore.GetRequest) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
       public Builder mergeFrom(com.grpc.sample.KvStore.GetRequest other) {
         if (other == com.grpc.sample.KvStore.GetRequest.getDefaultInstance()) return this;
         if (!other.getRequestKey().isEmpty()) {
@@ -757,6 +724,23 @@ public final class KvStore {
       @java.lang.Override
       public final boolean isInitialized() {
         return true;
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.GetRequest) {
+          return mergeFrom((com.grpc.sample.KvStore.GetRequest) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
       }
 
       @java.lang.Override
@@ -948,6 +932,16 @@ public final class KvStore {
           // @@protoc_insertion_point(message_implements:GetResponse)
           GetResponseOrBuilder {
     public static final int RESPONSEKEY_FIELD_NUMBER = 1;
+    // Use GetResponse.newBuilder() to construct.
+    private GetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetResponse() {
+      responseKey_ = "";
+      responseValue_ = "";
+      status_ = 0;
+    }
+
     public static final int RESPONSEVALUE_FIELD_NUMBER = 2;
     public static final int STATUS_FIELD_NUMBER = 3;
     private static final long serialVersionUID = 0L;
@@ -972,18 +966,6 @@ public final class KvStore {
     private volatile java.lang.Object responseValue_;
     private int status_;
     private byte memoizedIsInitialized = -1;
-
-    // Use GetResponse.newBuilder() to construct.
-    private GetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private GetResponse() {
-      responseKey_ = "";
-      responseValue_ = "";
-      status_ = 0;
-    }
-
     private GetResponse(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1058,10 +1040,27 @@ public final class KvStore {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
+    /**
+     * <code>int32 status = 3;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
     public static com.grpc.sample.KvStore.GetResponse parseFrom(
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public static com.grpc.sample.KvStore.GetResponse parseFrom(
@@ -1081,6 +1080,24 @@ public final class KvStore {
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESPONSEKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseKey().hashCode();
+      hash = (37 * hash) + RESPONSEVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseValue().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static com.grpc.sample.KvStore.GetResponse parseFrom(java.io.InputStream input)
@@ -1222,23 +1239,6 @@ public final class KvStore {
       }
     }
 
-    /**
-     * <code>int32 status = 3;</code>
-     */
-    public int getStatus() {
-      return status_;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
@@ -1297,27 +1297,8 @@ public final class KvStore {
     }
 
     @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESPONSEKEY_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseKey().hashCode();
-      hash = (37 * hash) + RESPONSEVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseValue().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    @java.lang.Override
     public Builder newBuilderForType() {
-      return newBuilder();
-    }
+      return newBuilder(); }
 
     @java.lang.Override
     public Builder toBuilder() {
@@ -1351,38 +1332,17 @@ public final class KvStore {
             com.grpc.sample.KvStore.GetResponseOrBuilder {
       private java.lang.Object responseKey_ = "";
       private java.lang.Object responseValue_ = "";
-      private int status_;
+      private int status_ ;
 
       // Construct using com.grpc.sample.KvStore.GetResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.grpc.sample.KvStore.internal_static_GetResponse_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.grpc.sample.KvStore.GetResponse.class, com.grpc.sample.KvStore.GetResponse.Builder.class);
-      }
-
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
-
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1395,10 +1355,10 @@ public final class KvStore {
         return this;
       }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
+      private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
 
       @java.lang.Override
@@ -1430,6 +1390,25 @@ public final class KvStore {
         return super.clone();
       }
 
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_GetResponse_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.grpc.sample.KvStore.GetResponse.class, com.grpc.sample.KvStore.GetResponse.Builder.class);
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
+      }
+
       @java.lang.Override
       public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -1447,30 +1426,6 @@ public final class KvStore {
       public Builder clearOneof(
               com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.grpc.sample.KvStore.GetResponse) {
-          return mergeFrom((com.grpc.sample.KvStore.GetResponse) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
       }
 
       public Builder mergeFrom(com.grpc.sample.KvStore.GetResponse other) {
@@ -1494,6 +1449,30 @@ public final class KvStore {
       @java.lang.Override
       public final boolean isInitialized() {
         return true;
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.GetResponse) {
+          return mergeFrom((com.grpc.sample.KvStore.GetResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
       }
 
       @java.lang.Override
@@ -1538,7 +1517,7 @@ public final class KvStore {
               java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
-        }
+  }
 
         responseKey_ = value;
         onChanged();
@@ -1610,7 +1589,7 @@ public final class KvStore {
               java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
-        }
+  }
 
         responseValue_ = value;
         onChanged();
@@ -1658,7 +1637,6 @@ public final class KvStore {
         onChanged();
         return this;
       }
-
       /**
        * <code>int32 status = 3;</code>
        */
@@ -1675,7 +1653,6 @@ public final class KvStore {
         onChanged();
         return this;
       }
-
       /**
        * <code>int32 status = 3;</code>
        */
@@ -1685,7 +1662,6 @@ public final class KvStore {
         onChanged();
         return this;
       }
-
       @java.lang.Override
       public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1712,6 +1688,16 @@ public final class KvStore {
           // @@protoc_insertion_point(message_implements:PutRequest)
           PutRequestOrBuilder {
     public static final int REQUESTKEY_FIELD_NUMBER = 1;
+    // Use PutRequest.newBuilder() to construct.
+    private PutRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PutRequest() {
+      requestKey_ = "";
+      requestNewValue_ = "";
+      requestOldValue_ = "";
+    }
+
     public static final int REQUESTNEWVALUE_FIELD_NUMBER = 2;
     public static final int REQUESTOLDVALUE_FIELD_NUMBER = 3;
     private static final long serialVersionUID = 0L;
@@ -1736,18 +1722,6 @@ public final class KvStore {
     private volatile java.lang.Object requestNewValue_;
     private volatile java.lang.Object requestOldValue_;
     private byte memoizedIsInitialized = -1;
-
-    // Use PutRequest.newBuilder() to construct.
-    private PutRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private PutRequest() {
-      requestKey_ = "";
-      requestNewValue_ = "";
-      requestOldValue_ = "";
-    }
-
     private PutRequest(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1841,6 +1815,16 @@ public final class KvStore {
       return PARSER.parseFrom(data);
     }
 
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
     public static com.grpc.sample.KvStore.PutRequest parseFrom(
             byte[] data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1848,10 +1832,48 @@ public final class KvStore {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRequestKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestKey_);
+      }
+      if (!getRequestNewValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestNewValue_);
+      }
+      if (!getRequestOldValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestOldValue_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
     public static com.grpc.sample.KvStore.PutRequest parseFrom(java.io.InputStream input)
             throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
               .parseWithIOException(PARSER, input);
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUESTKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestKey().hashCode();
+      hash = (37 * hash) + REQUESTNEWVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestNewValue().hashCode();
+      hash = (37 * hash) + REQUESTOLDVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestOldValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static com.grpc.sample.KvStore.PutRequest parseFrom(
@@ -2021,16 +2043,6 @@ public final class KvStore {
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
       if (!getRequestKeyBytes().isEmpty()) {
@@ -2043,26 +2055,6 @@ public final class KvStore {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestOldValue_);
       }
       unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getRequestKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestKey_);
-      }
-      if (!getRequestNewValueBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestNewValue_);
-      }
-      if (!getRequestOldValueBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestOldValue_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
     }
 
     @java.lang.Override
@@ -2087,27 +2079,8 @@ public final class KvStore {
     }
 
     @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUESTKEY_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestKey().hashCode();
-      hash = (37 * hash) + REQUESTNEWVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestNewValue().hashCode();
-      hash = (37 * hash) + REQUESTOLDVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestOldValue().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    @java.lang.Override
     public Builder newBuilderForType() {
-      return newBuilder();
-    }
+      return newBuilder(); }
 
     @java.lang.Override
     public Builder toBuilder() {
@@ -2147,32 +2120,11 @@ public final class KvStore {
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.grpc.sample.KvStore.internal_static_PutRequest_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.grpc.sample.KvStore.PutRequest.class, com.grpc.sample.KvStore.PutRequest.Builder.class);
-      }
-
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
-
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -2185,10 +2137,10 @@ public final class KvStore {
         return this;
       }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
+      private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
 
       @java.lang.Override
@@ -2220,6 +2172,25 @@ public final class KvStore {
         return super.clone();
       }
 
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_PutRequest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.grpc.sample.KvStore.PutRequest.class, com.grpc.sample.KvStore.PutRequest.Builder.class);
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
+      }
+
       @java.lang.Override
       public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -2237,30 +2208,6 @@ public final class KvStore {
       public Builder clearOneof(
               com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.grpc.sample.KvStore.PutRequest) {
-          return mergeFrom((com.grpc.sample.KvStore.PutRequest) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
       }
 
       public Builder mergeFrom(com.grpc.sample.KvStore.PutRequest other) {
@@ -2285,6 +2232,30 @@ public final class KvStore {
       @java.lang.Override
       public final boolean isInitialized() {
         return true;
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.PutRequest) {
+          return mergeFrom((com.grpc.sample.KvStore.PutRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
       }
 
       @java.lang.Override
@@ -2329,7 +2300,7 @@ public final class KvStore {
               java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
-        }
+  }
 
         requestKey_ = value;
         onChanged();
@@ -2401,7 +2372,7 @@ public final class KvStore {
               java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
-        }
+  }
 
         requestNewValue_ = value;
         onChanged();
@@ -2473,7 +2444,7 @@ public final class KvStore {
               java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
-        }
+  }
 
         requestOldValue_ = value;
         onChanged();
@@ -2548,6 +2519,17 @@ public final class KvStore {
           // @@protoc_insertion_point(message_implements:PutResponse)
           PutResponseOrBuilder {
     public static final int RESPONSEKEY_FIELD_NUMBER = 1;
+    // Use PutResponse.newBuilder() to construct.
+    private PutResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PutResponse() {
+      responseKey_ = "";
+      responseNewValue_ = "";
+      responseOldValue_ = "";
+      status_ = 0;
+    }
+
     public static final int RESPONSENEWVALUE_FIELD_NUMBER = 2;
     public static final int RESPONSEOLDVALUE_FIELD_NUMBER = 3;
     public static final int STATUS_FIELD_NUMBER = 4;
@@ -2574,18 +2556,6 @@ public final class KvStore {
     private volatile java.lang.Object responseOldValue_;
     private int status_;
     private byte memoizedIsInitialized = -1;
-
-    // Use PutResponse.newBuilder() to construct.
-    private PutResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private PutResponse() {
-      responseKey_ = "";
-      responseNewValue_ = "";
-      responseOldValue_ = "";
-      status_ = 0;
-    }
 
     private PutResponse(
             com.google.protobuf.CodedInputStream input,
@@ -2680,9 +2650,26 @@ public final class KvStore {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
+    /**
+     * <code>int32 status = 4;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
     public static com.grpc.sample.KvStore.PutResponse parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public static com.grpc.sample.KvStore.PutResponse parseFrom(
@@ -2704,6 +2691,26 @@ public final class KvStore {
             throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
               .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESPONSEKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseKey().hashCode();
+      hash = (37 * hash) + RESPONSENEWVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseNewValue().hashCode();
+      hash = (37 * hash) + RESPONSEOLDVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseOldValue().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static com.grpc.sample.KvStore.PutResponse parseDelimitedFrom(java.io.InputStream input)
@@ -2864,23 +2871,6 @@ public final class KvStore {
       }
     }
 
-    /**
-     * <code>int32 status = 4;</code>
-     */
-    public int getStatus() {
-      return status_;
-    }
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
@@ -2947,29 +2937,8 @@ public final class KvStore {
     }
 
     @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESPONSEKEY_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseKey().hashCode();
-      hash = (37 * hash) + RESPONSENEWVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseNewValue().hashCode();
-      hash = (37 * hash) + RESPONSEOLDVALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseOldValue().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    @java.lang.Override
     public Builder newBuilderForType() {
-      return newBuilder();
-    }
+      return newBuilder(); }
 
     @java.lang.Override
     public Builder toBuilder() {
@@ -3004,38 +2973,12 @@ public final class KvStore {
       private java.lang.Object responseKey_ = "";
       private java.lang.Object responseNewValue_ = "";
       private java.lang.Object responseOldValue_ = "";
-      private int status_;
-
-      // Construct using com.grpc.sample.KvStore.PutResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.grpc.sample.KvStore.internal_static_PutResponse_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.grpc.sample.KvStore.PutResponse.class, com.grpc.sample.KvStore.PutResponse.Builder.class);
-      }
-
+      private int status_ ;
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
         }
       }
-
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -3050,10 +2993,9 @@ public final class KvStore {
         return this;
       }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
+      // Construct using com.grpc.sample.KvStore.PutResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
       }
 
       @java.lang.Override
@@ -3086,6 +3028,31 @@ public final class KvStore {
         return super.clone();
       }
 
+      private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_PutResponse_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.grpc.sample.KvStore.PutResponse.class, com.grpc.sample.KvStore.PutResponse.Builder.class);
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
+      }
+
       @java.lang.Override
       public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -3097,36 +3064,6 @@ public final class KvStore {
       public Builder clearField(
               com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.grpc.sample.KvStore.PutResponse) {
-          return mergeFrom((com.grpc.sample.KvStore.PutResponse) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
       }
 
       public Builder mergeFrom(com.grpc.sample.KvStore.PutResponse other) {
@@ -3154,6 +3091,36 @@ public final class KvStore {
       @java.lang.Override
       public final boolean isInitialized() {
         return true;
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.PutResponse) {
+          return mergeFrom((com.grpc.sample.KvStore.PutResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
       }
 
       @java.lang.Override
@@ -3198,7 +3165,7 @@ public final class KvStore {
               java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
-        }
+  }
 
         responseKey_ = value;
         onChanged();
@@ -3270,7 +3237,7 @@ public final class KvStore {
               java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
-        }
+  }
 
         responseNewValue_ = value;
         onChanged();
@@ -3342,7 +3309,7 @@ public final class KvStore {
               java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
-        }
+  }
 
         responseOldValue_ = value;
         onChanged();
@@ -3390,7 +3357,6 @@ public final class KvStore {
         onChanged();
         return this;
       }
-
       /**
        * <code>int32 status = 4;</code>
        */
