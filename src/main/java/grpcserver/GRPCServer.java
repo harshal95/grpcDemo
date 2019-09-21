@@ -1,5 +1,8 @@
 package grpcserver;
 
+import com.grpc.sample.kvStoreGrpc;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import kvStore.KVStoreService;
@@ -19,6 +22,15 @@ public class GRPCServer {
         Server server = ServerBuilder.forPort(port).addService(new KVStoreService(updateNode, rank, n)).build();
         server.start();
 
+        int basePort = port - rank;
+        for(int i = 0; i < n; i++) {
+            if(i != rank) {
+                ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", basePort + i).usePlaintext().build();
+                kvStoreGrpc.kvStoreBlockingStub kvStub = kvStoreGrpc.newBlockingStub(managedChannel).withWaitForReady();
+//                kvStor loginRequest = User.LoginRequest.newBuilder().setUsername("harshal").setPassword("harshal").build();
+//                User.APIResponse response = userStub.login(loginRequest);
+            }
+        }
         System.out.println("Server started at " + server.getPort());
         server.awaitTermination();
     }
