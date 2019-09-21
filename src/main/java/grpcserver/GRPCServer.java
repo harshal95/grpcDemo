@@ -9,7 +9,6 @@ import java.util.Arrays;
 
 public class GRPCServer {
     public static void main(String []args) throws IOException, InterruptedException {
-//        String inputParams[] = args[0].split(" ");
         int n = Integer.parseInt(args[0]);
         int rank = Integer.parseInt(args[1]);
         int updateNode = Integer.parseInt(args[2]);
@@ -17,7 +16,7 @@ public class GRPCServer {
         System.out.println("length of array: " +  args.length);
         System.out.println(Arrays.toString(args));
 
-        Server server = ServerBuilder.forPort(port).addService(new KVStoreService()).build();
+        Server server = ServerBuilder.forPort(port).addService(new KVStoreService(updateNode, rank, n)).build();
         server.start();
 
         System.out.println("Server started at " + server.getPort());

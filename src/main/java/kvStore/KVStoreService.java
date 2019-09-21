@@ -1,5 +1,6 @@
 package kvStore;
 
+import DB.KeyValueDatabase;
 import com.grpc.sample.KvStore;
 import com.grpc.sample.kvStoreGrpc;
 import io.grpc.stub.StreamObserver;
@@ -9,11 +10,21 @@ import java.util.HashMap;
 public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
     HashMap<String, String> kvMap;
-
+    Integer updateNode;
+    Integer rank;
+    Integer n;
+    KeyValueDatabase keyValueDatabase;
     public KVStoreService() {
-        kvMap = new HashMap<>();
-//        kvMap.put("drink", "tea");
-//        kvMap.put("eat", "biryani");
+        this.kvMap = new HashMap<>();
+        this.keyValueDatabase = new KeyValueDatabase(rank);
+    }
+
+    public KVStoreService(Integer updateNode, Integer rank, Integer n) {
+        this.kvMap = new HashMap<>();
+        this.updateNode = updateNode;
+        this.rank = rank;
+        this.n = n;
+        this.keyValueDatabase = new KeyValueDatabase(rank);
     }
 
     @Override
@@ -38,7 +49,6 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
     @Override
     public void put(KvStore.PutRequest request, StreamObserver<KvStore.PutResponse> responseObserver) {
-//        super.put(request, responseObserver);
         System.out.println("inside put");
         String key = request.getRequestKey();
         String newValue = request.getRequestNewValue();
@@ -50,7 +60,9 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
             putResponse.setResponseOldValue(oldValue);
         putResponse.setResponseNewValue(newValue);
         putResponse.setStatus(oldValue == null ? 0 : 1);
-
+        if (updateNode == rank) {
+            keyValueDatabase.insertIntoTable(key, newValue, System.currentTimeMillis());
+        }
         responseObserver.onNext(putResponse.build());
         responseObserver.onCompleted();
     }

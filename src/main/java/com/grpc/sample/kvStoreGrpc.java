@@ -25,15 +25,8 @@ public final class kvStoreGrpc {
           com.grpc.sample.KvStore.PutResponse> getPutMethod;
   private static volatile io.grpc.ServiceDescriptor serviceDescriptor;
 
-  /**
-   * Creates a new async stub that supports all call types for the service
-   */
-  public static kvStoreStub newStub(io.grpc.Channel channel) {
-    return new kvStoreStub(channel);
-  }
-
-  private kvStoreGrpc() {
-  }
+    private kvStoreGrpc() {
+    }
 
   @io.grpc.stub.annotations.RpcMethod(
           fullMethodName = SERVICE_NAME + '/' + "get",
@@ -61,7 +54,7 @@ public final class kvStoreGrpc {
         }
       }
     }
-    return getGetMethod;
+      return getGetMethod;
   }
 
   @io.grpc.stub.annotations.RpcMethod(
@@ -90,8 +83,15 @@ public final class kvStoreGrpc {
         }
       }
     }
-    return getPutMethod;
+      return getPutMethod;
   }
+
+    /**
+     * Creates a new async stub that supports all call types for the service
+     */
+    public static kvStoreStub newStub(io.grpc.Channel channel) {
+        return new kvStoreStub(channel);
+    }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
@@ -144,8 +144,8 @@ public final class kvStoreGrpc {
       asyncUnimplementedUnaryCall(getPutMethod(), responseObserver);
     }
 
-    @java.lang.Override
-    public final io.grpc.ServerServiceDefinition bindService() {
+      @java.lang.Override
+      public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
               .addMethod(
                       getGetMethod(),
