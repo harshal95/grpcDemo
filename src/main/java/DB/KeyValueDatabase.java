@@ -54,29 +54,27 @@ public class KeyValueDatabase {
             pstmt.setString(1, key);
             pstmt.setString(2, value);
             pstmt.setLong(3, timestamp);
-            System.out.println("b4 exec");
-            int result = pstmt.executeUpdate();
-            System.out.println("res: " + result);
+            pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
-//    public void selectAll() {
-//        String sql = "SELECT *  FROM kvtable";
-//
-//        try (Connection conn = this.connect();
-//             Statement stmt = conn.createStatement();
-//             ResultSet rs = stmt.executeQuery(sql)) {
-//
-//            // loop through the result set
-//            while (rs.next()) {
-//                System.out.println(rs.getString("key") + "\t" +
-//                        rs.getString("value") + "\t" +
-//                        rs.getLong("timestamp"));
-//            }
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
-//    }
+    public void updateKeyIfExistsInTable(String key, String value, long timestamp) {
+        System.out.println("inside update");
+        String sql = "UPDATE kvtable SET value = ? ,"
+                + "timestamp = ? "
+                + "WHERE key = ? ";
+
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, value);
+            pstmt.setLong(2, timestamp);
+            pstmt.setString(3, key);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

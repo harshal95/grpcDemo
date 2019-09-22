@@ -4,6 +4,7 @@ option java_package = "com.grpc.sample";
 service kvStore {
     rpc get (GetRequest) returns (GetResponse);
     rpc put (PutRequest) returns (PutResponse);
+    rpc pushMessage (PushMessageRequest) returns (PushMessageResponse);
 }
 
 message GetRequest {
@@ -28,4 +29,16 @@ message PutResponse {
     string responseNewValue = 2;
     string responseOldValue = 3;
     int32 status = 4;
+}
+
+message PushMessageRequest {
+    string pushKey = 1;
+    string pushValue = 2;
+    int64 pushTimestamp = 3;
+}
+
+message PushMessageResponse {
+    string pushResponseKey = 1;
+    string pushResponseValue = 2;
+    int64 pushResponseTimestamp = 3;
 }

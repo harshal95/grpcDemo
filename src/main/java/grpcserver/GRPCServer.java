@@ -9,17 +9,20 @@ import kvStore.KVStoreService;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class GRPCServer {
+
     public static void main(String []args) throws IOException, InterruptedException {
         int n = Integer.parseInt(args[0]);
         int rank = Integer.parseInt(args[1]);
         int updateNode = Integer.parseInt(args[2]);
         int port = Integer.parseInt(args[3]);
+        HashMap<Integer, kvStoreGrpc.kvStoreBlockingStub> stubHashMap = new HashMap<>();
         System.out.println("length of array: " +  args.length);
         System.out.println(Arrays.toString(args));
-
-        Server server = ServerBuilder.forPort(port).addService(new KVStoreService(updateNode, rank, n)).build();
+        KVStoreService kvStoreService = new KVStoreService(updateNode, rank, n);
+        Server server = ServerBuilder.forPort(port).addService(kvStoreService).build();
         server.start();
 
         int basePort = port - rank;
@@ -27,11 +30,11 @@ public class GRPCServer {
             if(i != rank) {
                 ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", basePort + i).usePlaintext().build();
                 kvStoreGrpc.kvStoreBlockingStub kvStub = kvStoreGrpc.newBlockingStub(managedChannel).withWaitForReady();
-//                kvStor loginRequest = User.LoginRequest.newBuilder().setUsername("harshal").setPassword("harshal").build();
-//                User.APIResponse response = userStub.login(loginRequest);
+                stubHashMap.put(i, kvStub);
             }
         }
         System.out.println("Server started at " + server.getPort());
+        kvStoreService.setStubHashMap(stubHashMap);
         server.awaitTermination();
     }
 }

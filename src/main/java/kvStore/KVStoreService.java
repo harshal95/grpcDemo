@@ -14,6 +14,7 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
     Integer rank;
     Integer n;
     KeyValueDatabase keyValueDatabase;
+    HashMap<Integer, kvStoreGrpc.kvStoreBlockingStub> stubHashMap;
     public KVStoreService() {
         this.kvMap = new HashMap<>();
         this.keyValueDatabase = new KeyValueDatabase(rank);
@@ -27,10 +28,14 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
         this.keyValueDatabase = new KeyValueDatabase(rank);
     }
 
+    public void setStubHashMap(HashMap<Integer, kvStoreGrpc.kvStoreBlockingStub> stubHashMap) {
+        this.stubHashMap = stubHashMap;
+    }
+
     @Override
     public void get(KvStore.GetRequest request, StreamObserver<KvStore.GetResponse> responseObserver) {
 
-        System.out.println("inside get");
+        System.out.println("inside get of : " + rank);
         String key = request.getRequestKey();
         String value = request.getRequestValue();
         KvStore.GetResponse.Builder getResponse = KvStore.GetResponse.newBuilder();
@@ -49,21 +54,73 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
     @Override
     public void put(KvStore.PutRequest request, StreamObserver<KvStore.PutResponse> responseObserver) {
-        System.out.println("inside put");
+        System.out.println("inside put of : " + rank);
         String key = request.getRequestKey();
         String newValue = request.getRequestNewValue();
+        Long time = null;
 
-        KvStore.PutResponse.Builder putResponse = KvStore.PutResponse.newBuilder();
-        putResponse.setResponseKey(key);
-        String oldValue = kvMap.put(key, newValue);
-        if (oldValue != null)
-            putResponse.setResponseOldValue(oldValue);
-        putResponse.setResponseNewValue(newValue);
-        putResponse.setStatus(oldValue == null ? 0 : 1);
-        if (updateNode == rank) {
-            keyValueDatabase.insertIntoTable(key, newValue, System.currentTimeMillis());
+        KvStore.PutResponse putResponse = null;
+        if (updateNode != rank) {
+            kvStoreGrpc.kvStoreBlockingStub kvStub = stubHashMap.get(updateNode);
+            putResponse = kvStub.put(request);
+            // note: updating only hashmap and not db - waiting for broadcast msg to update db
+            kvMap.put(key, putResponse.getResponseNewValue());
+        } else {
+            //HashTable response
+            KvStore.PutResponse.Builder putResponseBuilder = KvStore.PutResponse.newBuilder();
+            putResponseBuilder.setResponseKey(key);
+            String oldValue = kvMap.put(key, newValue);
+            if (oldValue != null)
+                putResponseBuilder.setResponseOldValue(oldValue);
+            putResponseBuilder.setResponseNewValue(newValue);
+            putResponseBuilder.setStatus(oldValue == null ? 1 : 0);
+
+            //Update DB
+            time = System.currentTimeMillis();
+            if (oldValue == null) {
+                keyValueDatabase.insertIntoTable(key, newValue, time);
+            } else {
+                keyValueDatabase.updateKeyIfExistsInTable(key, newValue, time);
+            }
+            putResponse = putResponseBuilder.build();
+
+            //Broadcast
+            for (int i = 0; i < n; i++) {
+                if (i != rank) {
+                    kvStoreGrpc.kvStoreBlockingStub kvStub = stubHashMap.get(i);
+                    KvStore.PushMessageRequest.Builder pushMessageRequestBuilder = KvStore.PushMessageRequest.newBuilder();
+                    pushMessageRequestBuilder.setPushKey(key);
+                    pushMessageRequestBuilder.setPushValue(newValue);
+                    //TODO :  check for long value
+                    pushMessageRequestBuilder.setPushTimestamp(time.intValue());
+                    kvStub.pushMessage(pushMessageRequestBuilder.build());
+                }
+            }
         }
-        responseObserver.onNext(putResponse.build());
+        responseObserver.onNext(putResponse);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void pushMessage(KvStore.PushMessageRequest request, StreamObserver<KvStore.PushMessageResponse> responseObserver) {
+        System.out.println("inside pushMessage of: " + rank);
+        String key = request.getPushKey();
+        String newValue = request.getPushValue();
+        long timestamp = request.getPushTimestamp();
+        KvStore.PushMessageResponse.Builder pushMessageResponseBuilder = KvStore.PushMessageResponse.newBuilder();
+        String oldValue = kvMap.put(key, newValue);
+
+        pushMessageResponseBuilder.setPushResponseKey(key);
+        pushMessageResponseBuilder.setPushResponseValue(newValue);
+        pushMessageResponseBuilder.setPushResponseTimestamp(timestamp);
+
+        //Update DB
+        if (oldValue == null) {
+            keyValueDatabase.insertIntoTable(key, newValue, timestamp);
+        } else {
+            keyValueDatabase.updateKeyIfExistsInTable(key, newValue, timestamp);
+        }
+        responseObserver.onNext(pushMessageResponseBuilder.build());
         responseObserver.onCompleted();
     }
 }
