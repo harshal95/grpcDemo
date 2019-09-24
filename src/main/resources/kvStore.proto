@@ -5,6 +5,7 @@ service kvStore {
     rpc get (GetRequest) returns (GetResponse);
     rpc put (PutRequest) returns (PutResponse);
     rpc pushMessage (PushMessageRequest) returns (PushMessageResponse);
+    rpc updateNodeInfo (UpdateNodePushMessage) returns (UpdateNodeResponse);
 }
 
 message GetRequest {
@@ -22,6 +23,10 @@ message PutRequest {
     string requestKey = 1;
     string requestNewValue = 2;
     string requestOldValue = 3;
+    int32 updateNode = 4;
+    int64 updateNodeTimestamp = 5;
+    repeated int32 deadRanks = 6;
+
 }
 
 message PutResponse {
@@ -35,10 +40,21 @@ message PushMessageRequest {
     string pushKey = 1;
     string pushValue = 2;
     int64 pushTimestamp = 3;
+    int32 updateNode = 4;
+    int64 updateNodeTimestamp = 5;
+    repeated int32 deadRanks = 6;
 }
 
 message PushMessageResponse {
     string pushResponseKey = 1;
     string pushResponseValue = 2;
     int64 pushResponseTimestamp = 3;
+}
+
+message UpdateNodePushMessage {
+    int32 newUpdateNode = 1;
+    int64 newUpdateNodeTimestamp = 2;
+}
+
+message UpdateNodeResponse {
 }
