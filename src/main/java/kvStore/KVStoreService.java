@@ -5,9 +5,11 @@ import com.grpc.sample.KvStore;
 import com.grpc.sample.kvStoreGrpc;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
+import javafx.util.Pair;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
@@ -15,6 +17,7 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
     HashMap<String, String> kvMap;
     HashSet<Integer> deadSet;
     Integer updateNode;
+    Long updateNodeTimestamp;
     Integer rank;
     Integer n;
     KeyValueDatabase keyValueDatabase;
@@ -25,17 +28,47 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
         this.keyValueDatabase = new KeyValueDatabase(rank);
     }
 
-    public KVStoreService(Integer updateNode, Integer rank, Integer n) {
+    public KVStoreService(Integer rank, Integer n) {
         this.kvMap = new HashMap<>();
-        this.updateNode = updateNode;
         this.rank = rank;
         this.n = n;
         this.keyValueDatabase = new KeyValueDatabase(rank);
         this.deadSet = new HashSet<>();
     }
 
+    public void setUpdateNodeTimestamp(Long updateNodeTimestamp) {
+        this.updateNodeTimestamp = updateNodeTimestamp;
+    }
+
+    public void setUpdateNode(Integer updateNode) {
+        this.updateNode = updateNode;
+    }
+
     public void setStubHashMap(HashMap<Integer, kvStoreGrpc.kvStoreBlockingStub> stubHashMap) {
         this.stubHashMap = stubHashMap;
+    }
+
+    public Pair<Integer, Long> fetchUpdateNodeInfoFromDB() {
+        return keyValueDatabase.getUpdateNodeInfo();
+    }
+
+    public void setUpdateNodeAndTimestampDB(int updateNode, long updateNodeTimestamp) {
+        keyValueDatabase.updateUpdateNodeTable(updateNode, updateNodeTimestamp);
+        this.updateNode = updateNode;
+        this.updateNodeTimestamp = updateNodeTimestamp;
+    }
+
+    public void reconciliateDB(List<KvStore.Row> records) {
+        keyValueDatabase.reconciliateDB(records);
+    }
+
+    public void refreshHashTable() {
+        List<KvStore.Row> records = keyValueDatabase.getRecordsSince(1);
+//        HashMap<String, String> refreshHashMap = new HashMap<>();
+        for (KvStore.Row record : records) {
+            this.kvMap.put(record.getKey(), record.getValue());
+        }
+        System.out.println("Server : " + rank + " printing hashtable " + kvMap.toString());
     }
 
     @Override
@@ -58,11 +91,54 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
     }
 
+//    public boolean validateInput(String key, String value) {
+//        if(key.length() > 128 || value.length() > 2048)
+//            return false;
+//
+//        String keyRegex = "^[a-zA-Z0-9]+$";
+//        Pattern keyPattern = Pattern.compile(keyRegex);
+//        Matcher KeyMatcher = keyPattern.matcher(keyPattern);
+//
+//        String valueRegex = "^$";
+//        Pattern valuePattern = Pattern.compile(valueRegex);
+//        Matcher valueMatcher = valuePattern.matcher(valuePattern);
+//        return KeyMatcher && valueMatcher;
+//    }
+
+
+    @Override
+    public void syncMessage(KvStore.SyncMessageRequest request, StreamObserver<KvStore.SyncMessageResponse> responseObserver) {
+        System.out.println("Server: " + rank + " inside syncMessage");
+        long timestamp = request.getSyncTimestamp();
+        List<KvStore.Row> records = keyValueDatabase.getRecordsSince(timestamp);
+        System.out.println("Server: " + rank + " syncRecords : " + records.toString());
+        KvStore.SyncMessageResponse.Builder response = KvStore.SyncMessageResponse.newBuilder();
+        response.addAllRow(records);
+        responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
+    }
+
+    public long getMaxTimestamp() {
+        return keyValueDatabase.getMaxTimestampFromKVTable();
+    }
+
+    @Override
+    public void getUpdateNode(KvStore.UpdateNodeRequest request, StreamObserver<KvStore.UpdateNodeResponse> responseObserver) {
+        deadSet.remove(request.getSourceNode());
+        KvStore.UpdateNodeResponse.Builder response = KvStore.UpdateNodeResponse.newBuilder();
+        response.setUpdateNode(updateNode);
+        response.setUpdateNodeTimestamp(updateNodeTimestamp);
+        responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
+    }
+
     @Override
     public void put(KvStore.PutRequest request, StreamObserver<KvStore.PutResponse> responseObserver) {
         System.out.println("Server: " + rank + " PUT");
         String key = request.getRequestKey();
         String newValue = request.getRequestNewValue();
+
+        boolean isFailed = false;
 
         if (request.getUpdateNode() == -1) {
             KvStore.PutRequest.Builder putRequestBuilder = KvStore.PutRequest.newBuilder();
@@ -73,9 +149,14 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
             //TODO: add timestamp
             request = putRequestBuilder.build();
         }
+
+        //TODO: Need to investigate if timestamp check is necessary
         if (request.getUpdateNode() != -1 && request.getUpdateNode() != updateNode) {
             updateNode = request.getUpdateNode();
             deadSet = new HashSet<>(request.getDeadRanksList());
+            updateNodeTimestamp = request.getUpdateNodeTimestamp();
+            //Save new update node in DB
+            keyValueDatabase.updateUpdateNodeTable(updateNode, updateNodeTimestamp);
         }
 
         KvStore.PutResponse putResponse = null;
@@ -85,15 +166,16 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
                 try {
                     System.out.println("Server: " + rank + " Calling update node: " + updateNode);
                     putResponse = kvStub.withDeadlineAfter(5, TimeUnit.SECONDS).put(request);
+
                     break;
                 } catch (StatusRuntimeException timeoutException) {
                     System.out.println("Server: " + rank + " Timeout exception - catch block" + timeoutException.getStatus());
                     //Add failed node to deadset
                     deadSet.add(updateNode);
-
+                    isFailed = true;
                     // Update the update node
                     updateNode = (updateNode + 1) % n;
-
+                    updateNodeTimestamp = System.currentTimeMillis();
                     System.out.println("Server: " + rank + " Updated value of update node: " + updateNode);
                     kvStub = stubHashMap.get(updateNode);
 
@@ -102,12 +184,15 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
                     putRequestBuilder.setRequestOldValue(request.getRequestOldValue());
                     putRequestBuilder.setRequestNewValue(newValue);
                     putRequestBuilder.setUpdateNode(updateNode);
+                    putRequestBuilder.setUpdateNodeTimestamp(updateNodeTimestamp);
                     putRequestBuilder.addAllDeadRanks(deadSet);
                     request = putRequestBuilder.build();
 
                 }
             }
-
+            if (isFailed) {
+                keyValueDatabase.updateUpdateNodeTable(updateNode, updateNodeTimestamp);
+            }
 
 //            //new rpc Broadcast
 //            for (int i = 0; i < n; i++) {
@@ -119,7 +204,6 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 //                    kvBroadcastStub.updateNodeInfo(updateNodePushMessageBuilder.build());
 //                }
 //            }
-
             if (updateNode == rank) {
                 putResponse = updateNodeOperations(key, newValue);
             }
@@ -128,7 +212,7 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
         }
         // note: updating only hashmap and not db - waiting for broadcast msg to update db
         kvMap.put(key, putResponse.getResponseNewValue());
-        
+
         responseObserver.onNext(putResponse);
         responseObserver.onCompleted();
     }
@@ -142,7 +226,12 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
         if (request.getUpdateNode() != updateNode) {
             updateNode = request.getUpdateNode();
+            updateNodeTimestamp = request.getUpdateNodeTimestamp();
+            //Save new updateNode value in DB
+            keyValueDatabase.updateUpdateNodeTable(updateNode, updateNodeTimestamp);
+
         }
+
         deadSet = new HashSet<>(request.getDeadRanksList());
         KvStore.PushMessageResponse.Builder pushMessageResponseBuilder = KvStore.PushMessageResponse.newBuilder();
         String oldValue = kvMap.put(key, newValue);
@@ -161,11 +250,6 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
         responseObserver.onCompleted();
     }
 
-    @Override
-    public void updateNodeInfo(KvStore.UpdateNodePushMessage request, StreamObserver<KvStore.UpdateNodeResponse> responseObserver) {
-        System.out.println("Server: " + rank + " UpdateNodeInfoAPI");
-        updateNode = request.getNewUpdateNode();
-    }
 
     public KvStore.PutResponse updateNodeOperations(String key, String newValue) {
         Long time = null;
@@ -197,8 +281,10 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
                 pushMessageRequestBuilder.setPushValue(newValue);
                 //TODO :  check for long value
                 pushMessageRequestBuilder.setPushTimestamp(time.intValue());
-                pushMessageRequestBuilder.addAllDeadRanks(deadSet);
+                pushMessageRequestBuilder.setUpdateNodeTimestamp(updateNodeTimestamp);
                 pushMessageRequestBuilder.setUpdateNode(updateNode);
+                pushMessageRequestBuilder.addAllDeadRanks(deadSet);
+
 
                 //TODO : update node timestamp
                 kvStub.pushMessage(pushMessageRequestBuilder.build());

@@ -5,7 +5,8 @@ service kvStore {
     rpc get (GetRequest) returns (GetResponse);
     rpc put (PutRequest) returns (PutResponse);
     rpc pushMessage (PushMessageRequest) returns (PushMessageResponse);
-    rpc updateNodeInfo (UpdateNodePushMessage) returns (UpdateNodeResponse);
+    rpc getUpdateNode (UpdateNodeRequest) returns (UpdateNodeResponse);
+    rpc syncMessage (SyncMessageRequest) returns (SyncMessageResponse);
 }
 
 message GetRequest {
@@ -51,10 +52,25 @@ message PushMessageResponse {
     int64 pushResponseTimestamp = 3;
 }
 
-message UpdateNodePushMessage {
-    int32 newUpdateNode = 1;
-    int64 newUpdateNodeTimestamp = 2;
+message UpdateNodeRequest {
+    int32 updateNode = 1;
+    int64 updateNodeTimestamp = 2;
+    int32 sourceNode = 3;
 }
 
 message UpdateNodeResponse {
+    int32 updateNode = 1;
+    int64 updateNodeTimestamp = 2;
+}
+message Row {
+    string key = 1;
+    string value = 2;
+    int64 timestamp = 3;
+}
+message SyncMessageRequest {
+    int64 syncTimestamp = 1;
+}
+
+message SyncMessageResponse {
+    repeated Row row = 1;
 }

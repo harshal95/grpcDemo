@@ -19,7 +19,8 @@ public final class kvStoreGrpc {
   public static final String SERVICE_NAME = "kvStore";
   private static final int METHODID_PUT = 1;
   private static final int METHODID_PUSH_MESSAGE = 2;
-  private static final int METHODID_UPDATE_NODE_INFO = 3;
+    private static final int METHODID_GET_UPDATE_NODE = 3;
+    private static final int METHODID_SYNC_MESSAGE = 4;
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.grpc.sample.KvStore.GetRequest,
           com.grpc.sample.KvStore.GetResponse> getGetMethod;
@@ -27,12 +28,21 @@ public final class kvStoreGrpc {
           com.grpc.sample.KvStore.PutResponse> getPutMethod;
   private static volatile io.grpc.MethodDescriptor<com.grpc.sample.KvStore.PushMessageRequest,
           com.grpc.sample.KvStore.PushMessageResponse> getPushMessageMethod;
-  private static volatile io.grpc.MethodDescriptor<com.grpc.sample.KvStore.UpdateNodePushMessage,
-          com.grpc.sample.KvStore.UpdateNodeResponse> getUpdateNodeInfoMethod;
+    private static volatile io.grpc.MethodDescriptor<com.grpc.sample.KvStore.UpdateNodeRequest,
+            com.grpc.sample.KvStore.UpdateNodeResponse> getGetUpdateNodeMethod;
+    private static volatile io.grpc.MethodDescriptor<com.grpc.sample.KvStore.SyncMessageRequest,
+            com.grpc.sample.KvStore.SyncMessageResponse> getSyncMessageMethod;
   private static volatile io.grpc.ServiceDescriptor serviceDescriptor;
 
-  private kvStoreGrpc() {
-  }
+    /**
+     * Creates a new async stub that supports all call types for the service
+     */
+    public static kvStoreStub newStub(io.grpc.Channel channel) {
+        return new kvStoreStub(channel);
+    }
+
+    private kvStoreGrpc() {
+    }
 
   @io.grpc.stub.annotations.RpcMethod(
           fullMethodName = SERVICE_NAME + '/' + "get",
@@ -60,7 +70,7 @@ public final class kvStoreGrpc {
         }
       }
     }
-    return getGetMethod;
+      return getGetMethod;
   }
 
   @io.grpc.stub.annotations.RpcMethod(
@@ -89,7 +99,7 @@ public final class kvStoreGrpc {
         }
       }
     }
-    return getPutMethod;
+      return getPutMethod;
   }
 
   @io.grpc.stub.annotations.RpcMethod(
@@ -118,43 +128,65 @@ public final class kvStoreGrpc {
         }
       }
     }
-    return getPushMessageMethod;
+      return getPushMessageMethod;
   }
 
   @io.grpc.stub.annotations.RpcMethod(
-          fullMethodName = SERVICE_NAME + '/' + "updateNodeInfo",
-          requestType = com.grpc.sample.KvStore.UpdateNodePushMessage.class,
+          fullMethodName = SERVICE_NAME + '/' + "getUpdateNode",
+          requestType = com.grpc.sample.KvStore.UpdateNodeRequest.class,
           responseType = com.grpc.sample.KvStore.UpdateNodeResponse.class,
           methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.grpc.sample.KvStore.UpdateNodePushMessage,
-          com.grpc.sample.KvStore.UpdateNodeResponse> getUpdateNodeInfoMethod() {
-    io.grpc.MethodDescriptor<com.grpc.sample.KvStore.UpdateNodePushMessage, com.grpc.sample.KvStore.UpdateNodeResponse> getUpdateNodeInfoMethod;
-    if ((getUpdateNodeInfoMethod = kvStoreGrpc.getUpdateNodeInfoMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.grpc.sample.KvStore.UpdateNodeRequest,
+          com.grpc.sample.KvStore.UpdateNodeResponse> getGetUpdateNodeMethod() {
+      io.grpc.MethodDescriptor<com.grpc.sample.KvStore.UpdateNodeRequest, com.grpc.sample.KvStore.UpdateNodeResponse> getGetUpdateNodeMethod;
+      if ((getGetUpdateNodeMethod = kvStoreGrpc.getGetUpdateNodeMethod) == null) {
       synchronized (kvStoreGrpc.class) {
-        if ((getUpdateNodeInfoMethod = kvStoreGrpc.getUpdateNodeInfoMethod) == null) {
-          kvStoreGrpc.getUpdateNodeInfoMethod = getUpdateNodeInfoMethod =
-                  io.grpc.MethodDescriptor.<com.grpc.sample.KvStore.UpdateNodePushMessage, com.grpc.sample.KvStore.UpdateNodeResponse>newBuilder()
-                          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                          .setFullMethodName(generateFullMethodName(
-                                  "kvStore", "updateNodeInfo"))
-                          .setSampledToLocalTracing(true)
-                          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                                  com.grpc.sample.KvStore.UpdateNodePushMessage.getDefaultInstance()))
-                          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                                  com.grpc.sample.KvStore.UpdateNodeResponse.getDefaultInstance()))
-                          .setSchemaDescriptor(new kvStoreMethodDescriptorSupplier("updateNodeInfo"))
-                          .build();
-        }
+          if ((getGetUpdateNodeMethod = kvStoreGrpc.getGetUpdateNodeMethod) == null) {
+              kvStoreGrpc.getGetUpdateNodeMethod = getGetUpdateNodeMethod =
+                      io.grpc.MethodDescriptor.<com.grpc.sample.KvStore.UpdateNodeRequest, com.grpc.sample.KvStore.UpdateNodeResponse>newBuilder()
+                              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                              .setFullMethodName(generateFullMethodName(
+                                      "kvStore", "getUpdateNode"))
+                              .setSampledToLocalTracing(true)
+                              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                                      com.grpc.sample.KvStore.UpdateNodeRequest.getDefaultInstance()))
+                              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                                      com.grpc.sample.KvStore.UpdateNodeResponse.getDefaultInstance()))
+                              .setSchemaDescriptor(new kvStoreMethodDescriptorSupplier("getUpdateNode"))
+                              .build();
+          }
       }
-    }
-    return getUpdateNodeInfoMethod;
+      }
+      return getGetUpdateNodeMethod;
   }
 
-  /**
-   * Creates a new async stub that supports all call types for the service
-   */
-  public static kvStoreStub newStub(io.grpc.Channel channel) {
-    return new kvStoreStub(channel);
+    @io.grpc.stub.annotations.RpcMethod(
+            fullMethodName = SERVICE_NAME + '/' + "syncMessage",
+            requestType = com.grpc.sample.KvStore.SyncMessageRequest.class,
+            responseType = com.grpc.sample.KvStore.SyncMessageResponse.class,
+            methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+    public static io.grpc.MethodDescriptor<com.grpc.sample.KvStore.SyncMessageRequest,
+            com.grpc.sample.KvStore.SyncMessageResponse> getSyncMessageMethod() {
+        io.grpc.MethodDescriptor<com.grpc.sample.KvStore.SyncMessageRequest, com.grpc.sample.KvStore.SyncMessageResponse> getSyncMessageMethod;
+        if ((getSyncMessageMethod = kvStoreGrpc.getSyncMessageMethod) == null) {
+            synchronized (kvStoreGrpc.class) {
+                if ((getSyncMessageMethod = kvStoreGrpc.getSyncMessageMethod) == null) {
+                    kvStoreGrpc.getSyncMessageMethod = getSyncMessageMethod =
+                            io.grpc.MethodDescriptor.<com.grpc.sample.KvStore.SyncMessageRequest, com.grpc.sample.KvStore.SyncMessageResponse>newBuilder()
+                                    .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                                    .setFullMethodName(generateFullMethodName(
+                                            "kvStore", "syncMessage"))
+                                    .setSampledToLocalTracing(true)
+                                    .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                                            com.grpc.sample.KvStore.SyncMessageRequest.getDefaultInstance()))
+                                    .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                                            com.grpc.sample.KvStore.SyncMessageResponse.getDefaultInstance()))
+                                    .setSchemaDescriptor(new kvStoreMethodDescriptorSupplier("syncMessage"))
+                                    .build();
+                }
+            }
+        }
+        return getSyncMessageMethod;
   }
 
   /**
@@ -184,7 +216,8 @@ public final class kvStoreGrpc {
                   .addMethod(getGetMethod())
                   .addMethod(getPutMethod())
                   .addMethod(getPushMessageMethod())
-                  .addMethod(getUpdateNodeInfoMethod())
+                  .addMethod(getGetUpdateNodeMethod())
+                  .addMethod(getSyncMessageMethod())
                   .build();
         }
       }
@@ -211,7 +244,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public void pushMessage(com.grpc.sample.KvStore.PushMessageRequest request,
                             io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.PushMessageResponse> responseObserver) {
@@ -219,15 +251,22 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
-    public void updateNodeInfo(com.grpc.sample.KvStore.UpdateNodePushMessage request,
-                               io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.UpdateNodeResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateNodeInfoMethod(), responseObserver);
+    public void getUpdateNode(com.grpc.sample.KvStore.UpdateNodeRequest request,
+                              io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.UpdateNodeResponse> responseObserver) {
+        asyncUnimplementedUnaryCall(getGetUpdateNodeMethod(), responseObserver);
     }
 
-    @java.lang.Override
-    public final io.grpc.ServerServiceDefinition bindService() {
+      /**
+       *
+       */
+      public void syncMessage(com.grpc.sample.KvStore.SyncMessageRequest request,
+                              io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.SyncMessageResponse> responseObserver) {
+          asyncUnimplementedUnaryCall(getSyncMessageMethod(), responseObserver);
+      }
+
+      @java.lang.Override
+      public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
               .addMethod(
                       getGetMethod(),
@@ -251,12 +290,19 @@ public final class kvStoreGrpc {
                                       com.grpc.sample.KvStore.PushMessageResponse>(
                                       this, METHODID_PUSH_MESSAGE)))
               .addMethod(
-                      getUpdateNodeInfoMethod(),
+                      getGetUpdateNodeMethod(),
                       asyncUnaryCall(
                               new MethodHandlers<
-                                      com.grpc.sample.KvStore.UpdateNodePushMessage,
+                                      com.grpc.sample.KvStore.UpdateNodeRequest,
                                       com.grpc.sample.KvStore.UpdateNodeResponse>(
-                                      this, METHODID_UPDATE_NODE_INFO)))
+                                      this, METHODID_GET_UPDATE_NODE)))
+              .addMethod(
+                      getSyncMessageMethod(),
+                      asyncUnaryCall(
+                              new MethodHandlers<
+                                      com.grpc.sample.KvStore.SyncMessageRequest,
+                                      com.grpc.sample.KvStore.SyncMessageResponse>(
+                                      this, METHODID_SYNC_MESSAGE)))
               .build();
     }
   }
@@ -296,7 +342,6 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public void pushMessage(com.grpc.sample.KvStore.PushMessageRequest request,
                             io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.PushMessageResponse> responseObserver) {
@@ -305,12 +350,20 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
-    public void updateNodeInfo(com.grpc.sample.KvStore.UpdateNodePushMessage request,
-                               io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.UpdateNodeResponse> responseObserver) {
+    public void getUpdateNode(com.grpc.sample.KvStore.UpdateNodeRequest request,
+                              io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.UpdateNodeResponse> responseObserver) {
       asyncUnaryCall(
-              getChannel().newCall(getUpdateNodeInfoMethod(), getCallOptions()), request, responseObserver);
+              getChannel().newCall(getGetUpdateNodeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+      /**
+       *
+       */
+      public void syncMessage(com.grpc.sample.KvStore.SyncMessageRequest request,
+                              io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.SyncMessageResponse> responseObserver) {
+          asyncUnaryCall(
+                  getChannel().newCall(getSyncMessageMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -347,74 +400,94 @@ public final class kvStoreGrpc {
     }
 
     /**
-     *
      */
     public com.grpc.sample.KvStore.PushMessageResponse pushMessage(com.grpc.sample.KvStore.PushMessageRequest request) {
       return blockingUnaryCall(
               getChannel(), getPushMessageMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     */
-    public com.grpc.sample.KvStore.UpdateNodeResponse updateNodeInfo(com.grpc.sample.KvStore.UpdateNodePushMessage request) {
+      /**
+       *
+       */
+      public com.grpc.sample.KvStore.UpdateNodeResponse getUpdateNode(com.grpc.sample.KvStore.UpdateNodeRequest request) {
       return blockingUnaryCall(
-              getChannel(), getUpdateNodeInfoMethod(), getCallOptions(), request);
+              getChannel(), getGetUpdateNodeMethod(), getCallOptions(), request);
+      }
+
+      /**
+       *
+       */
+      public com.grpc.sample.KvStore.SyncMessageResponse syncMessage(com.grpc.sample.KvStore.SyncMessageRequest request) {
+          return blockingUnaryCall(
+                  getChannel(), getSyncMessageMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   */
-  public static final class kvStoreFutureStub extends io.grpc.stub.AbstractStub<kvStoreFutureStub> {
-    private kvStoreFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private kvStoreFutureStub(io.grpc.Channel channel,
-                              io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected kvStoreFutureStub build(io.grpc.Channel channel,
-                                      io.grpc.CallOptions callOptions) {
-      return new kvStoreFutureStub(channel, callOptions);
-    }
-
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.GetResponse> get(
-            com.grpc.sample.KvStore.GetRequest request) {
-      return futureUnaryCall(
-              getChannel().newCall(getGetMethod(), getCallOptions()), request);
+    public static final class kvStoreFutureStub extends io.grpc.stub.AbstractStub<kvStoreFutureStub> {
+        private kvStoreFutureStub(io.grpc.Channel channel) {
+            super(channel);
+        }
+
+        private kvStoreFutureStub(io.grpc.Channel channel,
+                                  io.grpc.CallOptions callOptions) {
+            super(channel, callOptions);
+        }
+
+        @java.lang.Override
+        protected kvStoreFutureStub build(io.grpc.Channel channel,
+                                          io.grpc.CallOptions callOptions) {
+            return new kvStoreFutureStub(channel, callOptions);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.GetResponse> get(
+                com.grpc.sample.KvStore.GetRequest request) {
+            return futureUnaryCall(
+                    getChannel().newCall(getGetMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.PutResponse> put(
+                com.grpc.sample.KvStore.PutRequest request) {
+            return futureUnaryCall(
+                    getChannel().newCall(getPutMethod(), getCallOptions()), request);
+        }
+
+        /**
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.PushMessageResponse> pushMessage(
+                com.grpc.sample.KvStore.PushMessageRequest request) {
+            return futureUnaryCall(
+                    getChannel().newCall(getPushMessageMethod(), getCallOptions()), request);
+        }
+
+        /**
+         *
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.UpdateNodeResponse> getUpdateNode(
+                com.grpc.sample.KvStore.UpdateNodeRequest request) {
+            return futureUnaryCall(
+                    getChannel().newCall(getGetUpdateNodeMethod(), getCallOptions()), request);
+        }
+
+        /**
+         *
+         */
+        public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.SyncMessageResponse> syncMessage(
+                com.grpc.sample.KvStore.SyncMessageRequest request) {
+            return futureUnaryCall(
+                    getChannel().newCall(getSyncMessageMethod(), getCallOptions()), request);
+        }
     }
 
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.PutResponse> put(
-            com.grpc.sample.KvStore.PutRequest request) {
-      return futureUnaryCall(
-              getChannel().newCall(getPutMethod(), getCallOptions()), request);
+    private static final class kvStoreFileDescriptorSupplier
+            extends kvStoreBaseDescriptorSupplier {
+        kvStoreFileDescriptorSupplier() {}
     }
-
-    /**
-     *
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.PushMessageResponse> pushMessage(
-            com.grpc.sample.KvStore.PushMessageRequest request) {
-      return futureUnaryCall(
-              getChannel().newCall(getPushMessageMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.grpc.sample.KvStore.UpdateNodeResponse> updateNodeInfo(
-            com.grpc.sample.KvStore.UpdateNodePushMessage request) {
-      return futureUnaryCall(
-              getChannel().newCall(getUpdateNodeInfoMethod(), getCallOptions()), request);
-    }
-  }
 
   private static final class MethodHandlers<Req, Resp> implements
           io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -444,10 +517,14 @@ public final class kvStoreGrpc {
         case METHODID_PUSH_MESSAGE:
           serviceImpl.pushMessage((com.grpc.sample.KvStore.PushMessageRequest) request,
                   (io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.PushMessageResponse>) responseObserver);
-          break;
-        case METHODID_UPDATE_NODE_INFO:
-          serviceImpl.updateNodeInfo((com.grpc.sample.KvStore.UpdateNodePushMessage) request,
-                  (io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.UpdateNodeResponse>) responseObserver);
+            break;
+          case METHODID_GET_UPDATE_NODE:
+              serviceImpl.getUpdateNode((com.grpc.sample.KvStore.UpdateNodeRequest) request,
+                      (io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.UpdateNodeResponse>) responseObserver);
+              break;
+          case METHODID_SYNC_MESSAGE:
+              serviceImpl.syncMessage((com.grpc.sample.KvStore.SyncMessageRequest) request,
+                      (io.grpc.stub.StreamObserver<com.grpc.sample.KvStore.SyncMessageResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -478,11 +555,6 @@ public final class kvStoreGrpc {
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("kvStore");
     }
-  }
-
-  private static final class kvStoreFileDescriptorSupplier
-      extends kvStoreBaseDescriptorSupplier {
-    kvStoreFileDescriptorSupplier() {}
   }
 
   private static final class kvStoreMethodDescriptorSupplier
