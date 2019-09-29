@@ -4,199 +4,19 @@
 package com.grpc.sample;
 
 public final class KvStore {
-  private static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_GetRequest_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_GetRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_GetResponse_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_GetResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_PutRequest_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_PutRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_PutResponse_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_PutResponse_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_PushMessageRequest_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_PushMessageRequest_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_PushMessageResponse_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_PushMessageResponse_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_UpdateNodeRequest_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_UpdateNodeRequest_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_UpdateNodeResponse_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_UpdateNodeResponse_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_Row_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_Row_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_SyncMessageRequest_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_SyncMessageRequest_fieldAccessorTable;
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_SyncMessageResponse_descriptor;
-    private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_SyncMessageResponse_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
-
-  static {
-    java.lang.String[] descriptorData = {
-            "\n\rkvStore.proto\"6\n\nGetRequest\022\022\n\nrequest" +
-                    "Key\030\001 \001(\t\022\024\n\014requestValue\030\002 \001(\t\"I\n\013GetRe" +
-                    "sponse\022\023\n\013responseKey\030\001 \001(\t\022\025\n\rresponseV" +
-                    "alue\030\002 \001(\t\022\016\n\006status\030\003 \001(\005\"\226\001\n\nPutReques" +
-                    "t\022\022\n\nrequestKey\030\001 \001(\t\022\027\n\017requestNewValue" +
-                    "\030\002 \001(\t\022\027\n\017requestOldValue\030\003 \001(\t\022\022\n\nupdat" +
-                    "eNode\030\004 \001(\005\022\033\n\023updateNodeTimestamp\030\005 \001(\003" +
-                    "\022\021\n\tdeadRanks\030\006 \003(\005\"f\n\013PutResponse\022\023\n\013re" +
-                    "sponseKey\030\001 \001(\t\022\030\n\020responseNewValue\030\002 \001(" +
-                    "\t\022\030\n\020responseOldValue\030\003 \001(\t\022\016\n\006status\030\004 " +
-                    "\001(\005\"\223\001\n\022PushMessageRequest\022\017\n\007pushKey\030\001 " +
-                    "\001(\t\022\021\n\tpushValue\030\002 \001(\t\022\025\n\rpushTimestamp\030" +
-                    "\003 \001(\003\022\022\n\nupdateNode\030\004 \001(\005\022\033\n\023updateNodeT" +
-                    "imestamp\030\005 \001(\003\022\021\n\tdeadRanks\030\006 \003(\005\"h\n\023Pus" +
-                    "hMessageResponse\022\027\n\017pushResponseKey\030\001 \001(" +
-                    "\t\022\031\n\021pushResponseValue\030\002 \001(\t\022\035\n\025pushResp" +
-                    "onseTimestamp\030\003 \001(\003\"X\n\021UpdateNodeRequest" +
-                    "\022\022\n\nupdateNode\030\001 \001(\005\022\033\n\023updateNodeTimest" +
-                    "amp\030\002 \001(\003\022\022\n\nsourceNode\030\003 \001(\005\"E\n\022UpdateN" +
-                    "odeResponse\022\022\n\nupdateNode\030\001 \001(\005\022\033\n\023updat" +
-                    "eNodeTimestamp\030\002 \001(\003\"4\n\003Row\022\013\n\003key\030\001 \001(\t" +
-                    "\022\r\n\005value\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"+\n\022Sy" +
-                    "ncMessageRequest\022\025\n\rsyncTimestamp\030\001 \001(\003\"" +
-                    "(\n\023SyncMessageResponse\022\021\n\003row\030\001 \003(\0132\004.Ro" +
-                    "w2\373\001\n\007kvStore\022 \n\003get\022\013.GetRequest\032\014.GetR" +
-                    "esponse\022 \n\003put\022\013.PutRequest\032\014.PutRespons" +
-                    "e\0228\n\013pushMessage\022\023.PushMessageRequest\032\024." +
-                    "PushMessageResponse\0228\n\rgetUpdateNode\022\022.U" +
-                    "pdateNodeRequest\032\023.UpdateNodeResponse\0228\n" +
-                    "\013syncMessage\022\023.SyncMessageRequest\032\024.Sync" +
-                    "MessageResponseB\021\n\017com.grpc.sampleb\006prot" +
-                    "o3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-            new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-                public com.google.protobuf.ExtensionRegistry assignDescriptors(
-                        com.google.protobuf.Descriptors.FileDescriptor root) {
-                    descriptor = root;
-                    return null;
-                }
-            };
-    com.google.protobuf.Descriptors.FileDescriptor
-            .internalBuildGeneratedFileFrom(descriptorData,
-                    new com.google.protobuf.Descriptors.FileDescriptor[]{
-                    }, assigner);
-    internal_static_GetRequest_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-    internal_static_GetRequest_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_GetRequest_descriptor,
-            new java.lang.String[]{"RequestKey", "RequestValue",});
-    internal_static_GetResponse_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-    internal_static_GetResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_GetResponse_descriptor,
-            new java.lang.String[]{"ResponseKey", "ResponseValue", "Status",});
-    internal_static_PutRequest_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-    internal_static_PutRequest_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_PutRequest_descriptor,
-            new java.lang.String[]{"RequestKey", "RequestNewValue", "RequestOldValue", "UpdateNode", "UpdateNodeTimestamp", "DeadRanks",});
-    internal_static_PutResponse_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-    internal_static_PutResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_PutResponse_descriptor,
-            new java.lang.String[]{"ResponseKey", "ResponseNewValue", "ResponseOldValue", "Status",});
-      internal_static_PushMessageRequest_descriptor =
-              getDescriptor().getMessageTypes().get(4);
-      internal_static_PushMessageRequest_fieldAccessorTable = new
-              com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-              internal_static_PushMessageRequest_descriptor,
-              new java.lang.String[]{"PushKey", "PushValue", "PushTimestamp", "UpdateNode", "UpdateNodeTimestamp", "DeadRanks",});
-      internal_static_PushMessageResponse_descriptor =
-              getDescriptor().getMessageTypes().get(5);
-      internal_static_PushMessageResponse_fieldAccessorTable = new
-              com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-              internal_static_PushMessageResponse_descriptor,
-              new java.lang.String[]{"PushResponseKey", "PushResponseValue", "PushResponseTimestamp",});
-      internal_static_UpdateNodeRequest_descriptor =
-              getDescriptor().getMessageTypes().get(6);
-      internal_static_UpdateNodeRequest_fieldAccessorTable = new
-              com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-              internal_static_UpdateNodeRequest_descriptor,
-              new java.lang.String[]{"UpdateNode", "UpdateNodeTimestamp", "SourceNode",});
-      internal_static_UpdateNodeResponse_descriptor =
-              getDescriptor().getMessageTypes().get(7);
-      internal_static_UpdateNodeResponse_fieldAccessorTable = new
-              com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-              internal_static_UpdateNodeResponse_descriptor,
-              new java.lang.String[]{"UpdateNode", "UpdateNodeTimestamp",});
-      internal_static_Row_descriptor =
-              getDescriptor().getMessageTypes().get(8);
-      internal_static_Row_fieldAccessorTable = new
-              com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-              internal_static_Row_descriptor,
-              new java.lang.String[]{"Key", "Value", "Timestamp",});
-      internal_static_SyncMessageRequest_descriptor =
-              getDescriptor().getMessageTypes().get(9);
-      internal_static_SyncMessageRequest_fieldAccessorTable = new
-              com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-              internal_static_SyncMessageRequest_descriptor,
-              new java.lang.String[]{"SyncTimestamp",});
-      internal_static_SyncMessageResponse_descriptor =
-              getDescriptor().getMessageTypes().get(10);
-      internal_static_SyncMessageResponse_fieldAccessorTable = new
-              com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-              internal_static_SyncMessageResponse_descriptor,
-              new java.lang.String[]{"Row",});
-  }
-
-    private KvStore() {
-    }
-
+  private KvStore() {}
   public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistryLite registry) {
+      com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-            (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-  getDescriptor() {
-    return descriptor;
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface GetRequestOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:GetRequest)
-          com.google.protobuf.MessageOrBuilder {
+      // @@protoc_insertion_point(interface_extends:GetRequest)
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string requestKey = 1;</code>
@@ -216,11 +36,674 @@ public final class KvStore {
      * <code>string requestValue = 2;</code>
      */
     com.google.protobuf.ByteString
-    getRequestValueBytes();
+        getRequestValueBytes();
   }
+  /**
+   * Protobuf type {@code GetRequest}
+   */
+  public  static final class GetRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GetRequest)
+      GetRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetRequest.newBuilder() to construct.
+    private GetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetRequest() {
+      requestKey_ = "";
+      requestValue_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestKey_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestValue_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_GetRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.GetRequest.class, com.grpc.sample.KvStore.GetRequest.Builder.class);
+    }
+
+    public static final int REQUESTKEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object requestKey_;
+    /**
+     * <code>string requestKey = 1;</code>
+     */
+    public java.lang.String getRequestKey() {
+      java.lang.Object ref = requestKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string requestKey = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestKeyBytes() {
+      java.lang.Object ref = requestKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REQUESTVALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object requestValue_;
+    /**
+     * <code>string requestValue = 2;</code>
+     */
+    public java.lang.String getRequestValue() {
+      java.lang.Object ref = requestValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestValue_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string requestValue = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestValueBytes() {
+      java.lang.Object ref = requestValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getRequestKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestKey_);
+      }
+      if (!getRequestValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestValue_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRequestKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestKey_);
+      }
+      if (!getRequestValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestValue_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.GetRequest)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.GetRequest other = (com.grpc.sample.KvStore.GetRequest) obj;
+
+      boolean result = true;
+      result = result && getRequestKey()
+          .equals(other.getRequestKey());
+      result = result && getRequestValue()
+          .equals(other.getRequestValue());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUESTKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestKey().hashCode();
+      hash = (37 * hash) + REQUESTVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.GetRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.GetRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GetRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GetRequest)
+        com.grpc.sample.KvStore.GetRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_GetRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.GetRequest.class, com.grpc.sample.KvStore.GetRequest.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.GetRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        requestKey_ = "";
+
+        requestValue_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.GetRequest getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.GetRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.GetRequest build() {
+        com.grpc.sample.KvStore.GetRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.GetRequest buildPartial() {
+        com.grpc.sample.KvStore.GetRequest result = new com.grpc.sample.KvStore.GetRequest(this);
+        result.requestKey_ = requestKey_;
+        result.requestValue_ = requestValue_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.GetRequest) {
+          return mergeFrom((com.grpc.sample.KvStore.GetRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.grpc.sample.KvStore.GetRequest other) {
+        if (other == com.grpc.sample.KvStore.GetRequest.getDefaultInstance()) return this;
+        if (!other.getRequestKey().isEmpty()) {
+          requestKey_ = other.requestKey_;
+          onChanged();
+        }
+        if (!other.getRequestValue().isEmpty()) {
+          requestValue_ = other.requestValue_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.GetRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.GetRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object requestKey_ = "";
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public java.lang.String getRequestKey() {
+        java.lang.Object ref = requestKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequestKeyBytes() {
+        java.lang.Object ref = requestKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public Builder setRequestKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public Builder clearRequestKey() {
+        
+        requestKey_ = getDefaultInstance().getRequestKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public Builder setRequestKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object requestValue_ = "";
+      /**
+       * <code>string requestValue = 2;</code>
+       */
+      public java.lang.String getRequestValue() {
+        java.lang.Object ref = requestValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string requestValue = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequestValueBytes() {
+        java.lang.Object ref = requestValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string requestValue = 2;</code>
+       */
+      public Builder setRequestValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestValue = 2;</code>
+       */
+      public Builder clearRequestValue() {
+        
+        requestValue_ = getDefaultInstance().getRequestValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestValue = 2;</code>
+       */
+      public Builder setRequestValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestValue_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:GetRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:GetRequest)
+    private static final com.grpc.sample.KvStore.GetRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.GetRequest();
+    }
+
+    public static com.grpc.sample.KvStore.GetRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetRequest>() {
+      @java.lang.Override
+      public GetRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.GetRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface GetResponseOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:GetResponse)
-          com.google.protobuf.MessageOrBuilder {
+      // @@protoc_insertion_point(interface_extends:GetResponse)
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string responseKey = 1;</code>
@@ -230,7 +713,7 @@ public final class KvStore {
      * <code>string responseKey = 1;</code>
      */
     com.google.protobuf.ByteString
-    getResponseKeyBytes();
+        getResponseKeyBytes();
 
     /**
      * <code>string responseValue = 2;</code>
@@ -240,16 +723,737 @@ public final class KvStore {
      * <code>string responseValue = 2;</code>
      */
     com.google.protobuf.ByteString
-    getResponseValueBytes();
+        getResponseValueBytes();
 
     /**
      * <code>int32 status = 3;</code>
      */
     int getStatus();
   }
+  /**
+   * Protobuf type {@code GetResponse}
+   */
+  public  static final class GetResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GetResponse)
+      GetResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetResponse.newBuilder() to construct.
+    private GetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetResponse() {
+      responseKey_ = "";
+      responseValue_ = "";
+      status_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              responseKey_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              responseValue_ = s;
+              break;
+            }
+            case 24: {
+
+              status_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_GetResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.GetResponse.class, com.grpc.sample.KvStore.GetResponse.Builder.class);
+    }
+
+    public static final int RESPONSEKEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object responseKey_;
+    /**
+     * <code>string responseKey = 1;</code>
+     */
+    public java.lang.String getResponseKey() {
+      java.lang.Object ref = responseKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string responseKey = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponseKeyBytes() {
+      java.lang.Object ref = responseKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESPONSEVALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object responseValue_;
+    /**
+     * <code>string responseValue = 2;</code>
+     */
+    public java.lang.String getResponseValue() {
+      java.lang.Object ref = responseValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseValue_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string responseValue = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponseValueBytes() {
+      java.lang.Object ref = responseValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 3;
+    private int status_;
+    /**
+     * <code>int32 status = 3;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getResponseKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseKey_);
+      }
+      if (!getResponseValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, responseValue_);
+      }
+      if (status_ != 0) {
+        output.writeInt32(3, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getResponseKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseKey_);
+      }
+      if (!getResponseValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, responseValue_);
+      }
+      if (status_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.GetResponse)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.GetResponse other = (com.grpc.sample.KvStore.GetResponse) obj;
+
+      boolean result = true;
+      result = result && getResponseKey()
+          .equals(other.getResponseKey());
+      result = result && getResponseValue()
+          .equals(other.getResponseValue());
+      result = result && (getStatus()
+          == other.getStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESPONSEKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseKey().hashCode();
+      hash = (37 * hash) + RESPONSEVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseValue().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.GetResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.GetResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GetResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GetResponse)
+        com.grpc.sample.KvStore.GetResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_GetResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.GetResponse.class, com.grpc.sample.KvStore.GetResponse.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.GetResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        responseKey_ = "";
+
+        responseValue_ = "";
+
+        status_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.GetResponse getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.GetResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.GetResponse build() {
+        com.grpc.sample.KvStore.GetResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.GetResponse buildPartial() {
+        com.grpc.sample.KvStore.GetResponse result = new com.grpc.sample.KvStore.GetResponse(this);
+        result.responseKey_ = responseKey_;
+        result.responseValue_ = responseValue_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.GetResponse) {
+          return mergeFrom((com.grpc.sample.KvStore.GetResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.grpc.sample.KvStore.GetResponse other) {
+        if (other == com.grpc.sample.KvStore.GetResponse.getDefaultInstance()) return this;
+        if (!other.getResponseKey().isEmpty()) {
+          responseKey_ = other.responseKey_;
+          onChanged();
+        }
+        if (!other.getResponseValue().isEmpty()) {
+          responseValue_ = other.responseValue_;
+          onChanged();
+        }
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.GetResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.GetResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object responseKey_ = "";
+      /**
+       * <code>string responseKey = 1;</code>
+       */
+      public java.lang.String getResponseKey() {
+        java.lang.Object ref = responseKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          responseKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string responseKey = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResponseKeyBytes() {
+        java.lang.Object ref = responseKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          responseKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string responseKey = 1;</code>
+       */
+      public Builder setResponseKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseKey = 1;</code>
+       */
+      public Builder clearResponseKey() {
+        
+        responseKey_ = getDefaultInstance().getResponseKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseKey = 1;</code>
+       */
+      public Builder setResponseKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        responseKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object responseValue_ = "";
+      /**
+       * <code>string responseValue = 2;</code>
+       */
+      public java.lang.String getResponseValue() {
+        java.lang.Object ref = responseValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          responseValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string responseValue = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResponseValueBytes() {
+        java.lang.Object ref = responseValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          responseValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string responseValue = 2;</code>
+       */
+      public Builder setResponseValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseValue = 2;</code>
+       */
+      public Builder clearResponseValue() {
+        
+        responseValue_ = getDefaultInstance().getResponseValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseValue = 2;</code>
+       */
+      public Builder setResponseValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        responseValue_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int status_ ;
+      /**
+       * <code>int32 status = 3;</code>
+       */
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>int32 status = 3;</code>
+       */
+      public Builder setStatus(int value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 status = 3;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:GetResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:GetResponse)
+    private static final com.grpc.sample.KvStore.GetResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.GetResponse();
+    }
+
+    public static com.grpc.sample.KvStore.GetResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetResponse>() {
+      @java.lang.Override
+      public GetResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.GetResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PutRequestOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:PutRequest)
-          com.google.protobuf.MessageOrBuilder {
+      // @@protoc_insertion_point(interface_extends:PutRequest)
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string requestKey = 1;</code>
@@ -259,7 +1463,7 @@ public final class KvStore {
      * <code>string requestKey = 1;</code>
      */
     com.google.protobuf.ByteString
-    getRequestKeyBytes();
+        getRequestKeyBytes();
 
     /**
      * <code>string requestNewValue = 2;</code>
@@ -269,7 +1473,7 @@ public final class KvStore {
      * <code>string requestNewValue = 2;</code>
      */
     com.google.protobuf.ByteString
-    getRequestNewValueBytes();
+        getRequestNewValueBytes();
 
     /**
      * <code>string requestOldValue = 3;</code>
@@ -279,36 +1483,1105 @@ public final class KvStore {
      * <code>string requestOldValue = 3;</code>
      */
     com.google.protobuf.ByteString
-    getRequestOldValueBytes();
+        getRequestOldValueBytes();
 
+    /**
+     * <code>int32 updateNode = 4;</code>
+     */
+    int getUpdateNode();
+
+    /**
+     * <code>int64 updateNodeTimestamp = 5;</code>
+     */
+    long getUpdateNodeTimestamp();
+
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    java.util.List<java.lang.Integer> getDeadRanksList();
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    int getDeadRanksCount();
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    int getDeadRanks(int index);
+  }
+  /**
+   * Protobuf type {@code PutRequest}
+   */
+  public  static final class PutRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:PutRequest)
+      PutRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PutRequest.newBuilder() to construct.
+    private PutRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PutRequest() {
+      requestKey_ = "";
+      requestNewValue_ = "";
+      requestOldValue_ = "";
+      updateNode_ = 0;
+      updateNodeTimestamp_ = 0L;
+      deadRanks_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PutRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestKey_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestNewValue_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestOldValue_ = s;
+              break;
+            }
+            case 32: {
+
+              updateNode_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
+              updateNodeTimestamp_ = input.readInt64();
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                deadRanks_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              deadRanks_.add(input.readInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
+                deadRanks_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                deadRanks_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          deadRanks_ = java.util.Collections.unmodifiableList(deadRanks_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_PutRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.PutRequest.class, com.grpc.sample.KvStore.PutRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int REQUESTKEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object requestKey_;
+    /**
+     * <code>string requestKey = 1;</code>
+     */
+    public java.lang.String getRequestKey() {
+      java.lang.Object ref = requestKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string requestKey = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestKeyBytes() {
+      java.lang.Object ref = requestKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REQUESTNEWVALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object requestNewValue_;
+    /**
+     * <code>string requestNewValue = 2;</code>
+     */
+    public java.lang.String getRequestNewValue() {
+      java.lang.Object ref = requestNewValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestNewValue_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string requestNewValue = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestNewValueBytes() {
+      java.lang.Object ref = requestNewValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestNewValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REQUESTOLDVALUE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object requestOldValue_;
+    /**
+     * <code>string requestOldValue = 3;</code>
+     */
+    public java.lang.String getRequestOldValue() {
+      java.lang.Object ref = requestOldValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestOldValue_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string requestOldValue = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestOldValueBytes() {
+      java.lang.Object ref = requestOldValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestOldValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UPDATENODE_FIELD_NUMBER = 4;
+    private int updateNode_;
+    /**
+     * <code>int32 updateNode = 4;</code>
+     */
+    public int getUpdateNode() {
+      return updateNode_;
+    }
+
+    public static final int UPDATENODETIMESTAMP_FIELD_NUMBER = 5;
+    private long updateNodeTimestamp_;
+    /**
+     * <code>int64 updateNodeTimestamp = 5;</code>
+     */
+    public long getUpdateNodeTimestamp() {
+      return updateNodeTimestamp_;
+    }
+
+    public static final int DEADRANKS_FIELD_NUMBER = 6;
+    private java.util.List<java.lang.Integer> deadRanks_;
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getDeadRanksList() {
+      return deadRanks_;
+    }
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    public int getDeadRanksCount() {
+      return deadRanks_.size();
+    }
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    public int getDeadRanks(int index) {
+      return deadRanks_.get(index);
+    }
+    private int deadRanksMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (!getRequestKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestKey_);
+      }
+      if (!getRequestNewValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestNewValue_);
+      }
+      if (!getRequestOldValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestOldValue_);
+      }
+      if (updateNode_ != 0) {
+        output.writeInt32(4, updateNode_);
+      }
+      if (updateNodeTimestamp_ != 0L) {
+        output.writeInt64(5, updateNodeTimestamp_);
+      }
+      if (getDeadRanksList().size() > 0) {
+        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(deadRanksMemoizedSerializedSize);
+      }
+      for (int i = 0; i < deadRanks_.size(); i++) {
+        output.writeInt32NoTag(deadRanks_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRequestKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestKey_);
+      }
+      if (!getRequestNewValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestNewValue_);
+      }
+      if (!getRequestOldValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestOldValue_);
+      }
+      if (updateNode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, updateNode_);
+      }
+      if (updateNodeTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, updateNodeTimestamp_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < deadRanks_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(deadRanks_.get(i));
+        }
+        size += dataSize;
+        if (!getDeadRanksList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        deadRanksMemoizedSerializedSize = dataSize;
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.PutRequest)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.PutRequest other = (com.grpc.sample.KvStore.PutRequest) obj;
+
+      boolean result = true;
+      result = result && getRequestKey()
+          .equals(other.getRequestKey());
+      result = result && getRequestNewValue()
+          .equals(other.getRequestNewValue());
+      result = result && getRequestOldValue()
+          .equals(other.getRequestOldValue());
+      result = result && (getUpdateNode()
+          == other.getUpdateNode());
+      result = result && (getUpdateNodeTimestamp()
+          == other.getUpdateNodeTimestamp());
+      result = result && getDeadRanksList()
+          .equals(other.getDeadRanksList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUESTKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestKey().hashCode();
+      hash = (37 * hash) + REQUESTNEWVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestNewValue().hashCode();
+      hash = (37 * hash) + REQUESTOLDVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestOldValue().hashCode();
+      hash = (37 * hash) + UPDATENODE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateNode();
+      hash = (37 * hash) + UPDATENODETIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUpdateNodeTimestamp());
+      if (getDeadRanksCount() > 0) {
+        hash = (37 * hash) + DEADRANKS_FIELD_NUMBER;
+        hash = (53 * hash) + getDeadRanksList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PutRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.PutRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code PutRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:PutRequest)
+        com.grpc.sample.KvStore.PutRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_PutRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.PutRequest.class, com.grpc.sample.KvStore.PutRequest.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.PutRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        requestKey_ = "";
+
+        requestNewValue_ = "";
+
+        requestOldValue_ = "";
+
+        updateNode_ = 0;
+
+        updateNodeTimestamp_ = 0L;
+
+        deadRanks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PutRequest getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.PutRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PutRequest build() {
+        com.grpc.sample.KvStore.PutRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PutRequest buildPartial() {
+        com.grpc.sample.KvStore.PutRequest result = new com.grpc.sample.KvStore.PutRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.requestKey_ = requestKey_;
+        result.requestNewValue_ = requestNewValue_;
+        result.requestOldValue_ = requestOldValue_;
+        result.updateNode_ = updateNode_;
+        result.updateNodeTimestamp_ = updateNodeTimestamp_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          deadRanks_ = java.util.Collections.unmodifiableList(deadRanks_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.deadRanks_ = deadRanks_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.PutRequest) {
+          return mergeFrom((com.grpc.sample.KvStore.PutRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.grpc.sample.KvStore.PutRequest other) {
+        if (other == com.grpc.sample.KvStore.PutRequest.getDefaultInstance()) return this;
+        if (!other.getRequestKey().isEmpty()) {
+          requestKey_ = other.requestKey_;
+          onChanged();
+        }
+        if (!other.getRequestNewValue().isEmpty()) {
+          requestNewValue_ = other.requestNewValue_;
+          onChanged();
+        }
+        if (!other.getRequestOldValue().isEmpty()) {
+          requestOldValue_ = other.requestOldValue_;
+          onChanged();
+        }
+        if (other.getUpdateNode() != 0) {
+          setUpdateNode(other.getUpdateNode());
+        }
+        if (other.getUpdateNodeTimestamp() != 0L) {
+          setUpdateNodeTimestamp(other.getUpdateNodeTimestamp());
+        }
+        if (!other.deadRanks_.isEmpty()) {
+          if (deadRanks_.isEmpty()) {
+            deadRanks_ = other.deadRanks_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureDeadRanksIsMutable();
+            deadRanks_.addAll(other.deadRanks_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.PutRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.PutRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object requestKey_ = "";
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public java.lang.String getRequestKey() {
+        java.lang.Object ref = requestKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequestKeyBytes() {
+        java.lang.Object ref = requestKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public Builder setRequestKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public Builder clearRequestKey() {
+        
+        requestKey_ = getDefaultInstance().getRequestKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestKey = 1;</code>
+       */
+      public Builder setRequestKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object requestNewValue_ = "";
+      /**
+       * <code>string requestNewValue = 2;</code>
+       */
+      public java.lang.String getRequestNewValue() {
+        java.lang.Object ref = requestNewValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestNewValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string requestNewValue = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequestNewValueBytes() {
+        java.lang.Object ref = requestNewValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestNewValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string requestNewValue = 2;</code>
+       */
+      public Builder setRequestNewValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestNewValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestNewValue = 2;</code>
+       */
+      public Builder clearRequestNewValue() {
+        
+        requestNewValue_ = getDefaultInstance().getRequestNewValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestNewValue = 2;</code>
+       */
+      public Builder setRequestNewValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestNewValue_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object requestOldValue_ = "";
+      /**
+       * <code>string requestOldValue = 3;</code>
+       */
+      public java.lang.String getRequestOldValue() {
+        java.lang.Object ref = requestOldValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestOldValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string requestOldValue = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequestOldValueBytes() {
+        java.lang.Object ref = requestOldValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestOldValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string requestOldValue = 3;</code>
+       */
+      public Builder setRequestOldValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestOldValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestOldValue = 3;</code>
+       */
+      public Builder clearRequestOldValue() {
+        
+        requestOldValue_ = getDefaultInstance().getRequestOldValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestOldValue = 3;</code>
+       */
+      public Builder setRequestOldValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestOldValue_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int updateNode_ ;
       /**
        * <code>int32 updateNode = 4;</code>
        */
-      int getUpdateNode();
+      public int getUpdateNode() {
+        return updateNode_;
+      }
+      /**
+       * <code>int32 updateNode = 4;</code>
+       */
+      public Builder setUpdateNode(int value) {
+        
+        updateNode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 updateNode = 4;</code>
+       */
+      public Builder clearUpdateNode() {
+        
+        updateNode_ = 0;
+        onChanged();
+        return this;
+      }
 
+      private long updateNodeTimestamp_ ;
       /**
        * <code>int64 updateNodeTimestamp = 5;</code>
        */
-      long getUpdateNodeTimestamp();
+      public long getUpdateNodeTimestamp() {
+        return updateNodeTimestamp_;
+      }
+      /**
+       * <code>int64 updateNodeTimestamp = 5;</code>
+       */
+      public Builder setUpdateNodeTimestamp(long value) {
+        
+        updateNodeTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 updateNodeTimestamp = 5;</code>
+       */
+      public Builder clearUpdateNodeTimestamp() {
+        
+        updateNodeTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
 
+      private java.util.List<java.lang.Integer> deadRanks_ = java.util.Collections.emptyList();
+      private void ensureDeadRanksIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          deadRanks_ = new java.util.ArrayList<java.lang.Integer>(deadRanks_);
+          bitField0_ |= 0x00000020;
+         }
+      }
       /**
        * <code>repeated int32 deadRanks = 6;</code>
        */
-      java.util.List<java.lang.Integer> getDeadRanksList();
-
+      public java.util.List<java.lang.Integer>
+          getDeadRanksList() {
+        return java.util.Collections.unmodifiableList(deadRanks_);
+      }
       /**
        * <code>repeated int32 deadRanks = 6;</code>
        */
-      int getDeadRanksCount();
-
+      public int getDeadRanksCount() {
+        return deadRanks_.size();
+      }
       /**
        * <code>repeated int32 deadRanks = 6;</code>
        */
-      int getDeadRanks(int index);
+      public int getDeadRanks(int index) {
+        return deadRanks_.get(index);
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public Builder setDeadRanks(
+          int index, int value) {
+        ensureDeadRanksIsMutable();
+        deadRanks_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public Builder addDeadRanks(int value) {
+        ensureDeadRanksIsMutable();
+        deadRanks_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public Builder addAllDeadRanks(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureDeadRanksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, deadRanks_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public Builder clearDeadRanks() {
+        deadRanks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:PutRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:PutRequest)
+    private static final com.grpc.sample.KvStore.PutRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.PutRequest();
+    }
+
+    public static com.grpc.sample.KvStore.PutRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PutRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PutRequest>() {
+      @java.lang.Override
+      public PutRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PutRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PutRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PutRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.PutRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
+
   public interface PutResponseOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:PutResponse)
-          com.google.protobuf.MessageOrBuilder {
+      // @@protoc_insertion_point(interface_extends:PutResponse)
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string responseKey = 1;</code>
@@ -345,955 +2618,32 @@ public final class KvStore {
      */
     int getStatus();
   }
-
-    public interface PushMessageRequestOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:PushMessageRequest)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>string pushKey = 1;</code>
-         */
-        java.lang.String getPushKey();
-
-        /**
-         * <code>string pushKey = 1;</code>
-         */
-        com.google.protobuf.ByteString
-        getPushKeyBytes();
-
-        /**
-         * <code>string pushValue = 2;</code>
-         */
-        java.lang.String getPushValue();
-
-        /**
-     * <code>string pushValue = 2;</code>
-         */
-        com.google.protobuf.ByteString
-        getPushValueBytes();
-
-        /**
-         * <code>int64 pushTimestamp = 3;</code>
-         */
-        long getPushTimestamp();
-
-        /**
-         * <code>int32 updateNode = 4;</code>
-         */
-        int getUpdateNode();
-
-        /**
-         * <code>int64 updateNodeTimestamp = 5;</code>
-         */
-        long getUpdateNodeTimestamp();
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
-         */
-        java.util.List<java.lang.Integer> getDeadRanksList();
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
-         */
-        int getDeadRanksCount();
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
-         */
-        int getDeadRanks(int index);
-    }
-
-    public interface PushMessageResponseOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:PushMessageResponse)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>string pushResponseKey = 1;</code>
-         */
-        java.lang.String getPushResponseKey();
-
-        /**
-         * <code>string pushResponseKey = 1;</code>
-         */
-        com.google.protobuf.ByteString
-        getPushResponseKeyBytes();
-
-    /**
-     * <code>string pushResponseValue = 2;</code>
-     */
-    java.lang.String getPushResponseValue();
-
-        /**
-         * <code>string pushResponseValue = 2;</code>
-         */
-        com.google.protobuf.ByteString
-        getPushResponseValueBytes();
-
-        /**
-         * <code>int64 pushResponseTimestamp = 3;</code>
-         */
-        long getPushResponseTimestamp();
-    }
-
-    public interface UpdateNodeRequestOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:UpdateNodeRequest)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>int32 updateNode = 1;</code>
-         */
-        int getUpdateNode();
-
-        /**
-         * <code>int64 updateNodeTimestamp = 2;</code>
-         */
-        long getUpdateNodeTimestamp();
-
-        /**
-         * <code>int32 sourceNode = 3;</code>
-         */
-        int getSourceNode();
-    }
-
-    public interface UpdateNodeResponseOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:UpdateNodeResponse)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>int32 updateNode = 1;</code>
-         */
-        int getUpdateNode();
-
-        /**
-         * <code>int64 updateNodeTimestamp = 2;</code>
-         */
-        long getUpdateNodeTimestamp();
-    }
-
-    public interface RowOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:Row)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>string key = 1;</code>
-         */
-        java.lang.String getKey();
-
-        /**
-         * <code>string key = 1;</code>
-         */
-        com.google.protobuf.ByteString
-        getKeyBytes();
-
-        /**
-         * <code>string value = 2;</code>
-         */
-        java.lang.String getValue();
-
-        /**
-         * <code>string value = 2;</code>
-         */
-        com.google.protobuf.ByteString
-        getValueBytes();
-
-        /**
-         * <code>int64 timestamp = 3;</code>
-         */
-        long getTimestamp();
-    }
-
-    public interface SyncMessageRequestOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:SyncMessageRequest)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>int64 syncTimestamp = 1;</code>
-         */
-        long getSyncTimestamp();
-    }
-
-    public interface SyncMessageResponseOrBuilder extends
-            // @@protoc_insertion_point(interface_extends:SyncMessageResponse)
-            com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        java.util.List<com.grpc.sample.KvStore.Row>
-        getRowList();
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        com.grpc.sample.KvStore.Row getRow(int index);
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        int getRowCount();
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        java.util.List<? extends com.grpc.sample.KvStore.RowOrBuilder>
-        getRowOrBuilderList();
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        com.grpc.sample.KvStore.RowOrBuilder getRowOrBuilder(
-                int index);
-    }
-
-    /**
-     * Protobuf type {@code GetRequest}
+  /**
+   * Protobuf type {@code PutResponse}
    */
-    public static final class GetRequest extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:GetRequest)
-            GetRequestOrBuilder {
-        public static final int REQUESTKEY_FIELD_NUMBER = 1;
-        public static final int REQUESTVALUE_FIELD_NUMBER = 2;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:GetRequest)
-        private static final com.grpc.sample.KvStore.GetRequest DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<GetRequest>
-                PARSER = new com.google.protobuf.AbstractParser<GetRequest>() {
-            @java.lang.Override
-            public GetRequest parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new GetRequest(input, extensionRegistry);
-            }
-        };
-
-    static {
-      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.GetRequest();
-    }
-
-    private volatile java.lang.Object requestKey_;
-        private volatile java.lang.Object requestValue_;
-        private byte memoizedIsInitialized = -1;
-
-        // Use GetRequest.newBuilder() to construct.
-        private GetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  public  static final class PutResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:PutResponse)
+      PutResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PutResponse.newBuilder() to construct.
+    private PutResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GetRequest() {
-      requestKey_ = "";
-        requestValue_ = "";
-    }
-
-        private GetRequest(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-            switch (tag) {
-                case 0:
-                    done = true;
-                    break;
-                case 10: {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-              requestKey_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestValue_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
-      } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-      }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseFrom(
-                com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-    }
-
-    public static com.grpc.sample.KvStore.GetRequest parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-                .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-        public static com.grpc.sample.KvStore.GetRequest parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.GetRequest parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-    }
-
-    public static com.grpc.sample.KvStore.GetRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(com.grpc.sample.KvStore.GetRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    public static com.grpc.sample.KvStore.GetRequest getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-    }
-
-        public static com.google.protobuf.Parser<GetRequest> parser() {
-            return PARSER;
+    private PutResponse() {
+      responseKey_ = "";
+      responseNewValue_ = "";
+      responseOldValue_ = "";
+      status_ = 0;
     }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-        return this.unknownFields;
+      return this.unknownFields;
     }
-
-        @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.grpc.sample.KvStore.internal_static_GetRequest_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.grpc.sample.KvStore.GetRequest.class, com.grpc.sample.KvStore.GetRequest.Builder.class);
-    }
-
-    /**
-     * <code>string requestKey = 1;</code>
-     */
-    public java.lang.String getRequestKey() {
-      java.lang.Object ref = requestKey_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          requestKey_ = s;
-        return s;
-      }
-    }
-
-    /**
-     * <code>string requestKey = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRequestKeyBytes() {
-      java.lang.Object ref = requestKey_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-          requestKey_ = b;
-          return b;
-      } else {
-          return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     * <code>string requestValue = 2;</code>
-     */
-    public java.lang.String getRequestValue() {
-      java.lang.Object ref = requestValue_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          requestValue_ = s;
-          return s;
-      }
-    }
-
-    /**
-     * <code>string requestValue = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-    getRequestValueBytes() {
-        java.lang.Object ref = requestValue_;
-        if (ref instanceof java.lang.String) {
-            com.google.protobuf.ByteString b =
-                    com.google.protobuf.ByteString.copyFromUtf8(
-                            (java.lang.String) ref);
-        requestValue_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-        }
-    }
-
-        @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
-        if (!getRequestKeyBytes().isEmpty()) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestKey_);
-        }
-        if (!getRequestValueBytes().isEmpty()) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestValue_);
-        }
-        unknownFields.writeTo(output);
-    }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!getRequestKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestKey_);
-      }
-      if (!getRequestValueBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestValue_);
-      }
-      size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof com.grpc.sample.KvStore.GetRequest)) {
-        return super.equals(obj);
-        }
-        com.grpc.sample.KvStore.GetRequest other = (com.grpc.sample.KvStore.GetRequest) obj;
-
-        boolean result = true;
-        result = result && getRequestKey()
-                .equals(other.getRequestKey());
-        result = result && getRequestValue()
-                .equals(other.getRequestValue());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-    }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + REQUESTKEY_FIELD_NUMBER;
-      hash = (53 * hash) + getRequestKey().hashCode();
-            hash = (37 * hash) + REQUESTVALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getRequestValue().hashCode();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-        return newBuilder();
-    }
-
-        @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GetRequest> getParserForType() {
-        return PARSER;
-    }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.GetRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-    /**
-     * Protobuf type {@code GetRequest}
-     */
-    public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:GetRequest)
-        com.grpc.sample.KvStore.GetRequestOrBuilder {
-      private java.lang.Object requestKey_ = "";
-      private java.lang.Object requestValue_ = "";
-
-      // Construct using com.grpc.sample.KvStore.GetRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-      }
-
-        private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-        return com.grpc.sample.KvStore.internal_static_GetRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.grpc.sample.KvStore.GetRequest.class, com.grpc.sample.KvStore.GetRequest.Builder.class);
-      }
-
-      @java.lang.Override
-      public com.grpc.sample.KvStore.GetRequest getDefaultInstanceForType() {
-        return com.grpc.sample.KvStore.GetRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.grpc.sample.KvStore.GetRequest build() {
-        com.grpc.sample.KvStore.GetRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.grpc.sample.KvStore.GetRequest buildPartial() {
-          com.grpc.sample.KvStore.GetRequest result = new com.grpc.sample.KvStore.GetRequest(this);
-          result.requestKey_ = requestKey_;
-          result.requestValue_ = requestValue_;
-          onBuilt();
-          return result;
-      }
-
-        @java.lang.Override
-        public Builder clear() {
-            super.clear();
-            requestKey_ = "";
-
-            requestValue_ = "";
-
-            return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-            return com.grpc.sample.KvStore.internal_static_GetRequest_descriptor;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-        @java.lang.Override
-        public Builder clearField(
-                com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                int index, java.lang.Object value) {
-            return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                java.lang.Object value) {
-            return super.addRepeatedField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.grpc.sample.KvStore.GetRequest) {
-                return mergeFrom((com.grpc.sample.KvStore.GetRequest)other);
-            } else {
-                super.mergeFrom(other);
-                return this;
-            }
-        }
-
-      public Builder mergeFrom(com.grpc.sample.KvStore.GetRequest other) {
-        if (other == com.grpc.sample.KvStore.GetRequest.getDefaultInstance()) return this;
-        if (!other.getRequestKey().isEmpty()) {
-            requestKey_ = other.requestKey_;
-            onChanged();
-        }
-          if (!other.getRequestValue().isEmpty()) {
-              requestValue_ = other.requestValue_;
-              onChanged();
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.grpc.sample.KvStore.GetRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.grpc.sample.KvStore.GetRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-            if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      /**
-       * <code>string requestKey = 1;</code>
-       */
-      public java.lang.String getRequestKey() {
-        java.lang.Object ref = requestKey_;
-          if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          requestKey_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-          }
-      }
-
-        /**
-         * <code>string requestKey = 1;</code>
-       */
-      public Builder setRequestKey(
-          java.lang.String value) {
-          if (value == null) {
-              throw new NullPointerException();
-          }
-
-          requestKey_ = value;
-          onChanged();
-        return this;
-      }
-
-      /**
-       * <code>string requestKey = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRequestKeyBytes() {
-        java.lang.Object ref = requestKey_;
-        if (ref instanceof String) {
-            com.google.protobuf.ByteString b =
-                    com.google.protobuf.ByteString.copyFromUtf8(
-                            (java.lang.String) ref);
-          requestKey_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       * <code>string requestKey = 1;</code>
-       */
-      public Builder setRequestKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        requestKey_ = value;
-        onChanged();
-        return this;
-      }
-
-      /**
-       * <code>string requestKey = 1;</code>
-       */
-      public Builder clearRequestKey() {
-
-          requestKey_ = getDefaultInstance().getRequestKey();
-        onChanged();
-        return this;
-      }
-
-      /**
-       * <code>string requestValue = 2;</code>
-       */
-      public java.lang.String getRequestValue() {
-        java.lang.Object ref = requestValue_;
-          if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-                  (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          requestValue_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-          }
-      }
-
-        /**
-         * <code>string requestValue = 2;</code>
-       */
-      public Builder setRequestValue(
-          java.lang.String value) {
-        if (value == null) {
-            throw new NullPointerException();
-        }
-
-          requestValue_ = value;
-          onChanged();
-          return this;
-      }
-
-      /**
-       * <code>string requestValue = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRequestValueBytes() {
-        java.lang.Object ref = requestValue_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
-          requestValue_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       * <code>string requestValue = 2;</code>
-       */
-      public Builder setRequestValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-        }
-          checkByteStringIsUtf8(value);
-
-          requestValue_ = value;
-        onChanged();
-        return this;
-      }
-
-      /**
-       * <code>string requestValue = 2;</code>
-       */
-      public Builder clearRequestValue() {
-
-          requestValue_ = getDefaultInstance().getRequestValue();
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-                final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:GetRequest)
-    }
-
-  }
-
-  /**
-   * Protobuf type {@code GetResponse}
-   */
-  public  static final class GetResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:GetResponse)
-          GetResponseOrBuilder {
-      public static final int RESPONSEKEY_FIELD_NUMBER = 1;
-
-      // Use GetResponse.newBuilder() to construct.
-      private GetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-          super(builder);
-      }
-
-      public static final int RESPONSEVALUE_FIELD_NUMBER = 2;
-      public static final int STATUS_FIELD_NUMBER = 3;
-      private static final long serialVersionUID = 0L;
-      // @@protoc_insertion_point(class_scope:GetResponse)
-      private static final com.grpc.sample.KvStore.GetResponse DEFAULT_INSTANCE;
-      private static final com.google.protobuf.Parser<GetResponse>
-              PARSER = new com.google.protobuf.AbstractParser<GetResponse>() {
-          @java.lang.Override
-          public GetResponse parsePartialFrom(
-                  com.google.protobuf.CodedInputStream input,
-                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                  throws com.google.protobuf.InvalidProtocolBufferException {
-              return new GetResponse(input, extensionRegistry);
-          }
-      };
-
-      static {
-          DEFAULT_INSTANCE = new com.grpc.sample.KvStore.GetResponse();
-      }
-
-      private volatile java.lang.Object responseKey_;
-      private volatile java.lang.Object responseValue_;
-    private int status_;
-    private byte memoizedIsInitialized = -1;
-    private GetResponse() {
-      responseKey_ = "";
-      responseValue_ = "";
-        status_ = 0;
-    }
-
-      private GetResponse(
-              com.google.protobuf.CodedInputStream input,
+    private PutResponse(
+        com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
@@ -1310,27 +2660,33 @@ public final class KvStore {
           switch (tag) {
             case 0:
               done = true;
-                break;
-              case 10: {
-                  java.lang.String s = input.readStringRequireUtf8();
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-                  responseKey_ = s;
-                  break;
+              responseKey_ = s;
+              break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              responseValue_ = s;
+              responseNewValue_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              responseOldValue_ = s;
+              break;
+            }
+            case 32: {
 
               status_ = input.readInt32();
               break;
             }
             default: {
               if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1340,161 +2696,43 @@ public final class KvStore {
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-                  e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
       } finally {
-          this.unknownFields = unknownFields.build();
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
-      }
-
-      public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-          return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(
-              com.google.protobuf.ByteString data,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(byte[] data)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-              throws java.io.IOException {
-          if (!getResponseKeyBytes().isEmpty()) {
-              com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseKey_);
-          }
-          if (!getResponseValueBytes().isEmpty()) {
-              com.google.protobuf.GeneratedMessageV3.writeString(output, 2, responseValue_);
-      }
-      if (status_ != 0) {
-          output.writeInt32(3, status_);
-      }
-          unknownFields.writeTo(output);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(
-              byte[] data,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(java.io.InputStream input)
-              throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
     }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(
-              java.io.InputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-                  .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseDelimitedFrom(java.io.InputStream input)
-              throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-                  .parseDelimitedWithIOException(PARSER, input);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseDelimitedFrom(
-              java.io.InputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-                  .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public static com.grpc.sample.KvStore.GetResponse parseFrom(
-              com.google.protobuf.CodedInputStream input)
-              throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-
-    public static com.grpc.sample.KvStore.GetResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(com.grpc.sample.KvStore.GetResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    public static com.grpc.sample.KvStore.GetResponse getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-    }
-
-      public static com.google.protobuf.Parser<GetResponse> parser() {
-          return PARSER;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-        return this.unknownFields;
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.grpc.sample.KvStore.internal_static_GetResponse_fieldAccessorTable
+      return com.grpc.sample.KvStore.internal_static_PutResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-                  com.grpc.sample.KvStore.GetResponse.class, com.grpc.sample.KvStore.GetResponse.Builder.class);
+              com.grpc.sample.KvStore.PutResponse.class, com.grpc.sample.KvStore.PutResponse.Builder.class);
     }
 
+    public static final int RESPONSEKEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object responseKey_;
     /**
      * <code>string responseKey = 1;</code>
      */
     public java.lang.String getResponseKey() {
       java.lang.Object ref = responseKey_;
-        if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-        } else {
-            com.google.protobuf.ByteString bs =
-                    (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            responseKey_ = s;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseKey_ = s;
         return s;
       }
     }
-
     /**
      * <code>string responseKey = 1;</code>
      */
@@ -1502,64 +2740,271 @@ public final class KvStore {
         getResponseKeyBytes() {
       java.lang.Object ref = responseKey_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-          responseKey_ = b;
-          return b;
+        responseKey_ = b;
+        return b;
       } else {
-          return (com.google.protobuf.ByteString) ref;
+        return (com.google.protobuf.ByteString) ref;
       }
     }
 
+    public static final int RESPONSENEWVALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object responseNewValue_;
     /**
-     * <code>string responseValue = 2;</code>
+     * <code>string responseNewValue = 2;</code>
      */
-    public java.lang.String getResponseValue() {
-      java.lang.Object ref = responseValue_;
-        if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-        } else {
-            com.google.protobuf.ByteString bs =
-                    (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-        responseValue_ = s;
-            return s;
-        }
-    }
-
-      /**
-       * <code>string responseValue = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-      getResponseValueBytes() {
-          java.lang.Object ref = responseValue_;
-          if (ref instanceof java.lang.String) {
-              com.google.protobuf.ByteString b =
-                      com.google.protobuf.ByteString.copyFromUtf8(
-                              (java.lang.String) ref);
-              responseValue_ = b;
-              return b;
-          } else {
-              return (com.google.protobuf.ByteString) ref;
-          }
+    public java.lang.String getResponseNewValue() {
+      java.lang.Object ref = responseNewValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseNewValue_ = s;
+        return s;
       }
-
-      /**
-       * <code>int32 status = 3;</code>
-       */
-      public int getStatus() {
-          return status_;
+    }
+    /**
+     * <code>string responseNewValue = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponseNewValueBytes() {
+      java.lang.Object ref = responseNewValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseNewValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    public static final int RESPONSEOLDVALUE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object responseOldValue_;
+    /**
+     * <code>string responseOldValue = 3;</code>
+     */
+    public java.lang.String getResponseOldValue() {
+      java.lang.Object ref = responseOldValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseOldValue_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string responseOldValue = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponseOldValueBytes() {
+      java.lang.Object ref = responseOldValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseOldValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private int status_;
+    /**
+     * <code>int32 status = 4;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getResponseKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseKey_);
+      }
+      if (!getResponseNewValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, responseNewValue_);
+      }
+      if (!getResponseOldValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, responseOldValue_);
+      }
+      if (status_ != 0) {
+        output.writeInt32(4, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getResponseKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseKey_);
+      }
+      if (!getResponseNewValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, responseNewValue_);
+      }
+      if (!getResponseOldValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, responseOldValue_);
+      }
+      if (status_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.PutResponse)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.PutResponse other = (com.grpc.sample.KvStore.PutResponse) obj;
+
+      boolean result = true;
+      result = result && getResponseKey()
+          .equals(other.getResponseKey());
+      result = result && getResponseNewValue()
+          .equals(other.getResponseNewValue());
+      result = result && getResponseOldValue()
+          .equals(other.getResponseOldValue());
+      result = result && (getStatus()
+          == other.getStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESPONSEKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseKey().hashCode();
+      hash = (37 * hash) + RESPONSENEWVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseNewValue().hashCode();
+      hash = (37 * hash) + RESPONSEOLDVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseOldValue().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PutResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.PutResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1568,231 +3013,144 @@ public final class KvStore {
       Builder builder = new Builder(parent);
       return builder;
     }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getResponseKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseKey_);
-      }
-        if (!getResponseValueBytes().isEmpty()) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, responseValue_);
-      }
-      if (status_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, status_);
-      }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-          return true;
-      }
-        if (!(obj instanceof com.grpc.sample.KvStore.GetResponse)) {
-        return super.equals(obj);
-        }
-        com.grpc.sample.KvStore.GetResponse other = (com.grpc.sample.KvStore.GetResponse) obj;
-
-        boolean result = true;
-        result = result && getResponseKey()
-                .equals(other.getResponseKey());
-        result = result && getResponseValue()
-                .equals(other.getResponseValue());
-        result = result && (getStatus()
-                == other.getStatus());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-    }
-
-      @java.lang.Override
-      public int hashCode() {
-          if (memoizedHashCode != 0) {
-              return memoizedHashCode;
-          }
-          int hash = 41;
-          hash = (19 * hash) + getDescriptor().hashCode();
-          hash = (37 * hash) + RESPONSEKEY_FIELD_NUMBER;
-          hash = (53 * hash) + getResponseKey().hashCode();
-          hash = (37 * hash) + RESPONSEVALUE_FIELD_NUMBER;
-          hash = (53 * hash) + getResponseValue().hashCode();
-          hash = (37 * hash) + STATUS_FIELD_NUMBER;
-          hash = (53 * hash) + getStatus();
-          hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-      @java.lang.Override
-      public Builder newBuilderForType() {
-          return newBuilder();
-      }
-
-      @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<GetResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.grpc.sample.KvStore.GetResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
     /**
-     * Protobuf type {@code GetResponse}
+     * Protobuf type {@code PutResponse}
      */
     public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:GetResponse)
-        com.grpc.sample.KvStore.GetResponseOrBuilder {
-      private java.lang.Object responseKey_ = "";
-        private java.lang.Object responseValue_ = "";
-        private int status_;
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:PutResponse)
+        com.grpc.sample.KvStore.PutResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
+      }
 
-        // Construct using com.grpc.sample.KvStore.GetResponse.newBuilder()
-        private Builder() {
-            maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-        return com.grpc.sample.KvStore.internal_static_GetResponse_fieldAccessorTable
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_PutResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.grpc.sample.KvStore.GetResponse.class, com.grpc.sample.KvStore.GetResponse.Builder.class);
+                com.grpc.sample.KvStore.PutResponse.class, com.grpc.sample.KvStore.PutResponse.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.PutResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        responseKey_ = "";
+
+        responseNewValue_ = "";
+
+        responseOldValue_ = "";
+
+        status_ = 0;
+
+        return this;
       }
 
       @java.lang.Override
-      public com.grpc.sample.KvStore.GetResponse getDefaultInstanceForType() {
-        return com.grpc.sample.KvStore.GetResponse.getDefaultInstance();
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
       }
 
       @java.lang.Override
-      public com.grpc.sample.KvStore.GetResponse build() {
-          com.grpc.sample.KvStore.GetResponse result = buildPartial();
-          if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-          }
-          return result;
+      public com.grpc.sample.KvStore.PutResponse getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.PutResponse.getDefaultInstance();
       }
 
-        private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PutResponse build() {
+        com.grpc.sample.KvStore.PutResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @java.lang.Override
-        public Builder clear() {
-            super.clear();
-            responseKey_ = "";
-
-            responseValue_ = "";
-
-            status_ = 0;
-
-            return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-            return com.grpc.sample.KvStore.internal_static_GetResponse_descriptor;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.GetResponse buildPartial() {
-            com.grpc.sample.KvStore.GetResponse result = new com.grpc.sample.KvStore.GetResponse(this);
-            result.responseKey_ = responseKey_;
-            result.responseValue_ = responseValue_;
-            result.status_ = status_;
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PutResponse buildPartial() {
+        com.grpc.sample.KvStore.PutResponse result = new com.grpc.sample.KvStore.PutResponse(this);
+        result.responseKey_ = responseKey_;
+        result.responseNewValue_ = responseNewValue_;
+        result.responseOldValue_ = responseOldValue_;
+        result.status_ = status_;
         onBuilt();
         return result;
-        }
+      }
 
-        @java.lang.Override
-        public Builder clone() {
-            return super.clone();
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.PutResponse) {
+          return mergeFrom((com.grpc.sample.KvStore.PutResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        @java.lang.Override
-        public Builder setField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                java.lang.Object value) {
-            return super.setField(field, value);
+      public Builder mergeFrom(com.grpc.sample.KvStore.PutResponse other) {
+        if (other == com.grpc.sample.KvStore.PutResponse.getDefaultInstance()) return this;
+        if (!other.getResponseKey().isEmpty()) {
+          responseKey_ = other.responseKey_;
+          onChanged();
         }
-
-        @java.lang.Override
-        public Builder clearField(
-                com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return super.clearField(field);
+        if (!other.getResponseNewValue().isEmpty()) {
+          responseNewValue_ = other.responseNewValue_;
+          onChanged();
         }
-
-        @java.lang.Override
-        public Builder clearOneof(
-                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return super.clearOneof(oneof);
+        if (!other.getResponseOldValue().isEmpty()) {
+          responseOldValue_ = other.responseOldValue_;
+          onChanged();
         }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                int index, java.lang.Object value) {
-            return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-                com.google.protobuf.Descriptors.FieldDescriptor field,
-                java.lang.Object value) {
-            return super.addRepeatedField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.grpc.sample.KvStore.GetResponse) {
-                return mergeFrom((com.grpc.sample.KvStore.GetResponse) other);
-            } else {
-                super.mergeFrom(other);
-                return this;
-            }
-        }
-
-        public Builder mergeFrom(com.grpc.sample.KvStore.GetResponse other) {
-            if (other == com.grpc.sample.KvStore.GetResponse.getDefaultInstance()) return this;
-            if (!other.getResponseKey().isEmpty()) {
-                responseKey_ = other.responseKey_;
-                onChanged();
-            }
-            if (!other.getResponseValue().isEmpty()) {
-                responseValue_ = other.responseValue_;
-                onChanged();
-            }
-            if (other.getStatus() != 0) {
-                setStatus(other.getStatus());
+        if (other.getStatus() != 0) {
+          setStatus(other.getStatus());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1809,12 +3167,12 @@ public final class KvStore {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.grpc.sample.KvStore.GetResponse parsedMessage = null;
+        com.grpc.sample.KvStore.PutResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.grpc.sample.KvStore.GetResponse) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
+          parsedMessage = (com.grpc.sample.KvStore.PutResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -1823,12 +3181,13 @@ public final class KvStore {
         return this;
       }
 
+      private java.lang.Object responseKey_ = "";
       /**
        * <code>string responseKey = 1;</code>
        */
       public java.lang.String getResponseKey() {
-          java.lang.Object ref = responseKey_;
-          if (!(ref instanceof java.lang.String)) {
+        java.lang.Object ref = responseKey_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
@@ -1838,30 +3197,15 @@ public final class KvStore {
           return (java.lang.String) ref;
         }
       }
-
-        /**
-         * <code>string responseKey = 1;</code>
-         */
-        public Builder setResponseKey(
-                java.lang.String value) {
-            if (value == null) {
-                throw new NullPointerException();
-            }
-
-        responseKey_ = value;
-        onChanged();
-        return this;
-      }
-
       /**
        * <code>string responseKey = 1;</code>
        */
       public com.google.protobuf.ByteString
-      getResponseKeyBytes() {
-          java.lang.Object ref = responseKey_;
-          if (ref instanceof String) {
-              com.google.protobuf.ByteString b =
-                      com.google.protobuf.ByteString.copyFromUtf8(
+          getResponseKeyBytes() {
+        java.lang.Object ref = responseKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           responseKey_ = b;
           return b;
@@ -1869,7 +3213,28 @@ public final class KvStore {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
+      /**
+       * <code>string responseKey = 1;</code>
+       */
+      public Builder setResponseKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseKey = 1;</code>
+       */
+      public Builder clearResponseKey() {
+        
+        responseKey_ = getDefaultInstance().getResponseKey();
+        onChanged();
+        return this;
+      }
       /**
        * <code>string responseKey = 1;</code>
        */
@@ -1879,125 +3244,179 @@ public final class KvStore {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
-          responseKey_ = value;
-          onChanged();
-          return this;
-      }
-
-        /**
-         * <code>string responseKey = 1;</code>
-         */
-        public Builder clearResponseKey() {
-
-        responseKey_ = getDefaultInstance().getResponseKey();
+        
+        responseKey_ = value;
         onChanged();
         return this;
       }
 
+      private java.lang.Object responseNewValue_ = "";
       /**
-       * <code>string responseValue = 2;</code>
+       * <code>string responseNewValue = 2;</code>
        */
-      public java.lang.String getResponseValue() {
-        java.lang.Object ref = responseValue_;
-          if (!(ref instanceof java.lang.String)) {
+      public java.lang.String getResponseNewValue() {
+        java.lang.Object ref = responseNewValue_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          responseValue_ = s;
-              return s;
-          } else {
+          responseNewValue_ = s;
+          return s;
+        } else {
           return (java.lang.String) ref;
-          }
+        }
       }
-
-        /**
-         * <code>string responseValue = 2;</code>
-         */
-        public Builder setResponseValue(
-                java.lang.String value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-
-        responseValue_ = value;
-        onChanged();
-        return this;
-      }
-
       /**
-       * <code>string responseValue = 2;</code>
+       * <code>string responseNewValue = 2;</code>
        */
       public com.google.protobuf.ByteString
-      getResponseValueBytes() {
-        java.lang.Object ref = responseValue_;
-          if (ref instanceof String) {
-              com.google.protobuf.ByteString b =
+          getResponseNewValueBytes() {
+        java.lang.Object ref = responseNewValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          responseValue_ = b;
+          responseNewValue_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
-       * <code>string responseValue = 2;</code>
+       * <code>string responseNewValue = 2;</code>
        */
-      public Builder setResponseValueBytes(
+      public Builder setResponseNewValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseNewValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseNewValue = 2;</code>
+       */
+      public Builder clearResponseNewValue() {
+        
+        responseNewValue_ = getDefaultInstance().getResponseNewValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseNewValue = 2;</code>
+       */
+      public Builder setResponseNewValueBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
-        responseValue_ = value;
+        
+        responseNewValue_ = value;
         onChanged();
         return this;
       }
 
+      private java.lang.Object responseOldValue_ = "";
       /**
-       * <code>string responseValue = 2;</code>
+       * <code>string responseOldValue = 3;</code>
        */
-      public Builder clearResponseValue() {
-
-        responseValue_ = getDefaultInstance().getResponseValue();
-          onChanged();
-          return this;
+      public java.lang.String getResponseOldValue() {
+        java.lang.Object ref = responseOldValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          responseOldValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string responseOldValue = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResponseOldValueBytes() {
+        java.lang.Object ref = responseOldValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          responseOldValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string responseOldValue = 3;</code>
+       */
+      public Builder setResponseOldValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseOldValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseOldValue = 3;</code>
+       */
+      public Builder clearResponseOldValue() {
+        
+        responseOldValue_ = getDefaultInstance().getResponseOldValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseOldValue = 3;</code>
+       */
+      public Builder setResponseOldValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        responseOldValue_ = value;
+        onChanged();
+        return this;
       }
 
-        /**
-         * <code>int32 status = 3;</code>
-         */
-        public int getStatus() {
+      private int status_ ;
+      /**
+       * <code>int32 status = 4;</code>
+       */
+      public int getStatus() {
         return status_;
-        }
-
-        /**
-         * <code>int32 status = 3;</code>
-         */
-        public Builder setStatus(int value) {
-
-            status_ = value;
-            onChanged();
-            return this;
-        }
-
-        /**
-         * <code>int32 status = 3;</code>
+      }
+      /**
+       * <code>int32 status = 4;</code>
+       */
+      public Builder setStatus(int value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 status = 4;</code>
        */
       public Builder clearStatus() {
-
+        
         status_ = 0;
         onChanged();
         return this;
       }
-
-        @java.lang.Override
-        public final Builder setUnknownFields(
-                final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFieldsProto3(unknownFields);
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
@@ -2007,66 +3426,125 @@ public final class KvStore {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:GetResponse)
+      // @@protoc_insertion_point(builder_scope:PutResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:PutResponse)
+    private static final com.grpc.sample.KvStore.PutResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.PutResponse();
+    }
+
+    public static com.grpc.sample.KvStore.PutResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PutResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PutResponse>() {
+      @java.lang.Override
+      public PutResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PutResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PutResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PutResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.PutResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
     }
 
   }
 
+  public interface PushMessageRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:PushMessageRequest)
+      com.google.protobuf.MessageOrBuilder {
+
     /**
-     * Protobuf type {@code PutRequest}
+     * <code>string pushKey = 1;</code>
      */
-    public static final class PutRequest extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:PutRequest)
-            PutRequestOrBuilder {
-        public static final int REQUESTKEY_FIELD_NUMBER = 1;
-        public static final int REQUESTNEWVALUE_FIELD_NUMBER = 2;
-        public static final int REQUESTOLDVALUE_FIELD_NUMBER = 3;
-        public static final int UPDATENODE_FIELD_NUMBER = 4;
-        public static final int UPDATENODETIMESTAMP_FIELD_NUMBER = 5;
-        public static final int DEADRANKS_FIELD_NUMBER = 6;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:PutRequest)
-        private static final com.grpc.sample.KvStore.PutRequest DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<PutRequest>
-                PARSER = new com.google.protobuf.AbstractParser<PutRequest>() {
-            @java.lang.Override
-            public PutRequest parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new PutRequest(input, extensionRegistry);
-            }
-        };
+    java.lang.String getPushKey();
+    /**
+     * <code>string pushKey = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getPushKeyBytes();
 
-    static {
-      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.PutRequest();
-    }
+    /**
+     * <code>string pushValue = 2;</code>
+     */
+    java.lang.String getPushValue();
+    /**
+     * <code>string pushValue = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPushValueBytes();
 
-        private int bitField0_;
-        private volatile java.lang.Object requestKey_;
-        private volatile java.lang.Object requestNewValue_;
-        private volatile java.lang.Object requestOldValue_;
-        private int updateNode_;
-        private long updateNodeTimestamp_;
-        private java.util.List<java.lang.Integer> deadRanks_;
-        private int deadRanksMemoizedSerializedSize = -1;
-        private byte memoizedIsInitialized = -1;
+    /**
+     * <code>int64 pushTimestamp = 3;</code>
+     */
+    long getPushTimestamp();
 
-        // Use PutRequest.newBuilder() to construct.
-        private PutRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    /**
+     * <code>int32 updateNode = 4;</code>
+     */
+    int getUpdateNode();
+
+    /**
+     * <code>int64 updateNodeTimestamp = 5;</code>
+     */
+    long getUpdateNodeTimestamp();
+
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    java.util.List<java.lang.Integer> getDeadRanksList();
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    int getDeadRanksCount();
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    int getDeadRanks(int index);
+  }
+  /**
+   * Protobuf type {@code PushMessageRequest}
+   */
+  public  static final class PushMessageRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:PushMessageRequest)
+      PushMessageRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PushMessageRequest.newBuilder() to construct.
+    private PushMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-
-    private PutRequest() {
-      requestKey_ = "";
-      requestNewValue_ = "";
-        requestOldValue_ = "";
-        updateNode_ = 0;
-        updateNodeTimestamp_ = 0L;
+    private PushMessageRequest() {
+      pushKey_ = "";
+      pushValue_ = "";
+      pushTimestamp_ = 0L;
+      updateNode_ = 0;
+      updateNodeTimestamp_ = 0L;
       deadRanks_ = java.util.Collections.emptyList();
     }
-    private PutRequest(
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PushMessageRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2081,336 +3559,216 @@ public final class KvStore {
         boolean done = false;
         while (!done) {
           int tag = input.readTag();
-            switch (tag) {
-                case 0:
-                    done = true;
-                    break;
-                case 10: {
-                    java.lang.String s = input.readStringRequireUtf8();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-                    requestKey_ = s;
-                    break;
-                }
-                case 18: {
-                    java.lang.String s = input.readStringRequireUtf8();
+              pushKey_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-                    requestNewValue_ = s;
-                    break;
-                }
-                case 26: {
-                    java.lang.String s = input.readStringRequireUtf8();
+              pushValue_ = s;
+              break;
+            }
+            case 24: {
 
-                    requestOldValue_ = s;
-                    break;
-                }
-                case 32: {
+              pushTimestamp_ = input.readInt64();
+              break;
+            }
+            case 32: {
 
-                    updateNode_ = input.readInt32();
-                    break;
-                }
-                case 40: {
+              updateNode_ = input.readInt32();
+              break;
+            }
+            case 40: {
 
-                    updateNodeTimestamp_ = input.readInt64();
-                    break;
-                }
-                case 48: {
-                    if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                        deadRanks_ = new java.util.ArrayList<java.lang.Integer>();
-                        mutable_bitField0_ |= 0x00000020;
-                    }
-                    deadRanks_.add(input.readInt32());
-                    break;
-                }
-                case 50: {
-                    int length = input.readRawVarint32();
-                    int limit = input.pushLimit(length);
-                    if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
+              updateNodeTimestamp_ = input.readInt64();
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                deadRanks_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              deadRanks_.add(input.readInt32());
+              break;
+            }
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
                 deadRanks_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000020;
               }
               while (input.getBytesUntilLimit() > 0) {
-                  deadRanks_.add(input.readInt32());
+                deadRanks_.add(input.readInt32());
               }
               input.popLimit(limit);
               break;
             }
             default: {
-                if (!parseUnknownFieldProto3(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                }
+                done = true;
+              }
               break;
             }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
+        throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
-          if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           deadRanks_ = java.util.Collections.unmodifiableList(deadRanks_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
     }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.PutRequest prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static com.grpc.sample.KvStore.PutRequest getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<PutRequest> parser() {
-            return PARSER;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+      return com.grpc.sample.KvStore.internal_static_PushMessageRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.grpc.sample.KvStore.internal_static_PutRequest_fieldAccessorTable
+      return com.grpc.sample.KvStore.internal_static_PushMessageRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.grpc.sample.KvStore.PutRequest.class, com.grpc.sample.KvStore.PutRequest.Builder.class);
+              com.grpc.sample.KvStore.PushMessageRequest.class, com.grpc.sample.KvStore.PushMessageRequest.Builder.class);
     }
 
-        /**
-         * <code>string requestKey = 1;</code>
-         */
-    public java.lang.String getRequestKey() {
-        java.lang.Object ref = requestKey_;
+    private int bitField0_;
+    public static final int PUSHKEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object pushKey_;
+    /**
+     * <code>string pushKey = 1;</code>
+     */
+    public java.lang.String getPushKey() {
+      java.lang.Object ref = pushKey_;
       if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
+        return (java.lang.String) ref;
       } else {
-          com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        requestKey_ = s;
+        pushKey_ = s;
         return s;
       }
     }
-
     /**
-     * <code>string requestKey = 1;</code>
+     * <code>string pushKey = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getRequestKeyBytes() {
-        java.lang.Object ref = requestKey_;
-        if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        getPushKeyBytes() {
+      java.lang.Object ref = pushKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        requestKey_ = b;
+        pushKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
+    public static final int PUSHVALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object pushValue_;
     /**
-     * <code>string requestNewValue = 2;</code>
+     * <code>string pushValue = 2;</code>
      */
-    public java.lang.String getRequestNewValue() {
-        java.lang.Object ref = requestNewValue_;
-        if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-        } else {
-            com.google.protobuf.ByteString bs =
+    public java.lang.String getPushValue() {
+      java.lang.Object ref = pushValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        requestNewValue_ = s;
+        pushValue_ = s;
         return s;
       }
     }
-
     /**
-     * <code>string requestNewValue = 2;</code>
+     * <code>string pushValue = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getRequestNewValueBytes() {
-      java.lang.Object ref = requestNewValue_;
-        if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        getPushValueBytes() {
+      java.lang.Object ref = pushValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        requestNewValue_ = b;
+        pushValue_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
+    public static final int PUSHTIMESTAMP_FIELD_NUMBER = 3;
+    private long pushTimestamp_;
     /**
-     * <code>string requestOldValue = 3;</code>
+     * <code>int64 pushTimestamp = 3;</code>
      */
-    public java.lang.String getRequestOldValue() {
-        java.lang.Object ref = requestOldValue_;
-        if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-        } else {
-            com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            requestOldValue_ = s;
-            return s;
-        }
+    public long getPushTimestamp() {
+      return pushTimestamp_;
     }
 
-        /**
-         * <code>string requestOldValue = 3;</code>
-         */
-        public com.google.protobuf.ByteString
-        getRequestOldValueBytes() {
-            java.lang.Object ref = requestOldValue_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                requestOldValue_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
+    public static final int UPDATENODE_FIELD_NUMBER = 4;
+    private int updateNode_;
+    /**
+     * <code>int32 updateNode = 4;</code>
+     */
+    public int getUpdateNode() {
+      return updateNode_;
+    }
 
-        /**
-         * <code>int32 updateNode = 4;</code>
-         */
-        public int getUpdateNode() {
-            return updateNode_;
-        }
+    public static final int UPDATENODETIMESTAMP_FIELD_NUMBER = 5;
+    private long updateNodeTimestamp_;
+    /**
+     * <code>int64 updateNodeTimestamp = 5;</code>
+     */
+    public long getUpdateNodeTimestamp() {
+      return updateNodeTimestamp_;
+    }
 
-        /**
-         * <code>int64 updateNodeTimestamp = 5;</code>
-         */
-        public long getUpdateNodeTimestamp() {
-            return updateNodeTimestamp_;
-        }
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
-         */
-        public java.util.List<java.lang.Integer>
+    public static final int DEADRANKS_FIELD_NUMBER = 6;
+    private java.util.List<java.lang.Integer> deadRanks_;
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    public java.util.List<java.lang.Integer>
         getDeadRanksList() {
-            return deadRanks_;
-        }
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
-         */
-        public int getDeadRanksCount() {
-            return deadRanks_.size();
-        }
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
+      return deadRanks_;
+    }
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
+     */
+    public int getDeadRanksCount() {
+      return deadRanks_.size();
+    }
+    /**
+     * <code>repeated int32 deadRanks = 6;</code>
      */
     public int getDeadRanks(int index) {
-        return deadRanks_.get(index);
+      return deadRanks_.get(index);
     }
+    private int deadRanksMemoizedSerializedSize = -1;
 
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
@@ -2418,67 +3776,62 @@ public final class KvStore {
       return true;
     }
 
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (!getPushKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pushKey_);
+      }
+      if (!getPushValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pushValue_);
+      }
+      if (pushTimestamp_ != 0L) {
+        output.writeInt64(3, pushTimestamp_);
+      }
+      if (updateNode_ != 0) {
+        output.writeInt32(4, updateNode_);
+      }
+      if (updateNodeTimestamp_ != 0L) {
+        output.writeInt64(5, updateNodeTimestamp_);
+      }
+      if (getDeadRanksList().size() > 0) {
+        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(deadRanksMemoizedSerializedSize);
+      }
+      for (int i = 0; i < deadRanks_.size(); i++) {
+        output.writeInt32NoTag(deadRanks_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
 
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (!getRequestKeyBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestKey_);
-            }
-            if (!getRequestNewValueBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestNewValue_);
-            }
-            if (!getRequestOldValueBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestOldValue_);
-            }
-            if (updateNode_ != 0) {
-                output.writeInt32(4, updateNode_);
-            }
-            if (updateNodeTimestamp_ != 0L) {
-                output.writeInt64(5, updateNodeTimestamp_);
-            }
-            if (getDeadRanksList().size() > 0) {
-                output.writeUInt32NoTag(50);
-                output.writeUInt32NoTag(deadRanksMemoizedSerializedSize);
-            }
-            for (int i = 0; i < deadRanks_.size(); i++) {
-                output.writeInt32NoTag(deadRanks_.get(i));
-            }
-            unknownFields.writeTo(output);
-        }
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
 
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!getRequestKeyBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestKey_);
-            }
-            if (!getRequestNewValueBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestNewValue_);
-            }
-            if (!getRequestOldValueBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestOldValue_);
-            }
-            if (updateNode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(4, updateNode_);
-            }
-            if (updateNodeTimestamp_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(5, updateNodeTimestamp_);
+      size = 0;
+      if (!getPushKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pushKey_);
+      }
+      if (!getPushValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pushValue_);
+      }
+      if (pushTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, pushTimestamp_);
+      }
+      if (updateNode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, updateNode_);
+      }
+      if (updateNodeTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, updateNodeTimestamp_);
       }
       {
         int dataSize = 0;
-          for (int i = 0; i < deadRanks_.size(); i++) {
+        for (int i = 0; i < deadRanks_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
             .computeInt32SizeNoTag(deadRanks_.get(i));
         }
@@ -2486,270 +3839,317 @@ public final class KvStore {
         if (!getDeadRanksList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
-                  .computeInt32SizeNoTag(dataSize);
+              .computeInt32SizeNoTag(dataSize);
         }
         deadRanksMemoizedSerializedSize = dataSize;
       }
-            size += unknownFields.getSerializedSize();
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof com.grpc.sample.KvStore.PutRequest)) {
-            return super.equals(obj);
-        }
-        com.grpc.sample.KvStore.PutRequest other = (com.grpc.sample.KvStore.PutRequest) obj;
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.PushMessageRequest)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.PushMessageRequest other = (com.grpc.sample.KvStore.PushMessageRequest) obj;
 
-        boolean result = true;
-        result = result && getRequestKey()
-                .equals(other.getRequestKey());
-        result = result && getRequestNewValue()
-                .equals(other.getRequestNewValue());
-        result = result && getRequestOldValue()
-                .equals(other.getRequestOldValue());
-        result = result && (getUpdateNode()
-                == other.getUpdateNode());
-        result = result && (getUpdateNodeTimestamp()
-                == other.getUpdateNodeTimestamp());
-        result = result && getDeadRanksList()
-                .equals(other.getDeadRanksList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+      boolean result = true;
+      result = result && getPushKey()
+          .equals(other.getPushKey());
+      result = result && getPushValue()
+          .equals(other.getPushValue());
+      result = result && (getPushTimestamp()
+          == other.getPushTimestamp());
+      result = result && (getUpdateNode()
+          == other.getUpdateNode());
+      result = result && (getUpdateNodeTimestamp()
+          == other.getUpdateNodeTimestamp());
+      result = result && getDeadRanksList()
+          .equals(other.getDeadRanksList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + REQUESTKEY_FIELD_NUMBER;
-            hash = (53 * hash) + getRequestKey().hashCode();
-            hash = (37 * hash) + REQUESTNEWVALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getRequestNewValue().hashCode();
-            hash = (37 * hash) + REQUESTOLDVALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getRequestOldValue().hashCode();
-            hash = (37 * hash) + UPDATENODE_FIELD_NUMBER;
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PUSHKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPushKey().hashCode();
+      hash = (37 * hash) + PUSHVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getPushValue().hashCode();
+      hash = (37 * hash) + PUSHTIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPushTimestamp());
+      hash = (37 * hash) + UPDATENODE_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateNode();
-            hash = (37 * hash) + UPDATENODETIMESTAMP_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                    getUpdateNodeTimestamp());
-            if (getDeadRanksCount() > 0) {
+      hash = (37 * hash) + UPDATENODETIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUpdateNodeTimestamp());
+      if (getDeadRanksCount() > 0) {
         hash = (37 * hash) + DEADRANKS_FIELD_NUMBER;
         hash = (53 * hash) + getDeadRanksList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
+      memoizedHashCode = hash;
+      return hash;
+    }
 
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
 
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.PushMessageRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
       return builder;
     }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PutRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.grpc.sample.KvStore.PutRequest getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-    }
-
-        /**
-         * Protobuf type {@code PutRequest}
-         */
+    /**
+     * Protobuf type {@code PushMessageRequest}
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:PutRequest)
-                com.grpc.sample.KvStore.PutRequestOrBuilder {
-            private int bitField0_;
-            private java.lang.Object requestKey_ = "";
-            private java.lang.Object requestNewValue_ = "";
-            private java.lang.Object requestOldValue_ = "";
-            private int updateNode_;
-            private long updateNodeTimestamp_;
-            private java.util.List<java.lang.Integer> deadRanks_ = java.util.Collections.emptyList();
+        // @@protoc_insertion_point(builder_implements:PushMessageRequest)
+        com.grpc.sample.KvStore.PushMessageRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_PushMessageRequest_descriptor;
+      }
 
-            // Construct using com.grpc.sample.KvStore.PutRequest.newBuilder()
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_PushMessageRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.PushMessageRequest.class, com.grpc.sample.KvStore.PushMessageRequest.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.PushMessageRequest.newBuilder()
       private Builder() {
-          maybeForceBuilderInitialization();
+        maybeForceBuilderInitialization();
       }
 
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        pushKey_ = "";
+
+        pushValue_ = "";
+
+        pushTimestamp_ = 0L;
+
+        updateNode_ = 0;
+
+        updateNodeTimestamp_ = 0L;
+
+        deadRanks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
       }
 
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
-            }
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_PushMessageRequest_descriptor;
+      }
 
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_PutRequest_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.PutRequest.class, com.grpc.sample.KvStore.PutRequest.Builder.class);
-            }
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PushMessageRequest getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.PushMessageRequest.getDefaultInstance();
+      }
 
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PushMessageRequest build() {
+        com.grpc.sample.KvStore.PushMessageRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
 
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                requestKey_ = "";
-
-                requestNewValue_ = "";
-
-        requestOldValue_ = "";
-
-                updateNode_ = 0;
-
-                updateNodeTimestamp_ = 0L;
-
-                deadRanks_ = java.util.Collections.emptyList();
-                bitField0_ = (bitField0_ & ~0x00000020);
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_PutRequest_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PutRequest getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.PutRequest.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PutRequest build() {
-                com.grpc.sample.KvStore.PutRequest result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.PutRequest) {
-                    return mergeFrom((com.grpc.sample.KvStore.PutRequest) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PutRequest buildPartial() {
-                com.grpc.sample.KvStore.PutRequest result = new com.grpc.sample.KvStore.PutRequest(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                result.requestKey_ = requestKey_;
-                result.requestNewValue_ = requestNewValue_;
-                result.requestOldValue_ = requestOldValue_;
-                result.updateNode_ = updateNode_;
-                result.updateNodeTimestamp_ = updateNodeTimestamp_;
-                if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                    deadRanks_ = java.util.Collections.unmodifiableList(deadRanks_);
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PushMessageRequest buildPartial() {
+        com.grpc.sample.KvStore.PushMessageRequest result = new com.grpc.sample.KvStore.PushMessageRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.pushKey_ = pushKey_;
+        result.pushValue_ = pushValue_;
+        result.pushTimestamp_ = pushTimestamp_;
+        result.updateNode_ = updateNode_;
+        result.updateNodeTimestamp_ = updateNodeTimestamp_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          deadRanks_ = java.util.Collections.unmodifiableList(deadRanks_);
           bitField0_ = (bitField0_ & ~0x00000020);
-                }
-                result.deadRanks_ = deadRanks_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
+        }
+        result.deadRanks_ = deadRanks_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-          return super.clone();
+        return (Builder) super.clone();
       }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
       }
-
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-          return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.PushMessageRequest) {
+          return mergeFrom((com.grpc.sample.KvStore.PushMessageRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
       }
 
-            public Builder mergeFrom(com.grpc.sample.KvStore.PutRequest other) {
-                if (other == com.grpc.sample.KvStore.PutRequest.getDefaultInstance()) return this;
-                if (!other.getRequestKey().isEmpty()) {
-                    requestKey_ = other.requestKey_;
-                    onChanged();
-                }
-                if (!other.getRequestNewValue().isEmpty()) {
-                    requestNewValue_ = other.requestNewValue_;
-                    onChanged();
-                }
-                if (!other.getRequestOldValue().isEmpty()) {
-                    requestOldValue_ = other.requestOldValue_;
-                    onChanged();
-                }
-                if (other.getUpdateNode() != 0) {
-                    setUpdateNode(other.getUpdateNode());
-                }
-                if (other.getUpdateNodeTimestamp() != 0L) {
-                    setUpdateNodeTimestamp(other.getUpdateNodeTimestamp());
-                }
-                if (!other.deadRanks_.isEmpty()) {
-                    if (deadRanks_.isEmpty()) {
-                        deadRanks_ = other.deadRanks_;
+      public Builder mergeFrom(com.grpc.sample.KvStore.PushMessageRequest other) {
+        if (other == com.grpc.sample.KvStore.PushMessageRequest.getDefaultInstance()) return this;
+        if (!other.getPushKey().isEmpty()) {
+          pushKey_ = other.pushKey_;
+          onChanged();
+        }
+        if (!other.getPushValue().isEmpty()) {
+          pushValue_ = other.pushValue_;
+          onChanged();
+        }
+        if (other.getPushTimestamp() != 0L) {
+          setPushTimestamp(other.getPushTimestamp());
+        }
+        if (other.getUpdateNode() != 0) {
+          setUpdateNode(other.getUpdateNode());
+        }
+        if (other.getUpdateNodeTimestamp() != 0L) {
+          setUpdateNodeTimestamp(other.getUpdateNodeTimestamp());
+        }
+        if (!other.deadRanks_.isEmpty()) {
+          if (deadRanks_.isEmpty()) {
+            deadRanks_ = other.deadRanks_;
             bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureDeadRanksIsMutable();
@@ -2763,6358 +4163,4444 @@ public final class KvStore {
       }
 
       @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.grpc.sample.KvStore.PutRequest parsedMessage = null;
-          try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.grpc.sample.KvStore.PutRequest) e.getUnfinishedMessage();
+        com.grpc.sample.KvStore.PushMessageRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.PushMessageRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
-          } finally {
-              if (parsedMessage != null) {
-                  mergeFrom(parsedMessage);
-              }
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
-          return this;
-      }
-
-      /**
-       * <code>string requestKey = 1;</code>
-       */
-      public java.lang.String getRequestKey() {
-        java.lang.Object ref = requestKey_;
-          if (!(ref instanceof java.lang.String)) {
-              com.google.protobuf.ByteString bs =
-                      (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-              requestKey_ = s;
-              return s;
-          } else {
-              return (java.lang.String) ref;
-          }
-      }
-
-            /**
-             * <code>string requestKey = 1;</code>
-       */
-      public Builder setRequestKey(
-          java.lang.String value) {
-        if (value == null) {
-            throw new NullPointerException();
         }
-
-          requestKey_ = value;
-        onChanged();
         return this;
       }
+      private int bitField0_;
 
-            /**
-             * <code>string requestKey = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getRequestKeyBytes() {
-                java.lang.Object ref = requestKey_;
+      private java.lang.Object pushKey_ = "";
+      /**
+       * <code>string pushKey = 1;</code>
+       */
+      public java.lang.String getPushKey() {
+        java.lang.Object ref = pushKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pushKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string pushKey = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPushKeyBytes() {
+        java.lang.Object ref = pushKey_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          requestKey_ = b;
+          pushKey_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
-       * <code>string requestKey = 1;</code>
+       * <code>string pushKey = 1;</code>
        */
-      public Builder setRequestKeyBytes(
-              com.google.protobuf.ByteString value) {
-          if (value == null) {
-              throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        requestKey_ = value;
-        onChanged();
-        return this;
-      }
-
-      /**
-       * <code>string requestKey = 1;</code>
-       */
-      public Builder clearRequestKey() {
-
-          requestKey_ = getDefaultInstance().getRequestKey();
-          onChanged();
-          return this;
-      }
-
-      /**
-       * <code>string requestNewValue = 2;</code>
-       */
-      public java.lang.String getRequestNewValue() {
-        java.lang.Object ref = requestNewValue_;
-          if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-                  (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-              requestNewValue_ = s;
-              return s;
-          } else {
-              return (java.lang.String) ref;
-          }
-      }
-
-            /**
-             * <code>string requestNewValue = 2;</code>
-       */
-      public Builder setRequestNewValue(
+      public Builder setPushKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
-        requestNewValue_ = value;
+  
+        pushKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushKey = 1;</code>
+       */
+      public Builder clearPushKey() {
+        
+        pushKey_ = getDefaultInstance().getPushKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushKey = 1;</code>
+       */
+      public Builder setPushKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pushKey_ = value;
         onChanged();
         return this;
       }
 
-            /**
-             * <code>string requestNewValue = 2;</code>
-             */
-            public com.google.protobuf.ByteString
-            getRequestNewValueBytes() {
-                java.lang.Object ref = requestNewValue_;
+      private java.lang.Object pushValue_ = "";
+      /**
+       * <code>string pushValue = 2;</code>
+       */
+      public java.lang.String getPushValue() {
+        java.lang.Object ref = pushValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pushValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string pushValue = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPushValueBytes() {
+        java.lang.Object ref = pushValue_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          requestNewValue_ = b;
+          pushValue_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
-       * <code>string requestNewValue = 2;</code>
+       * <code>string pushValue = 2;</code>
        */
-      public Builder setRequestNewValueBytes(
-              com.google.protobuf.ByteString value) {
-          if (value == null) {
-              throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        requestNewValue_ = value;
-        onChanged();
-        return this;
-      }
-
-      /**
-       * <code>string requestNewValue = 2;</code>
-       */
-      public Builder clearRequestNewValue() {
-
-          requestNewValue_ = getDefaultInstance().getRequestNewValue();
-          onChanged();
-        return this;
-      }
-
-      /**
-       * <code>string requestOldValue = 3;</code>
-       */
-      public java.lang.String getRequestOldValue() {
-          java.lang.Object ref = requestOldValue_;
-          if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-                  (com.google.protobuf.ByteString) ref;
-              java.lang.String s = bs.toStringUtf8();
-              requestOldValue_ = s;
-              return s;
-          } else {
-              return (java.lang.String) ref;
-          }
-      }
-
-            /**
-             * <code>string requestOldValue = 3;</code>
-       */
-      public Builder setRequestOldValue(
+      public Builder setPushValue(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
-        requestOldValue_ = value;
+  
+        pushValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushValue = 2;</code>
+       */
+      public Builder clearPushValue() {
+        
+        pushValue_ = getDefaultInstance().getPushValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushValue = 2;</code>
+       */
+      public Builder setPushValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pushValue_ = value;
         onChanged();
         return this;
       }
 
-            /**
-             * <code>string requestOldValue = 3;</code>
-             */
-            public com.google.protobuf.ByteString
-            getRequestOldValueBytes() {
-        java.lang.Object ref = requestOldValue_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
-            requestOldValue_ = b;
-            return b;
-        } else {
-            return (com.google.protobuf.ByteString) ref;
-        }
-            }
+      private long pushTimestamp_ ;
+      /**
+       * <code>int64 pushTimestamp = 3;</code>
+       */
+      public long getPushTimestamp() {
+        return pushTimestamp_;
+      }
+      /**
+       * <code>int64 pushTimestamp = 3;</code>
+       */
+      public Builder setPushTimestamp(long value) {
+        
+        pushTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 pushTimestamp = 3;</code>
+       */
+      public Builder clearPushTimestamp() {
+        
+        pushTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
 
-            /**
-             * <code>string requestOldValue = 3;</code>
-             */
-            public Builder setRequestOldValueBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
+      private int updateNode_ ;
+      /**
+       * <code>int32 updateNode = 4;</code>
+       */
+      public int getUpdateNode() {
+        return updateNode_;
+      }
+      /**
+       * <code>int32 updateNode = 4;</code>
+       */
+      public Builder setUpdateNode(int value) {
+        
+        updateNode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 updateNode = 4;</code>
+       */
+      public Builder clearUpdateNode() {
+        
+        updateNode_ = 0;
+        onChanged();
+        return this;
+      }
 
-                requestOldValue_ = value;
-                onChanged();
-                return this;
-            }
+      private long updateNodeTimestamp_ ;
+      /**
+       * <code>int64 updateNodeTimestamp = 5;</code>
+       */
+      public long getUpdateNodeTimestamp() {
+        return updateNodeTimestamp_;
+      }
+      /**
+       * <code>int64 updateNodeTimestamp = 5;</code>
+       */
+      public Builder setUpdateNodeTimestamp(long value) {
+        
+        updateNodeTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 updateNodeTimestamp = 5;</code>
+       */
+      public Builder clearUpdateNodeTimestamp() {
+        
+        updateNodeTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
 
-            /**
-             * <code>string requestOldValue = 3;</code>
-             */
-            public Builder clearRequestOldValue() {
-
-                requestOldValue_ = getDefaultInstance().getRequestOldValue();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 updateNode = 4;</code>
-             */
-            public int getUpdateNode() {
-                return updateNode_;
-            }
-
-            /**
-             * <code>int32 updateNode = 4;</code>
-             */
-            public Builder setUpdateNode(int value) {
-
-                updateNode_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 updateNode = 4;</code>
-             */
-            public Builder clearUpdateNode() {
-
-                updateNode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 5;</code>
-             */
-            public long getUpdateNodeTimestamp() {
-                return updateNodeTimestamp_;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 5;</code>
-             */
-            public Builder setUpdateNodeTimestamp(long value) {
-
-                updateNodeTimestamp_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 5;</code>
-             */
-            public Builder clearUpdateNodeTimestamp() {
-
-                updateNodeTimestamp_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            private void ensureDeadRanksIsMutable() {
-                if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-                    deadRanks_ = new java.util.ArrayList<java.lang.Integer>(deadRanks_);
-                    bitField0_ |= 0x00000020;
-                }
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public java.util.List<java.lang.Integer>
-            getDeadRanksList() {
-                return java.util.Collections.unmodifiableList(deadRanks_);
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public int getDeadRanksCount() {
-                return deadRanks_.size();
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public int getDeadRanks(int index) {
-                return deadRanks_.get(index);
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public Builder setDeadRanks(
-                    int index, int value) {
-                ensureDeadRanksIsMutable();
-                deadRanks_.set(index, value);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public Builder addDeadRanks(int value) {
-                ensureDeadRanksIsMutable();
-                deadRanks_.add(value);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
+      private java.util.List<java.lang.Integer> deadRanks_ = java.util.Collections.emptyList();
+      private void ensureDeadRanksIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          deadRanks_ = new java.util.ArrayList<java.lang.Integer>(deadRanks_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getDeadRanksList() {
+        return java.util.Collections.unmodifiableList(deadRanks_);
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public int getDeadRanksCount() {
+        return deadRanks_.size();
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public int getDeadRanks(int index) {
+        return deadRanks_.get(index);
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public Builder setDeadRanks(
+          int index, int value) {
+        ensureDeadRanksIsMutable();
+        deadRanks_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public Builder addDeadRanks(int value) {
+        ensureDeadRanksIsMutable();
+        deadRanks_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
       public Builder addAllDeadRanks(
-              java.lang.Iterable<? extends java.lang.Integer> values) {
-          ensureDeadRanksIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                  values, deadRanks_);
-          onChanged();
-          return this;
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureDeadRanksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, deadRanks_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 deadRanks = 6;</code>
+       */
+      public Builder clearDeadRanks() {
+        deadRanks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public Builder clearDeadRanks() {
-                deadRanks_ = java.util.Collections.emptyList();
-                bitField0_ = (bitField0_ & ~0x00000020);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
 
 
-            // @@protoc_insertion_point(builder_scope:PutRequest)
-        }
-
+      // @@protoc_insertion_point(builder_scope:PushMessageRequest)
     }
+
+    // @@protoc_insertion_point(class_scope:PushMessageRequest)
+    private static final com.grpc.sample.KvStore.PushMessageRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.PushMessageRequest();
+    }
+
+    public static com.grpc.sample.KvStore.PushMessageRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PushMessageRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PushMessageRequest>() {
+      @java.lang.Override
+      public PushMessageRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PushMessageRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PushMessageRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PushMessageRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.PushMessageRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PushMessageResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:PushMessageResponse)
+      com.google.protobuf.MessageOrBuilder {
 
     /**
-     * Protobuf type {@code PutResponse}
+     * <code>string pushResponseKey = 1;</code>
      */
-    public static final class PutResponse extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:PutResponse)
-            PutResponseOrBuilder {
-        public static final int RESPONSEKEY_FIELD_NUMBER = 1;
-        public static final int RESPONSENEWVALUE_FIELD_NUMBER = 2;
-        public static final int RESPONSEOLDVALUE_FIELD_NUMBER = 3;
-        public static final int STATUS_FIELD_NUMBER = 4;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:PutResponse)
-        private static final com.grpc.sample.KvStore.PutResponse DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<PutResponse>
-                PARSER = new com.google.protobuf.AbstractParser<PutResponse>() {
-            @java.lang.Override
-            public PutResponse parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new PutResponse(input, extensionRegistry);
-            }
-        };
-
-        static {
-            DEFAULT_INSTANCE = new com.grpc.sample.KvStore.PutResponse();
-        }
-
-        private volatile java.lang.Object responseKey_;
-        private volatile java.lang.Object responseNewValue_;
-        private volatile java.lang.Object responseOldValue_;
-        private int status_;
-        private byte memoizedIsInitialized = -1;
-
-        // Use PutResponse.newBuilder() to construct.
-        private PutResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
-        }
-
-        private PutResponse() {
-            responseKey_ = "";
-            responseNewValue_ = "";
-            responseOldValue_ = "";
-            status_ = 0;
-        }
-
-        private PutResponse(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 10: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            responseKey_ = s;
-                            break;
-                        }
-                        case 18: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            responseNewValue_ = s;
-                            break;
-                        }
-                        case 26: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            responseOldValue_ = s;
-                            break;
-                        }
-                        case 32: {
-
-                            status_ = input.readInt32();
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownFieldProto3(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-              }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.PutResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static com.grpc.sample.KvStore.PutResponse getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<PutResponse> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.grpc.sample.KvStore.internal_static_PutResponse_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.grpc.sample.KvStore.PutResponse.class, com.grpc.sample.KvStore.PutResponse.Builder.class);
-        }
-
-        /**
-         * <code>string responseKey = 1;</code>
-         */
-        public java.lang.String getResponseKey() {
-            java.lang.Object ref = responseKey_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                responseKey_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string responseKey = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-        getResponseKeyBytes() {
-            java.lang.Object ref = responseKey_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                responseKey_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>string responseNewValue = 2;</code>
+    java.lang.String getPushResponseKey();
+    /**
+     * <code>string pushResponseKey = 1;</code>
      */
-    public java.lang.String getResponseNewValue() {
-        java.lang.Object ref = responseNewValue_;
-        if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-        } else {
-            com.google.protobuf.ByteString bs =
-                    (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            responseNewValue_ = s;
-            return s;
-        }
+    com.google.protobuf.ByteString
+        getPushResponseKeyBytes();
+
+    /**
+     * <code>string pushResponseValue = 2;</code>
+     */
+    java.lang.String getPushResponseValue();
+    /**
+     * <code>string pushResponseValue = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPushResponseValueBytes();
+
+    /**
+     * <code>int64 pushResponseTimestamp = 3;</code>
+     */
+    long getPushResponseTimestamp();
+  }
+  /**
+   * Protobuf type {@code PushMessageResponse}
+   */
+  public  static final class PushMessageResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:PushMessageResponse)
+      PushMessageResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PushMessageResponse.newBuilder() to construct.
+    private PushMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PushMessageResponse() {
+      pushResponseKey_ = "";
+      pushResponseValue_ = "";
+      pushResponseTimestamp_ = 0L;
     }
 
-        /**
-         * <code>string responseNewValue = 2;</code>
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PushMessageResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pushResponseKey_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pushResponseValue_ = s;
+              break;
+            }
+            case 24: {
+
+              pushResponseTimestamp_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_PushMessageResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_PushMessageResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.PushMessageResponse.class, com.grpc.sample.KvStore.PushMessageResponse.Builder.class);
+    }
+
+    public static final int PUSHRESPONSEKEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object pushResponseKey_;
+    /**
+     * <code>string pushResponseKey = 1;</code>
+     */
+    public java.lang.String getPushResponseKey() {
+      java.lang.Object ref = pushResponseKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pushResponseKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string pushResponseKey = 1;</code>
      */
     public com.google.protobuf.ByteString
-    getResponseNewValueBytes() {
-        java.lang.Object ref = responseNewValue_;
-        if (ref instanceof java.lang.String) {
-            com.google.protobuf.ByteString b =
-                    com.google.protobuf.ByteString.copyFromUtf8(
-                            (java.lang.String) ref);
-            responseNewValue_ = b;
-            return b;
-        } else {
-            return (com.google.protobuf.ByteString) ref;
-        }
+        getPushResponseKeyBytes() {
+      java.lang.Object ref = pushResponseKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pushResponseKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-        /**
-         * <code>string responseOldValue = 3;</code>
-     */
-    public java.lang.String getResponseOldValue() {
-        java.lang.Object ref = responseOldValue_;
-        if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-        } else {
-            com.google.protobuf.ByteString bs =
-                    (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            responseOldValue_ = s;
-            return s;
-        }
-    }
-
-        /**
-         * <code>string responseOldValue = 3;</code>
-         */
-        public com.google.protobuf.ByteString
-        getResponseOldValueBytes() {
-            java.lang.Object ref = responseOldValue_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                responseOldValue_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>int32 status = 4;</code>
-         */
-        public int getStatus() {
-            return status_;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (!getResponseKeyBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseKey_);
-            }
-            if (!getResponseNewValueBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, responseNewValue_);
-            }
-            if (!getResponseOldValueBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, responseOldValue_);
-            }
-            if (status_ != 0) {
-                output.writeInt32(4, status_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!getResponseKeyBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseKey_);
-            }
-            if (!getResponseNewValueBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, responseNewValue_);
-            }
-            if (!getResponseOldValueBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, responseOldValue_);
-            }
-            if (status_ != 0) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(4, status_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.grpc.sample.KvStore.PutResponse)) {
-                return super.equals(obj);
-            }
-            com.grpc.sample.KvStore.PutResponse other = (com.grpc.sample.KvStore.PutResponse) obj;
-
-            boolean result = true;
-            result = result && getResponseKey()
-                    .equals(other.getResponseKey());
-            result = result && getResponseNewValue()
-                    .equals(other.getResponseNewValue());
-            result = result && getResponseOldValue()
-                    .equals(other.getResponseOldValue());
-            result = result && (getStatus()
-                    == other.getStatus());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + RESPONSEKEY_FIELD_NUMBER;
-            hash = (53 * hash) + getResponseKey().hashCode();
-            hash = (37 * hash) + RESPONSENEWVALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getResponseNewValue().hashCode();
-            hash = (37 * hash) + RESPONSEOLDVALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getResponseOldValue().hashCode();
-            hash = (37 * hash) + STATUS_FIELD_NUMBER;
-            hash = (53 * hash) + getStatus();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<PutResponse> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.PutResponse getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code PutResponse}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:PutResponse)
-                com.grpc.sample.KvStore.PutResponseOrBuilder {
-            private java.lang.Object responseKey_ = "";
-            private java.lang.Object responseNewValue_ = "";
-            private java.lang.Object responseOldValue_ = "";
-            private int status_;
-
-            // Construct using com.grpc.sample.KvStore.PutResponse.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_PutResponse_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.PutResponse.class, com.grpc.sample.KvStore.PutResponse.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                responseKey_ = "";
-
-                responseNewValue_ = "";
-
-                responseOldValue_ = "";
-
-                status_ = 0;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_PutResponse_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PutResponse getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.PutResponse.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PutResponse build() {
-                com.grpc.sample.KvStore.PutResponse result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PutResponse buildPartial() {
-                com.grpc.sample.KvStore.PutResponse result = new com.grpc.sample.KvStore.PutResponse(this);
-                result.responseKey_ = responseKey_;
-                result.responseNewValue_ = responseNewValue_;
-                result.responseOldValue_ = responseOldValue_;
-                result.status_ = status_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.PutResponse) {
-                    return mergeFrom((com.grpc.sample.KvStore.PutResponse) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(com.grpc.sample.KvStore.PutResponse other) {
-                if (other == com.grpc.sample.KvStore.PutResponse.getDefaultInstance()) return this;
-                if (!other.getResponseKey().isEmpty()) {
-                    responseKey_ = other.responseKey_;
-                    onChanged();
-                }
-                if (!other.getResponseNewValue().isEmpty()) {
-                    responseNewValue_ = other.responseNewValue_;
-                    onChanged();
-                }
-                if (!other.getResponseOldValue().isEmpty()) {
-                    responseOldValue_ = other.responseOldValue_;
-                    onChanged();
-                }
-                if (other.getStatus() != 0) {
-                    setStatus(other.getStatus());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                com.grpc.sample.KvStore.PutResponse parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (com.grpc.sample.KvStore.PutResponse) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <code>string responseKey = 1;</code>
-             */
-            public java.lang.String getResponseKey() {
-                java.lang.Object ref = responseKey_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    responseKey_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string responseKey = 1;</code>
-             */
-            public Builder setResponseKey(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                responseKey_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string responseKey = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getResponseKeyBytes() {
-                java.lang.Object ref = responseKey_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    responseKey_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string responseKey = 1;</code>
-             */
-            public Builder setResponseKeyBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                responseKey_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string responseKey = 1;</code>
-             */
-            public Builder clearResponseKey() {
-
-                responseKey_ = getDefaultInstance().getResponseKey();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string responseNewValue = 2;</code>
-             */
-            public java.lang.String getResponseNewValue() {
-                java.lang.Object ref = responseNewValue_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    responseNewValue_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string responseNewValue = 2;</code>
-             */
-            public Builder setResponseNewValue(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                responseNewValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string responseNewValue = 2;</code>
-             */
-            public com.google.protobuf.ByteString
-            getResponseNewValueBytes() {
-                java.lang.Object ref = responseNewValue_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    responseNewValue_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string responseNewValue = 2;</code>
-             */
-            public Builder setResponseNewValueBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                responseNewValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string responseNewValue = 2;</code>
-             */
-            public Builder clearResponseNewValue() {
-
-                responseNewValue_ = getDefaultInstance().getResponseNewValue();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string responseOldValue = 3;</code>
-             */
-            public java.lang.String getResponseOldValue() {
-                java.lang.Object ref = responseOldValue_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    responseOldValue_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string responseOldValue = 3;</code>
-             */
-            public Builder setResponseOldValue(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                responseOldValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string responseOldValue = 3;</code>
-             */
-            public com.google.protobuf.ByteString
-            getResponseOldValueBytes() {
-                java.lang.Object ref = responseOldValue_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    responseOldValue_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string responseOldValue = 3;</code>
-             */
-            public Builder setResponseOldValueBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                responseOldValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string responseOldValue = 3;</code>
-             */
-            public Builder clearResponseOldValue() {
-
-                responseOldValue_ = getDefaultInstance().getResponseOldValue();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 status = 4;</code>
-             */
-            public int getStatus() {
-                return status_;
-            }
-
-            /**
-             * <code>int32 status = 4;</code>
-             */
-            public Builder setStatus(int value) {
-
-                status_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 status = 4;</code>
-             */
-            public Builder clearStatus() {
-
-                status_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:PutResponse)
-        }
-
-    }
-
+    public static final int PUSHRESPONSEVALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object pushResponseValue_;
     /**
-     * Protobuf type {@code PushMessageRequest}
+     * <code>string pushResponseValue = 2;</code>
      */
-    public static final class PushMessageRequest extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:PushMessageRequest)
-            PushMessageRequestOrBuilder {
-        public static final int PUSHKEY_FIELD_NUMBER = 1;
-        public static final int PUSHVALUE_FIELD_NUMBER = 2;
-        public static final int PUSHTIMESTAMP_FIELD_NUMBER = 3;
-        public static final int UPDATENODE_FIELD_NUMBER = 4;
-        public static final int UPDATENODETIMESTAMP_FIELD_NUMBER = 5;
-        public static final int DEADRANKS_FIELD_NUMBER = 6;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:PushMessageRequest)
-        private static final com.grpc.sample.KvStore.PushMessageRequest DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<PushMessageRequest>
-                PARSER = new com.google.protobuf.AbstractParser<PushMessageRequest>() {
-            @java.lang.Override
-            public PushMessageRequest parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new PushMessageRequest(input, extensionRegistry);
-            }
-        };
-
-        static {
-            DEFAULT_INSTANCE = new com.grpc.sample.KvStore.PushMessageRequest();
-        }
-
-        private int bitField0_;
-        private volatile java.lang.Object pushKey_;
-        private volatile java.lang.Object pushValue_;
-        private long pushTimestamp_;
-        private int updateNode_;
-        private long updateNodeTimestamp_;
-        private java.util.List<java.lang.Integer> deadRanks_;
-        private int deadRanksMemoizedSerializedSize = -1;
-        private byte memoizedIsInitialized = -1;
-
-        // Use PushMessageRequest.newBuilder() to construct.
-        private PushMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
-        }
-
-        private PushMessageRequest() {
-            pushKey_ = "";
-            pushValue_ = "";
-            pushTimestamp_ = 0L;
-            updateNode_ = 0;
-            updateNodeTimestamp_ = 0L;
-            deadRanks_ = java.util.Collections.emptyList();
-        }
-
-        private PushMessageRequest(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 10: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            pushKey_ = s;
-                            break;
-                        }
-                        case 18: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            pushValue_ = s;
-                            break;
-                        }
-                        case 24: {
-
-                            pushTimestamp_ = input.readInt64();
-                            break;
-                        }
-                        case 32: {
-
-                            updateNode_ = input.readInt32();
-                            break;
-                        }
-                        case 40: {
-
-                            updateNodeTimestamp_ = input.readInt64();
-                            break;
-                        }
-                        case 48: {
-                            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                                deadRanks_ = new java.util.ArrayList<java.lang.Integer>();
-                                mutable_bitField0_ |= 0x00000020;
-                            }
-                            deadRanks_.add(input.readInt32());
-                            break;
-                        }
-                        case 50: {
-                            int length = input.readRawVarint32();
-                            int limit = input.pushLimit(length);
-                            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
-                                deadRanks_ = new java.util.ArrayList<java.lang.Integer>();
-                                mutable_bitField0_ |= 0x00000020;
-                            }
-                            while (input.getBytesUntilLimit() > 0) {
-                                deadRanks_.add(input.readInt32());
-                            }
-                            input.popLimit(limit);
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownFieldProto3(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                    deadRanks_ = java.util.Collections.unmodifiableList(deadRanks_);
-                }
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_PushMessageRequest_descriptor;
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.PushMessageRequest prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageRequest getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<PushMessageRequest> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.grpc.sample.KvStore.internal_static_PushMessageRequest_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.grpc.sample.KvStore.PushMessageRequest.class, com.grpc.sample.KvStore.PushMessageRequest.Builder.class);
-        }
-
-        /**
-         * <code>string pushKey = 1;</code>
-         */
-        public java.lang.String getPushKey() {
-            java.lang.Object ref = pushKey_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                pushKey_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string pushKey = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-        getPushKeyBytes() {
-            java.lang.Object ref = pushKey_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                pushKey_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>string pushValue = 2;</code>
-         */
-        public java.lang.String getPushValue() {
-            java.lang.Object ref = pushValue_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                pushValue_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string pushValue = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-        getPushValueBytes() {
-            java.lang.Object ref = pushValue_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                pushValue_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>int64 pushTimestamp = 3;</code>
-         */
-        public long getPushTimestamp() {
-            return pushTimestamp_;
-        }
-
-        /**
-         * <code>int32 updateNode = 4;</code>
-         */
-        public int getUpdateNode() {
-            return updateNode_;
-        }
-
-        /**
-         * <code>int64 updateNodeTimestamp = 5;</code>
-         */
-        public long getUpdateNodeTimestamp() {
-            return updateNodeTimestamp_;
-        }
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
-         */
-        public java.util.List<java.lang.Integer>
-        getDeadRanksList() {
-            return deadRanks_;
-        }
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
-         */
-        public int getDeadRanksCount() {
-            return deadRanks_.size();
-        }
-
-        /**
-         * <code>repeated int32 deadRanks = 6;</code>
-         */
-        public int getDeadRanks(int index) {
-            return deadRanks_.get(index);
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (!getPushKeyBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pushKey_);
-            }
-            if (!getPushValueBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pushValue_);
-            }
-            if (pushTimestamp_ != 0L) {
-                output.writeInt64(3, pushTimestamp_);
-            }
-            if (updateNode_ != 0) {
-                output.writeInt32(4, updateNode_);
-            }
-            if (updateNodeTimestamp_ != 0L) {
-                output.writeInt64(5, updateNodeTimestamp_);
-            }
-            if (getDeadRanksList().size() > 0) {
-                output.writeUInt32NoTag(50);
-                output.writeUInt32NoTag(deadRanksMemoizedSerializedSize);
-            }
-            for (int i = 0; i < deadRanks_.size(); i++) {
-                output.writeInt32NoTag(deadRanks_.get(i));
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!getPushKeyBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pushKey_);
-            }
-            if (!getPushValueBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pushValue_);
-            }
-            if (pushTimestamp_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(3, pushTimestamp_);
-            }
-            if (updateNode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(4, updateNode_);
-            }
-            if (updateNodeTimestamp_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(5, updateNodeTimestamp_);
-            }
-            {
-                int dataSize = 0;
-                for (int i = 0; i < deadRanks_.size(); i++) {
-                    dataSize += com.google.protobuf.CodedOutputStream
-                            .computeInt32SizeNoTag(deadRanks_.get(i));
-                }
-                size += dataSize;
-                if (!getDeadRanksList().isEmpty()) {
-                    size += 1;
-                    size += com.google.protobuf.CodedOutputStream
-                            .computeInt32SizeNoTag(dataSize);
-                }
-                deadRanksMemoizedSerializedSize = dataSize;
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.grpc.sample.KvStore.PushMessageRequest)) {
-                return super.equals(obj);
-            }
-            com.grpc.sample.KvStore.PushMessageRequest other = (com.grpc.sample.KvStore.PushMessageRequest) obj;
-
-            boolean result = true;
-            result = result && getPushKey()
-                    .equals(other.getPushKey());
-            result = result && getPushValue()
-                    .equals(other.getPushValue());
-            result = result && (getPushTimestamp()
-                    == other.getPushTimestamp());
-            result = result && (getUpdateNode()
-                    == other.getUpdateNode());
-            result = result && (getUpdateNodeTimestamp()
-                    == other.getUpdateNodeTimestamp());
-            result = result && getDeadRanksList()
-                    .equals(other.getDeadRanksList());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + PUSHKEY_FIELD_NUMBER;
-            hash = (53 * hash) + getPushKey().hashCode();
-            hash = (37 * hash) + PUSHVALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getPushValue().hashCode();
-            hash = (37 * hash) + PUSHTIMESTAMP_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                    getPushTimestamp());
-            hash = (37 * hash) + UPDATENODE_FIELD_NUMBER;
-            hash = (53 * hash) + getUpdateNode();
-            hash = (37 * hash) + UPDATENODETIMESTAMP_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                    getUpdateNodeTimestamp());
-            if (getDeadRanksCount() > 0) {
-                hash = (37 * hash) + DEADRANKS_FIELD_NUMBER;
-                hash = (53 * hash) + getDeadRanksList().hashCode();
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<PushMessageRequest> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.PushMessageRequest getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code PushMessageRequest}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:PushMessageRequest)
-                com.grpc.sample.KvStore.PushMessageRequestOrBuilder {
-            private int bitField0_;
-            private java.lang.Object pushKey_ = "";
-            private java.lang.Object pushValue_ = "";
-            private long pushTimestamp_;
-            private int updateNode_;
-            private long updateNodeTimestamp_;
-            private java.util.List<java.lang.Integer> deadRanks_ = java.util.Collections.emptyList();
-
-            // Construct using com.grpc.sample.KvStore.PushMessageRequest.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_PushMessageRequest_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_PushMessageRequest_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.PushMessageRequest.class, com.grpc.sample.KvStore.PushMessageRequest.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                pushKey_ = "";
-
-                pushValue_ = "";
-
-                pushTimestamp_ = 0L;
-
-                updateNode_ = 0;
-
-                updateNodeTimestamp_ = 0L;
-
-                deadRanks_ = java.util.Collections.emptyList();
-                bitField0_ = (bitField0_ & ~0x00000020);
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_PushMessageRequest_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PushMessageRequest getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.PushMessageRequest.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PushMessageRequest build() {
-                com.grpc.sample.KvStore.PushMessageRequest result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PushMessageRequest buildPartial() {
-                com.grpc.sample.KvStore.PushMessageRequest result = new com.grpc.sample.KvStore.PushMessageRequest(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                result.pushKey_ = pushKey_;
-                result.pushValue_ = pushValue_;
-                result.pushTimestamp_ = pushTimestamp_;
-                result.updateNode_ = updateNode_;
-                result.updateNodeTimestamp_ = updateNodeTimestamp_;
-                if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                    deadRanks_ = java.util.Collections.unmodifiableList(deadRanks_);
-                    bitField0_ = (bitField0_ & ~0x00000020);
-                }
-                result.deadRanks_ = deadRanks_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.PushMessageRequest) {
-                    return mergeFrom((com.grpc.sample.KvStore.PushMessageRequest) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(com.grpc.sample.KvStore.PushMessageRequest other) {
-                if (other == com.grpc.sample.KvStore.PushMessageRequest.getDefaultInstance()) return this;
-                if (!other.getPushKey().isEmpty()) {
-                    pushKey_ = other.pushKey_;
-                    onChanged();
-                }
-                if (!other.getPushValue().isEmpty()) {
-                    pushValue_ = other.pushValue_;
-                    onChanged();
-                }
-                if (other.getPushTimestamp() != 0L) {
-                    setPushTimestamp(other.getPushTimestamp());
-                }
-                if (other.getUpdateNode() != 0) {
-                    setUpdateNode(other.getUpdateNode());
-                }
-                if (other.getUpdateNodeTimestamp() != 0L) {
-                    setUpdateNodeTimestamp(other.getUpdateNodeTimestamp());
-                }
-                if (!other.deadRanks_.isEmpty()) {
-                    if (deadRanks_.isEmpty()) {
-                        deadRanks_ = other.deadRanks_;
-                        bitField0_ = (bitField0_ & ~0x00000020);
-                    } else {
-                        ensureDeadRanksIsMutable();
-                        deadRanks_.addAll(other.deadRanks_);
-                    }
-                    onChanged();
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                com.grpc.sample.KvStore.PushMessageRequest parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (com.grpc.sample.KvStore.PushMessageRequest) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <code>string pushKey = 1;</code>
-             */
-            public java.lang.String getPushKey() {
-                java.lang.Object ref = pushKey_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    pushKey_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string pushKey = 1;</code>
-             */
-            public Builder setPushKey(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                pushKey_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushKey = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getPushKeyBytes() {
-                java.lang.Object ref = pushKey_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    pushKey_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string pushKey = 1;</code>
-             */
-            public Builder setPushKeyBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                pushKey_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushKey = 1;</code>
-             */
-            public Builder clearPushKey() {
-
-                pushKey_ = getDefaultInstance().getPushKey();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushValue = 2;</code>
-             */
-            public java.lang.String getPushValue() {
-                java.lang.Object ref = pushValue_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    pushValue_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string pushValue = 2;</code>
-             */
-            public Builder setPushValue(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                pushValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushValue = 2;</code>
-             */
-            public com.google.protobuf.ByteString
-            getPushValueBytes() {
-                java.lang.Object ref = pushValue_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    pushValue_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string pushValue = 2;</code>
-             */
-            public Builder setPushValueBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                pushValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushValue = 2;</code>
-             */
-            public Builder clearPushValue() {
-
-                pushValue_ = getDefaultInstance().getPushValue();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 pushTimestamp = 3;</code>
-             */
-            public long getPushTimestamp() {
-                return pushTimestamp_;
-            }
-
-            /**
-             * <code>int64 pushTimestamp = 3;</code>
-             */
-            public Builder setPushTimestamp(long value) {
-
-                pushTimestamp_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 pushTimestamp = 3;</code>
-             */
-            public Builder clearPushTimestamp() {
-
-                pushTimestamp_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 updateNode = 4;</code>
-             */
-            public int getUpdateNode() {
-                return updateNode_;
-            }
-
-            /**
-             * <code>int32 updateNode = 4;</code>
-             */
-            public Builder setUpdateNode(int value) {
-
-                updateNode_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 updateNode = 4;</code>
-             */
-            public Builder clearUpdateNode() {
-
-                updateNode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 5;</code>
-             */
-            public long getUpdateNodeTimestamp() {
-                return updateNodeTimestamp_;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 5;</code>
-             */
-            public Builder setUpdateNodeTimestamp(long value) {
-
-                updateNodeTimestamp_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 5;</code>
-             */
-            public Builder clearUpdateNodeTimestamp() {
-
-                updateNodeTimestamp_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            private void ensureDeadRanksIsMutable() {
-                if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-                    deadRanks_ = new java.util.ArrayList<java.lang.Integer>(deadRanks_);
-                    bitField0_ |= 0x00000020;
-                }
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public java.util.List<java.lang.Integer>
-            getDeadRanksList() {
-                return java.util.Collections.unmodifiableList(deadRanks_);
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public int getDeadRanksCount() {
-                return deadRanks_.size();
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public int getDeadRanks(int index) {
-                return deadRanks_.get(index);
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public Builder setDeadRanks(
-                    int index, int value) {
-                ensureDeadRanksIsMutable();
-                deadRanks_.set(index, value);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public Builder addDeadRanks(int value) {
-                ensureDeadRanksIsMutable();
-                deadRanks_.add(value);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public Builder addAllDeadRanks(
-                    java.lang.Iterable<? extends java.lang.Integer> values) {
-                ensureDeadRanksIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                        values, deadRanks_);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>repeated int32 deadRanks = 6;</code>
-             */
-            public Builder clearDeadRanks() {
-                deadRanks_ = java.util.Collections.emptyList();
-                bitField0_ = (bitField0_ & ~0x00000020);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:PushMessageRequest)
-        }
-
+    public java.lang.String getPushResponseValue() {
+      java.lang.Object ref = pushResponseValue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pushResponseValue_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string pushResponseValue = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPushResponseValueBytes() {
+      java.lang.Object ref = pushResponseValue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pushResponseValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
+    public static final int PUSHRESPONSETIMESTAMP_FIELD_NUMBER = 3;
+    private long pushResponseTimestamp_;
+    /**
+     * <code>int64 pushResponseTimestamp = 3;</code>
+     */
+    public long getPushResponseTimestamp() {
+      return pushResponseTimestamp_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPushResponseKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pushResponseKey_);
+      }
+      if (!getPushResponseValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pushResponseValue_);
+      }
+      if (pushResponseTimestamp_ != 0L) {
+        output.writeInt64(3, pushResponseTimestamp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPushResponseKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pushResponseKey_);
+      }
+      if (!getPushResponseValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pushResponseValue_);
+      }
+      if (pushResponseTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, pushResponseTimestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.PushMessageResponse)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.PushMessageResponse other = (com.grpc.sample.KvStore.PushMessageResponse) obj;
+
+      boolean result = true;
+      result = result && getPushResponseKey()
+          .equals(other.getPushResponseKey());
+      result = result && getPushResponseValue()
+          .equals(other.getPushResponseValue());
+      result = result && (getPushResponseTimestamp()
+          == other.getPushResponseTimestamp());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PUSHRESPONSEKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPushResponseKey().hashCode();
+      hash = (37 * hash) + PUSHRESPONSEVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getPushResponseValue().hashCode();
+      hash = (37 * hash) + PUSHRESPONSETIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPushResponseTimestamp());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.PushMessageResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code PushMessageResponse}
      */
-    public static final class PushMessageResponse extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:PushMessageResponse)
-            PushMessageResponseOrBuilder {
-        public static final int PUSHRESPONSEKEY_FIELD_NUMBER = 1;
-        public static final int PUSHRESPONSEVALUE_FIELD_NUMBER = 2;
-        public static final int PUSHRESPONSETIMESTAMP_FIELD_NUMBER = 3;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:PushMessageResponse)
-        private static final com.grpc.sample.KvStore.PushMessageResponse DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<PushMessageResponse>
-                PARSER = new com.google.protobuf.AbstractParser<PushMessageResponse>() {
-            @java.lang.Override
-            public PushMessageResponse parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new PushMessageResponse(input, extensionRegistry);
-            }
-        };
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:PushMessageResponse)
+        com.grpc.sample.KvStore.PushMessageResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_PushMessageResponse_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new com.grpc.sample.KvStore.PushMessageResponse();
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_PushMessageResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.PushMessageResponse.class, com.grpc.sample.KvStore.PushMessageResponse.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.PushMessageResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        pushResponseKey_ = "";
 
-        private volatile java.lang.Object pushResponseKey_;
-        private volatile java.lang.Object pushResponseValue_;
-        private long pushResponseTimestamp_;
-        private byte memoizedIsInitialized = -1;
+        pushResponseValue_ = "";
 
-        // Use PushMessageResponse.newBuilder() to construct.
-        private PushMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+        pushResponseTimestamp_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_PushMessageResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PushMessageResponse getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.PushMessageResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PushMessageResponse build() {
+        com.grpc.sample.KvStore.PushMessageResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private PushMessageResponse() {
-            pushResponseKey_ = "";
-            pushResponseValue_ = "";
-            pushResponseTimestamp_ = 0L;
+      @java.lang.Override
+      public com.grpc.sample.KvStore.PushMessageResponse buildPartial() {
+        com.grpc.sample.KvStore.PushMessageResponse result = new com.grpc.sample.KvStore.PushMessageResponse(this);
+        result.pushResponseKey_ = pushResponseKey_;
+        result.pushResponseValue_ = pushResponseValue_;
+        result.pushResponseTimestamp_ = pushResponseTimestamp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.PushMessageResponse) {
+          return mergeFrom((com.grpc.sample.KvStore.PushMessageResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private PushMessageResponse(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 10: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            pushResponseKey_ = s;
-                            break;
-                        }
-                        case 18: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            pushResponseValue_ = s;
-                            break;
-                        }
-                        case 24: {
-
-                            pushResponseTimestamp_ = input.readInt64();
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownFieldProto3(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(com.grpc.sample.KvStore.PushMessageResponse other) {
+        if (other == com.grpc.sample.KvStore.PushMessageResponse.getDefaultInstance()) return this;
+        if (!other.getPushResponseKey().isEmpty()) {
+          pushResponseKey_ = other.pushResponseKey_;
+          onChanged();
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_PushMessageResponse_descriptor;
+        if (!other.getPushResponseValue().isEmpty()) {
+          pushResponseValue_ = other.pushResponseValue_;
+          onChanged();
         }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        if (other.getPushResponseTimestamp() != 0L) {
+          setPushResponseTimestamp(other.getPushResponseTimestamp());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.PushMessageResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.PushMessageResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      private java.lang.Object pushResponseKey_ = "";
+      /**
+       * <code>string pushResponseKey = 1;</code>
+       */
+      public java.lang.String getPushResponseKey() {
+        java.lang.Object ref = pushResponseKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pushResponseKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>string pushResponseKey = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPushResponseKeyBytes() {
+        java.lang.Object ref = pushResponseKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pushResponseKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+      /**
+       * <code>string pushResponseKey = 1;</code>
+       */
+      public Builder setPushResponseKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pushResponseKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushResponseKey = 1;</code>
+       */
+      public Builder clearPushResponseKey() {
+        
+        pushResponseKey_ = getDefaultInstance().getPushResponseKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushResponseKey = 1;</code>
+       */
+      public Builder setPushResponseKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pushResponseKey_ = value;
+        onChanged();
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      private java.lang.Object pushResponseValue_ = "";
+      /**
+       * <code>string pushResponseValue = 2;</code>
+       */
+      public java.lang.String getPushResponseValue() {
+        java.lang.Object ref = pushResponseValue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pushResponseValue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>string pushResponseValue = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPushResponseValueBytes() {
+        java.lang.Object ref = pushResponseValue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pushResponseValue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.PushMessageResponse prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static com.grpc.sample.KvStore.PushMessageResponse getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<PushMessageResponse> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.grpc.sample.KvStore.internal_static_PushMessageResponse_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.grpc.sample.KvStore.PushMessageResponse.class, com.grpc.sample.KvStore.PushMessageResponse.Builder.class);
-        }
-
-        /**
-         * <code>string pushResponseKey = 1;</code>
-         */
-        public java.lang.String getPushResponseKey() {
-            java.lang.Object ref = pushResponseKey_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                pushResponseKey_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string pushResponseKey = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-        getPushResponseKeyBytes() {
-            java.lang.Object ref = pushResponseKey_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                pushResponseKey_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>string pushResponseValue = 2;</code>
-         */
-        public java.lang.String getPushResponseValue() {
-            java.lang.Object ref = pushResponseValue_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                pushResponseValue_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string pushResponseValue = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-        getPushResponseValueBytes() {
-            java.lang.Object ref = pushResponseValue_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                pushResponseValue_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>int64 pushResponseTimestamp = 3;</code>
-         */
-        public long getPushResponseTimestamp() {
-            return pushResponseTimestamp_;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (!getPushResponseKeyBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pushResponseKey_);
-            }
-            if (!getPushResponseValueBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pushResponseValue_);
-            }
-            if (pushResponseTimestamp_ != 0L) {
-                output.writeInt64(3, pushResponseTimestamp_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!getPushResponseKeyBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pushResponseKey_);
-            }
-            if (!getPushResponseValueBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pushResponseValue_);
-            }
-            if (pushResponseTimestamp_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(3, pushResponseTimestamp_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.grpc.sample.KvStore.PushMessageResponse)) {
-                return super.equals(obj);
-            }
-            com.grpc.sample.KvStore.PushMessageResponse other = (com.grpc.sample.KvStore.PushMessageResponse) obj;
-
-            boolean result = true;
-            result = result && getPushResponseKey()
-                    .equals(other.getPushResponseKey());
-            result = result && getPushResponseValue()
-                    .equals(other.getPushResponseValue());
-            result = result && (getPushResponseTimestamp()
-                    == other.getPushResponseTimestamp());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + PUSHRESPONSEKEY_FIELD_NUMBER;
-            hash = (53 * hash) + getPushResponseKey().hashCode();
-            hash = (37 * hash) + PUSHRESPONSEVALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getPushResponseValue().hashCode();
-            hash = (37 * hash) + PUSHRESPONSETIMESTAMP_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                    getPushResponseTimestamp());
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<PushMessageResponse> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.PushMessageResponse getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code PushMessageResponse}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:PushMessageResponse)
-                com.grpc.sample.KvStore.PushMessageResponseOrBuilder {
-            private java.lang.Object pushResponseKey_ = "";
-            private java.lang.Object pushResponseValue_ = "";
-            private long pushResponseTimestamp_;
-
-            // Construct using com.grpc.sample.KvStore.PushMessageResponse.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_PushMessageResponse_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_PushMessageResponse_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.PushMessageResponse.class, com.grpc.sample.KvStore.PushMessageResponse.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                pushResponseKey_ = "";
-
-                pushResponseValue_ = "";
-
-                pushResponseTimestamp_ = 0L;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_PushMessageResponse_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PushMessageResponse getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.PushMessageResponse.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PushMessageResponse build() {
-                com.grpc.sample.KvStore.PushMessageResponse result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.PushMessageResponse buildPartial() {
-                com.grpc.sample.KvStore.PushMessageResponse result = new com.grpc.sample.KvStore.PushMessageResponse(this);
-                result.pushResponseKey_ = pushResponseKey_;
-                result.pushResponseValue_ = pushResponseValue_;
-                result.pushResponseTimestamp_ = pushResponseTimestamp_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.PushMessageResponse) {
-                    return mergeFrom((com.grpc.sample.KvStore.PushMessageResponse) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(com.grpc.sample.KvStore.PushMessageResponse other) {
-                if (other == com.grpc.sample.KvStore.PushMessageResponse.getDefaultInstance()) return this;
-                if (!other.getPushResponseKey().isEmpty()) {
-                    pushResponseKey_ = other.pushResponseKey_;
-                    onChanged();
-                }
-                if (!other.getPushResponseValue().isEmpty()) {
-                    pushResponseValue_ = other.pushResponseValue_;
-                    onChanged();
-                }
-                if (other.getPushResponseTimestamp() != 0L) {
-                    setPushResponseTimestamp(other.getPushResponseTimestamp());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                com.grpc.sample.KvStore.PushMessageResponse parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (com.grpc.sample.KvStore.PushMessageResponse) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <code>string pushResponseKey = 1;</code>
-             */
-            public java.lang.String getPushResponseKey() {
-                java.lang.Object ref = pushResponseKey_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    pushResponseKey_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string pushResponseKey = 1;</code>
-             */
-            public Builder setPushResponseKey(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                pushResponseKey_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushResponseKey = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getPushResponseKeyBytes() {
-                java.lang.Object ref = pushResponseKey_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    pushResponseKey_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string pushResponseKey = 1;</code>
-             */
-            public Builder setPushResponseKeyBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                pushResponseKey_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushResponseKey = 1;</code>
-             */
-            public Builder clearPushResponseKey() {
-
-                pushResponseKey_ = getDefaultInstance().getPushResponseKey();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushResponseValue = 2;</code>
-             */
-            public java.lang.String getPushResponseValue() {
-                java.lang.Object ref = pushResponseValue_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    pushResponseValue_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string pushResponseValue = 2;</code>
-             */
-            public Builder setPushResponseValue(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                pushResponseValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushResponseValue = 2;</code>
-             */
-            public com.google.protobuf.ByteString
-            getPushResponseValueBytes() {
-                java.lang.Object ref = pushResponseValue_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    pushResponseValue_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string pushResponseValue = 2;</code>
-             */
-            public Builder setPushResponseValueBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                pushResponseValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string pushResponseValue = 2;</code>
-             */
-            public Builder clearPushResponseValue() {
-
-                pushResponseValue_ = getDefaultInstance().getPushResponseValue();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 pushResponseTimestamp = 3;</code>
-             */
-            public long getPushResponseTimestamp() {
-                return pushResponseTimestamp_;
-            }
-
-            /**
-             * <code>int64 pushResponseTimestamp = 3;</code>
-             */
-            public Builder setPushResponseTimestamp(long value) {
-
-                pushResponseTimestamp_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 pushResponseTimestamp = 3;</code>
-             */
-            public Builder clearPushResponseTimestamp() {
-
-                pushResponseTimestamp_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:PushMessageResponse)
-        }
-
+      }
+      /**
+       * <code>string pushResponseValue = 2;</code>
+       */
+      public Builder setPushResponseValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pushResponseValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushResponseValue = 2;</code>
+       */
+      public Builder clearPushResponseValue() {
+        
+        pushResponseValue_ = getDefaultInstance().getPushResponseValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pushResponseValue = 2;</code>
+       */
+      public Builder setPushResponseValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pushResponseValue_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long pushResponseTimestamp_ ;
+      /**
+       * <code>int64 pushResponseTimestamp = 3;</code>
+       */
+      public long getPushResponseTimestamp() {
+        return pushResponseTimestamp_;
+      }
+      /**
+       * <code>int64 pushResponseTimestamp = 3;</code>
+       */
+      public Builder setPushResponseTimestamp(long value) {
+        
+        pushResponseTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 pushResponseTimestamp = 3;</code>
+       */
+      public Builder clearPushResponseTimestamp() {
+        
+        pushResponseTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:PushMessageResponse)
     }
 
+    // @@protoc_insertion_point(class_scope:PushMessageResponse)
+    private static final com.grpc.sample.KvStore.PushMessageResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.PushMessageResponse();
+    }
+
+    public static com.grpc.sample.KvStore.PushMessageResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PushMessageResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PushMessageResponse>() {
+      @java.lang.Override
+      public PushMessageResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PushMessageResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PushMessageResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PushMessageResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.PushMessageResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateNodeRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UpdateNodeRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 updateNode = 1;</code>
+     */
+    int getUpdateNode();
+
+    /**
+     * <code>int64 updateNodeTimestamp = 2;</code>
+     */
+    long getUpdateNodeTimestamp();
+
+    /**
+     * <code>int32 sourceNode = 3;</code>
+     */
+    int getSourceNode();
+  }
+  /**
+   * Protobuf type {@code UpdateNodeRequest}
+   */
+  public  static final class UpdateNodeRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:UpdateNodeRequest)
+      UpdateNodeRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateNodeRequest.newBuilder() to construct.
+    private UpdateNodeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateNodeRequest() {
+      updateNode_ = 0;
+      updateNodeTimestamp_ = 0L;
+      sourceNode_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateNodeRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              updateNode_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              updateNodeTimestamp_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              sourceNode_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.UpdateNodeRequest.class, com.grpc.sample.KvStore.UpdateNodeRequest.Builder.class);
+    }
+
+    public static final int UPDATENODE_FIELD_NUMBER = 1;
+    private int updateNode_;
+    /**
+     * <code>int32 updateNode = 1;</code>
+     */
+    public int getUpdateNode() {
+      return updateNode_;
+    }
+
+    public static final int UPDATENODETIMESTAMP_FIELD_NUMBER = 2;
+    private long updateNodeTimestamp_;
+    /**
+     * <code>int64 updateNodeTimestamp = 2;</code>
+     */
+    public long getUpdateNodeTimestamp() {
+      return updateNodeTimestamp_;
+    }
+
+    public static final int SOURCENODE_FIELD_NUMBER = 3;
+    private int sourceNode_;
+    /**
+     * <code>int32 sourceNode = 3;</code>
+     */
+    public int getSourceNode() {
+      return sourceNode_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (updateNode_ != 0) {
+        output.writeInt32(1, updateNode_);
+      }
+      if (updateNodeTimestamp_ != 0L) {
+        output.writeInt64(2, updateNodeTimestamp_);
+      }
+      if (sourceNode_ != 0) {
+        output.writeInt32(3, sourceNode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (updateNode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, updateNode_);
+      }
+      if (updateNodeTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, updateNodeTimestamp_);
+      }
+      if (sourceNode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, sourceNode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.UpdateNodeRequest)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.UpdateNodeRequest other = (com.grpc.sample.KvStore.UpdateNodeRequest) obj;
+
+      boolean result = true;
+      result = result && (getUpdateNode()
+          == other.getUpdateNode());
+      result = result && (getUpdateNodeTimestamp()
+          == other.getUpdateNodeTimestamp());
+      result = result && (getSourceNode()
+          == other.getSourceNode());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UPDATENODE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateNode();
+      hash = (37 * hash) + UPDATENODETIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUpdateNodeTimestamp());
+      hash = (37 * hash) + SOURCENODE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceNode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.UpdateNodeRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code UpdateNodeRequest}
      */
-    public static final class UpdateNodeRequest extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:UpdateNodeRequest)
-            UpdateNodeRequestOrBuilder {
-        public static final int UPDATENODE_FIELD_NUMBER = 1;
-        public static final int UPDATENODETIMESTAMP_FIELD_NUMBER = 2;
-        public static final int SOURCENODE_FIELD_NUMBER = 3;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:UpdateNodeRequest)
-        private static final com.grpc.sample.KvStore.UpdateNodeRequest DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<UpdateNodeRequest>
-                PARSER = new com.google.protobuf.AbstractParser<UpdateNodeRequest>() {
-            @java.lang.Override
-            public UpdateNodeRequest parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new UpdateNodeRequest(input, extensionRegistry);
-            }
-        };
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:UpdateNodeRequest)
+        com.grpc.sample.KvStore.UpdateNodeRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new com.grpc.sample.KvStore.UpdateNodeRequest();
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.UpdateNodeRequest.class, com.grpc.sample.KvStore.UpdateNodeRequest.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.UpdateNodeRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        updateNode_ = 0;
 
-        private int updateNode_;
-        private long updateNodeTimestamp_;
-        private int sourceNode_;
-        private byte memoizedIsInitialized = -1;
+        updateNodeTimestamp_ = 0L;
 
-        // Use UpdateNodeRequest.newBuilder() to construct.
-        private UpdateNodeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+        sourceNode_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.UpdateNodeRequest getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.UpdateNodeRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.UpdateNodeRequest build() {
+        com.grpc.sample.KvStore.UpdateNodeRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private UpdateNodeRequest() {
-            updateNode_ = 0;
-            updateNodeTimestamp_ = 0L;
-            sourceNode_ = 0;
+      @java.lang.Override
+      public com.grpc.sample.KvStore.UpdateNodeRequest buildPartial() {
+        com.grpc.sample.KvStore.UpdateNodeRequest result = new com.grpc.sample.KvStore.UpdateNodeRequest(this);
+        result.updateNode_ = updateNode_;
+        result.updateNodeTimestamp_ = updateNodeTimestamp_;
+        result.sourceNode_ = sourceNode_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.UpdateNodeRequest) {
+          return mergeFrom((com.grpc.sample.KvStore.UpdateNodeRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private UpdateNodeRequest(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 8: {
-
-                            updateNode_ = input.readInt32();
-                            break;
-                        }
-                        case 16: {
-
-                            updateNodeTimestamp_ = input.readInt64();
-                            break;
-                        }
-                        case 24: {
-
-                            sourceNode_ = input.readInt32();
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownFieldProto3(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(com.grpc.sample.KvStore.UpdateNodeRequest other) {
+        if (other == com.grpc.sample.KvStore.UpdateNodeRequest.getDefaultInstance()) return this;
+        if (other.getUpdateNode() != 0) {
+          setUpdateNode(other.getUpdateNode());
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_descriptor;
+        if (other.getUpdateNodeTimestamp() != 0L) {
+          setUpdateNodeTimestamp(other.getUpdateNodeTimestamp());
         }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        if (other.getSourceNode() != 0) {
+          setSourceNode(other.getSourceNode());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.UpdateNodeRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.UpdateNodeRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.UpdateNodeRequest prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeRequest getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<UpdateNodeRequest> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.grpc.sample.KvStore.UpdateNodeRequest.class, com.grpc.sample.KvStore.UpdateNodeRequest.Builder.class);
-        }
-
-        /**
-         * <code>int32 updateNode = 1;</code>
-         */
-        public int getUpdateNode() {
-            return updateNode_;
-        }
-
-        /**
-         * <code>int64 updateNodeTimestamp = 2;</code>
-         */
-        public long getUpdateNodeTimestamp() {
-            return updateNodeTimestamp_;
-        }
-
-        /**
-         * <code>int32 sourceNode = 3;</code>
-         */
-        public int getSourceNode() {
-            return sourceNode_;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (updateNode_ != 0) {
-                output.writeInt32(1, updateNode_);
-            }
-            if (updateNodeTimestamp_ != 0L) {
-                output.writeInt64(2, updateNodeTimestamp_);
-            }
-            if (sourceNode_ != 0) {
-                output.writeInt32(3, sourceNode_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (updateNode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(1, updateNode_);
-            }
-            if (updateNodeTimestamp_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(2, updateNodeTimestamp_);
-            }
-            if (sourceNode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(3, sourceNode_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.grpc.sample.KvStore.UpdateNodeRequest)) {
-                return super.equals(obj);
-            }
-            com.grpc.sample.KvStore.UpdateNodeRequest other = (com.grpc.sample.KvStore.UpdateNodeRequest) obj;
-
-            boolean result = true;
-            result = result && (getUpdateNode()
-                    == other.getUpdateNode());
-            result = result && (getUpdateNodeTimestamp()
-                    == other.getUpdateNodeTimestamp());
-            result = result && (getSourceNode()
-                    == other.getSourceNode());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + UPDATENODE_FIELD_NUMBER;
-            hash = (53 * hash) + getUpdateNode();
-            hash = (37 * hash) + UPDATENODETIMESTAMP_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                    getUpdateNodeTimestamp());
-            hash = (37 * hash) + SOURCENODE_FIELD_NUMBER;
-            hash = (53 * hash) + getSourceNode();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<UpdateNodeRequest> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.UpdateNodeRequest getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code UpdateNodeRequest}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:UpdateNodeRequest)
-                com.grpc.sample.KvStore.UpdateNodeRequestOrBuilder {
-            private int updateNode_;
-            private long updateNodeTimestamp_;
-            private int sourceNode_;
-
-            // Construct using com.grpc.sample.KvStore.UpdateNodeRequest.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.UpdateNodeRequest.class, com.grpc.sample.KvStore.UpdateNodeRequest.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                updateNode_ = 0;
-
-                updateNodeTimestamp_ = 0L;
-
-                sourceNode_ = 0;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_UpdateNodeRequest_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.UpdateNodeRequest getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.UpdateNodeRequest.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.UpdateNodeRequest build() {
-                com.grpc.sample.KvStore.UpdateNodeRequest result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.UpdateNodeRequest buildPartial() {
-                com.grpc.sample.KvStore.UpdateNodeRequest result = new com.grpc.sample.KvStore.UpdateNodeRequest(this);
-                result.updateNode_ = updateNode_;
-                result.updateNodeTimestamp_ = updateNodeTimestamp_;
-                result.sourceNode_ = sourceNode_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.UpdateNodeRequest) {
-                    return mergeFrom((com.grpc.sample.KvStore.UpdateNodeRequest) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(com.grpc.sample.KvStore.UpdateNodeRequest other) {
-                if (other == com.grpc.sample.KvStore.UpdateNodeRequest.getDefaultInstance()) return this;
-                if (other.getUpdateNode() != 0) {
-                    setUpdateNode(other.getUpdateNode());
-                }
-                if (other.getUpdateNodeTimestamp() != 0L) {
-                    setUpdateNodeTimestamp(other.getUpdateNodeTimestamp());
-                }
-                if (other.getSourceNode() != 0) {
-                    setSourceNode(other.getSourceNode());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                com.grpc.sample.KvStore.UpdateNodeRequest parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (com.grpc.sample.KvStore.UpdateNodeRequest) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <code>int32 updateNode = 1;</code>
-             */
-            public int getUpdateNode() {
-                return updateNode_;
-            }
-
-            /**
-             * <code>int32 updateNode = 1;</code>
-             */
-            public Builder setUpdateNode(int value) {
-
-                updateNode_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 updateNode = 1;</code>
-             */
-            public Builder clearUpdateNode() {
-
-                updateNode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 2;</code>
-             */
-            public long getUpdateNodeTimestamp() {
-                return updateNodeTimestamp_;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 2;</code>
-             */
-            public Builder setUpdateNodeTimestamp(long value) {
-
-                updateNodeTimestamp_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 2;</code>
-             */
-            public Builder clearUpdateNodeTimestamp() {
-
-                updateNodeTimestamp_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 sourceNode = 3;</code>
-             */
-            public int getSourceNode() {
-                return sourceNode_;
-            }
-
-            /**
-             * <code>int32 sourceNode = 3;</code>
-             */
-            public Builder setSourceNode(int value) {
-
-                sourceNode_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 sourceNode = 3;</code>
-             */
-            public Builder clearSourceNode() {
-
-                sourceNode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:UpdateNodeRequest)
-        }
-
+        return this;
+      }
+
+      private int updateNode_ ;
+      /**
+       * <code>int32 updateNode = 1;</code>
+       */
+      public int getUpdateNode() {
+        return updateNode_;
+      }
+      /**
+       * <code>int32 updateNode = 1;</code>
+       */
+      public Builder setUpdateNode(int value) {
+        
+        updateNode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 updateNode = 1;</code>
+       */
+      public Builder clearUpdateNode() {
+        
+        updateNode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long updateNodeTimestamp_ ;
+      /**
+       * <code>int64 updateNodeTimestamp = 2;</code>
+       */
+      public long getUpdateNodeTimestamp() {
+        return updateNodeTimestamp_;
+      }
+      /**
+       * <code>int64 updateNodeTimestamp = 2;</code>
+       */
+      public Builder setUpdateNodeTimestamp(long value) {
+        
+        updateNodeTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 updateNodeTimestamp = 2;</code>
+       */
+      public Builder clearUpdateNodeTimestamp() {
+        
+        updateNodeTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int sourceNode_ ;
+      /**
+       * <code>int32 sourceNode = 3;</code>
+       */
+      public int getSourceNode() {
+        return sourceNode_;
+      }
+      /**
+       * <code>int32 sourceNode = 3;</code>
+       */
+      public Builder setSourceNode(int value) {
+        
+        sourceNode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 sourceNode = 3;</code>
+       */
+      public Builder clearSourceNode() {
+        
+        sourceNode_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:UpdateNodeRequest)
     }
 
+    // @@protoc_insertion_point(class_scope:UpdateNodeRequest)
+    private static final com.grpc.sample.KvStore.UpdateNodeRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.UpdateNodeRequest();
+    }
+
+    public static com.grpc.sample.KvStore.UpdateNodeRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateNodeRequest>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateNodeRequest>() {
+      @java.lang.Override
+      public UpdateNodeRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateNodeRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateNodeRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateNodeRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.UpdateNodeRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateNodeResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:UpdateNodeResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 updateNode = 1;</code>
+     */
+    int getUpdateNode();
+
+    /**
+     * <code>int64 updateNodeTimestamp = 2;</code>
+     */
+    long getUpdateNodeTimestamp();
+  }
+  /**
+   * Protobuf type {@code UpdateNodeResponse}
+   */
+  public  static final class UpdateNodeResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:UpdateNodeResponse)
+      UpdateNodeResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateNodeResponse.newBuilder() to construct.
+    private UpdateNodeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateNodeResponse() {
+      updateNode_ = 0;
+      updateNodeTimestamp_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateNodeResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              updateNode_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              updateNodeTimestamp_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.UpdateNodeResponse.class, com.grpc.sample.KvStore.UpdateNodeResponse.Builder.class);
+    }
+
+    public static final int UPDATENODE_FIELD_NUMBER = 1;
+    private int updateNode_;
+    /**
+     * <code>int32 updateNode = 1;</code>
+     */
+    public int getUpdateNode() {
+      return updateNode_;
+    }
+
+    public static final int UPDATENODETIMESTAMP_FIELD_NUMBER = 2;
+    private long updateNodeTimestamp_;
+    /**
+     * <code>int64 updateNodeTimestamp = 2;</code>
+     */
+    public long getUpdateNodeTimestamp() {
+      return updateNodeTimestamp_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (updateNode_ != 0) {
+        output.writeInt32(1, updateNode_);
+      }
+      if (updateNodeTimestamp_ != 0L) {
+        output.writeInt64(2, updateNodeTimestamp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (updateNode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, updateNode_);
+      }
+      if (updateNodeTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, updateNodeTimestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.UpdateNodeResponse)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.UpdateNodeResponse other = (com.grpc.sample.KvStore.UpdateNodeResponse) obj;
+
+      boolean result = true;
+      result = result && (getUpdateNode()
+          == other.getUpdateNode());
+      result = result && (getUpdateNodeTimestamp()
+          == other.getUpdateNodeTimestamp());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UPDATENODE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateNode();
+      hash = (37 * hash) + UPDATENODETIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUpdateNodeTimestamp());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.UpdateNodeResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code UpdateNodeResponse}
      */
-    public static final class UpdateNodeResponse extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:UpdateNodeResponse)
-            UpdateNodeResponseOrBuilder {
-        public static final int UPDATENODE_FIELD_NUMBER = 1;
-        public static final int UPDATENODETIMESTAMP_FIELD_NUMBER = 2;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:UpdateNodeResponse)
-        private static final com.grpc.sample.KvStore.UpdateNodeResponse DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<UpdateNodeResponse>
-                PARSER = new com.google.protobuf.AbstractParser<UpdateNodeResponse>() {
-            @java.lang.Override
-            public UpdateNodeResponse parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new UpdateNodeResponse(input, extensionRegistry);
-            }
-        };
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:UpdateNodeResponse)
+        com.grpc.sample.KvStore.UpdateNodeResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new com.grpc.sample.KvStore.UpdateNodeResponse();
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.UpdateNodeResponse.class, com.grpc.sample.KvStore.UpdateNodeResponse.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.UpdateNodeResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        updateNode_ = 0;
 
-        private int updateNode_;
-        private long updateNodeTimestamp_;
-        private byte memoizedIsInitialized = -1;
+        updateNodeTimestamp_ = 0L;
 
-        // Use UpdateNodeResponse.newBuilder() to construct.
-        private UpdateNodeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.UpdateNodeResponse getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.UpdateNodeResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.UpdateNodeResponse build() {
+        com.grpc.sample.KvStore.UpdateNodeResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private UpdateNodeResponse() {
-            updateNode_ = 0;
-            updateNodeTimestamp_ = 0L;
+      @java.lang.Override
+      public com.grpc.sample.KvStore.UpdateNodeResponse buildPartial() {
+        com.grpc.sample.KvStore.UpdateNodeResponse result = new com.grpc.sample.KvStore.UpdateNodeResponse(this);
+        result.updateNode_ = updateNode_;
+        result.updateNodeTimestamp_ = updateNodeTimestamp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.UpdateNodeResponse) {
+          return mergeFrom((com.grpc.sample.KvStore.UpdateNodeResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private UpdateNodeResponse(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 8: {
-
-                            updateNode_ = input.readInt32();
-                            break;
-                        }
-                        case 16: {
-
-                            updateNodeTimestamp_ = input.readInt64();
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownFieldProto3(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(com.grpc.sample.KvStore.UpdateNodeResponse other) {
+        if (other == com.grpc.sample.KvStore.UpdateNodeResponse.getDefaultInstance()) return this;
+        if (other.getUpdateNode() != 0) {
+          setUpdateNode(other.getUpdateNode());
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_descriptor;
+        if (other.getUpdateNodeTimestamp() != 0L) {
+          setUpdateNodeTimestamp(other.getUpdateNodeTimestamp());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.UpdateNodeResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.UpdateNodeResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.UpdateNodeResponse prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static com.grpc.sample.KvStore.UpdateNodeResponse getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<UpdateNodeResponse> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.grpc.sample.KvStore.UpdateNodeResponse.class, com.grpc.sample.KvStore.UpdateNodeResponse.Builder.class);
-        }
-
-        /**
-         * <code>int32 updateNode = 1;</code>
-         */
-        public int getUpdateNode() {
-            return updateNode_;
-        }
-
-        /**
-         * <code>int64 updateNodeTimestamp = 2;</code>
-         */
-        public long getUpdateNodeTimestamp() {
-            return updateNodeTimestamp_;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (updateNode_ != 0) {
-                output.writeInt32(1, updateNode_);
-            }
-            if (updateNodeTimestamp_ != 0L) {
-                output.writeInt64(2, updateNodeTimestamp_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (updateNode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(1, updateNode_);
-            }
-            if (updateNodeTimestamp_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(2, updateNodeTimestamp_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.grpc.sample.KvStore.UpdateNodeResponse)) {
-                return super.equals(obj);
-            }
-            com.grpc.sample.KvStore.UpdateNodeResponse other = (com.grpc.sample.KvStore.UpdateNodeResponse) obj;
-
-            boolean result = true;
-            result = result && (getUpdateNode()
-                    == other.getUpdateNode());
-            result = result && (getUpdateNodeTimestamp()
-                    == other.getUpdateNodeTimestamp());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + UPDATENODE_FIELD_NUMBER;
-            hash = (53 * hash) + getUpdateNode();
-            hash = (37 * hash) + UPDATENODETIMESTAMP_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                    getUpdateNodeTimestamp());
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<UpdateNodeResponse> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.UpdateNodeResponse getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code UpdateNodeResponse}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:UpdateNodeResponse)
-                com.grpc.sample.KvStore.UpdateNodeResponseOrBuilder {
-            private int updateNode_;
-            private long updateNodeTimestamp_;
-
-            // Construct using com.grpc.sample.KvStore.UpdateNodeResponse.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.UpdateNodeResponse.class, com.grpc.sample.KvStore.UpdateNodeResponse.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                updateNode_ = 0;
-
-                updateNodeTimestamp_ = 0L;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_UpdateNodeResponse_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.UpdateNodeResponse getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.UpdateNodeResponse.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.UpdateNodeResponse build() {
-                com.grpc.sample.KvStore.UpdateNodeResponse result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.UpdateNodeResponse buildPartial() {
-                com.grpc.sample.KvStore.UpdateNodeResponse result = new com.grpc.sample.KvStore.UpdateNodeResponse(this);
-                result.updateNode_ = updateNode_;
-                result.updateNodeTimestamp_ = updateNodeTimestamp_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.UpdateNodeResponse) {
-                    return mergeFrom((com.grpc.sample.KvStore.UpdateNodeResponse) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(com.grpc.sample.KvStore.UpdateNodeResponse other) {
-                if (other == com.grpc.sample.KvStore.UpdateNodeResponse.getDefaultInstance()) return this;
-                if (other.getUpdateNode() != 0) {
-                    setUpdateNode(other.getUpdateNode());
-                }
-                if (other.getUpdateNodeTimestamp() != 0L) {
-                    setUpdateNodeTimestamp(other.getUpdateNodeTimestamp());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                com.grpc.sample.KvStore.UpdateNodeResponse parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (com.grpc.sample.KvStore.UpdateNodeResponse) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <code>int32 updateNode = 1;</code>
-             */
-            public int getUpdateNode() {
-                return updateNode_;
-            }
-
-            /**
-             * <code>int32 updateNode = 1;</code>
-             */
-            public Builder setUpdateNode(int value) {
-
-                updateNode_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int32 updateNode = 1;</code>
-             */
-            public Builder clearUpdateNode() {
-
-                updateNode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 2;</code>
-             */
-            public long getUpdateNodeTimestamp() {
-                return updateNodeTimestamp_;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 2;</code>
-             */
-            public Builder setUpdateNodeTimestamp(long value) {
-
-                updateNodeTimestamp_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 updateNodeTimestamp = 2;</code>
-             */
-            public Builder clearUpdateNodeTimestamp() {
-
-                updateNodeTimestamp_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:UpdateNodeResponse)
-        }
-
+        return this;
+      }
+
+      private int updateNode_ ;
+      /**
+       * <code>int32 updateNode = 1;</code>
+       */
+      public int getUpdateNode() {
+        return updateNode_;
+      }
+      /**
+       * <code>int32 updateNode = 1;</code>
+       */
+      public Builder setUpdateNode(int value) {
+        
+        updateNode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 updateNode = 1;</code>
+       */
+      public Builder clearUpdateNode() {
+        
+        updateNode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long updateNodeTimestamp_ ;
+      /**
+       * <code>int64 updateNodeTimestamp = 2;</code>
+       */
+      public long getUpdateNodeTimestamp() {
+        return updateNodeTimestamp_;
+      }
+      /**
+       * <code>int64 updateNodeTimestamp = 2;</code>
+       */
+      public Builder setUpdateNodeTimestamp(long value) {
+        
+        updateNodeTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 updateNodeTimestamp = 2;</code>
+       */
+      public Builder clearUpdateNodeTimestamp() {
+        
+        updateNodeTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:UpdateNodeResponse)
     }
 
+    // @@protoc_insertion_point(class_scope:UpdateNodeResponse)
+    private static final com.grpc.sample.KvStore.UpdateNodeResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.UpdateNodeResponse();
+    }
+
+    public static com.grpc.sample.KvStore.UpdateNodeResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateNodeResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateNodeResponse>() {
+      @java.lang.Override
+      public UpdateNodeResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateNodeResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateNodeResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateNodeResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.UpdateNodeResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RowOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Row)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string key = 1;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <code>string value = 2;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <code>string value = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+
+    /**
+     * <code>int64 timestamp = 3;</code>
+     */
+    long getTimestamp();
+  }
+  /**
+   * Protobuf type {@code Row}
+   */
+  public  static final class Row extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Row)
+      RowOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Row.newBuilder() to construct.
+    private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Row() {
+      key_ = "";
+      value_ = "";
+      timestamp_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Row(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            case 24: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_Row_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_Row_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.Row.class, com.grpc.sample.KvStore.Row.Builder.class);
+    }
+
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
+    /**
+     * <code>string key = 1;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object value_;
+    /**
+     * <code>string value = 2;</code>
+     */
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string value = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 3;
+    private long timestamp_;
+    /**
+     * <code>int64 timestamp = 3;</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(3, timestamp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, timestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.Row)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.Row other = (com.grpc.sample.KvStore.Row) obj;
+
+      boolean result = true;
+      result = result && getKey()
+          .equals(other.getKey());
+      result = result && getValue()
+          .equals(other.getValue());
+      result = result && (getTimestamp()
+          == other.getTimestamp());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.Row parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.Row parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.Row parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.Row parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.Row prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code Row}
      */
-    public static final class Row extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:Row)
-            RowOrBuilder {
-        public static final int KEY_FIELD_NUMBER = 1;
-        public static final int VALUE_FIELD_NUMBER = 2;
-        public static final int TIMESTAMP_FIELD_NUMBER = 3;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:Row)
-        private static final com.grpc.sample.KvStore.Row DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<Row>
-                PARSER = new com.google.protobuf.AbstractParser<Row>() {
-            @java.lang.Override
-            public Row parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Row(input, extensionRegistry);
-            }
-        };
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Row)
+        com.grpc.sample.KvStore.RowOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_Row_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new com.grpc.sample.KvStore.Row();
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_Row_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.Row.class, com.grpc.sample.KvStore.Row.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.Row.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        key_ = "";
 
-        private volatile java.lang.Object key_;
-        private volatile java.lang.Object value_;
-        private long timestamp_;
-        private byte memoizedIsInitialized = -1;
+        value_ = "";
 
-        // Use Row.newBuilder() to construct.
-        private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+        timestamp_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_Row_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.Row getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.Row.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.Row build() {
+        com.grpc.sample.KvStore.Row result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private Row() {
-            key_ = "";
-            value_ = "";
-            timestamp_ = 0L;
+      @java.lang.Override
+      public com.grpc.sample.KvStore.Row buildPartial() {
+        com.grpc.sample.KvStore.Row result = new com.grpc.sample.KvStore.Row(this);
+        result.key_ = key_;
+        result.value_ = value_;
+        result.timestamp_ = timestamp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.Row) {
+          return mergeFrom((com.grpc.sample.KvStore.Row)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private Row(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 10: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            key_ = s;
-                            break;
-                        }
-                        case 18: {
-                            java.lang.String s = input.readStringRequireUtf8();
-
-                            value_ = s;
-                            break;
-                        }
-                        case 24: {
-
-                            timestamp_ = input.readInt64();
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownFieldProto3(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(com.grpc.sample.KvStore.Row other) {
+        if (other == com.grpc.sample.KvStore.Row.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_Row_descriptor;
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
         }
-
-        public static com.grpc.sample.KvStore.Row parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.Row parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.Row parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.Row) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.Row parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-
-        public static com.grpc.sample.KvStore.Row parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.Row parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      private java.lang.Object value_ = "";
+      /**
+       * <code>string value = 2;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
-
-        public static com.grpc.sample.KvStore.Row parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>string value = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        public static com.grpc.sample.KvStore.Row parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.Row parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.Row parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.Row parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.Row parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.Row parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.Row prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static com.grpc.sample.KvStore.Row getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<Row> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.grpc.sample.KvStore.internal_static_Row_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.grpc.sample.KvStore.Row.class, com.grpc.sample.KvStore.Row.Builder.class);
-        }
-
-        /**
-         * <code>string key = 1;</code>
-         */
-        public java.lang.String getKey() {
-            java.lang.Object ref = key_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                key_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string key = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-        getKeyBytes() {
-            java.lang.Object ref = key_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                key_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>string value = 2;</code>
-         */
-        public java.lang.String getValue() {
-            java.lang.Object ref = value_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                value_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string value = 2;</code>
-         */
-        public com.google.protobuf.ByteString
-        getValueBytes() {
-            java.lang.Object ref = value_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                value_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        /**
-         * <code>int64 timestamp = 3;</code>
-         */
-        public long getTimestamp() {
-            return timestamp_;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (!getKeyBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
-            }
-            if (!getValueBytes().isEmpty()) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
-            }
-            if (timestamp_ != 0L) {
-                output.writeInt64(3, timestamp_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!getKeyBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
-            }
-            if (!getValueBytes().isEmpty()) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
-            }
-            if (timestamp_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(3, timestamp_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.grpc.sample.KvStore.Row)) {
-                return super.equals(obj);
-            }
-            com.grpc.sample.KvStore.Row other = (com.grpc.sample.KvStore.Row) obj;
-
-            boolean result = true;
-            result = result && getKey()
-                    .equals(other.getKey());
-            result = result && getValue()
-                    .equals(other.getValue());
-            result = result && (getTimestamp()
-                    == other.getTimestamp());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + KEY_FIELD_NUMBER;
-            hash = (53 * hash) + getKey().hashCode();
-            hash = (37 * hash) + VALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getValue().hashCode();
-            hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                    getTimestamp());
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Row> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.Row getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code Row}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:Row)
-                com.grpc.sample.KvStore.RowOrBuilder {
-            private java.lang.Object key_ = "";
-            private java.lang.Object value_ = "";
-            private long timestamp_;
-
-            // Construct using com.grpc.sample.KvStore.Row.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_Row_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_Row_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.Row.class, com.grpc.sample.KvStore.Row.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                key_ = "";
-
-                value_ = "";
-
-                timestamp_ = 0L;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_Row_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.Row getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.Row.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.Row build() {
-                com.grpc.sample.KvStore.Row result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.Row buildPartial() {
-                com.grpc.sample.KvStore.Row result = new com.grpc.sample.KvStore.Row(this);
-                result.key_ = key_;
-                result.value_ = value_;
-                result.timestamp_ = timestamp_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.Row) {
-                    return mergeFrom((com.grpc.sample.KvStore.Row) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(com.grpc.sample.KvStore.Row other) {
-                if (other == com.grpc.sample.KvStore.Row.getDefaultInstance()) return this;
-                if (!other.getKey().isEmpty()) {
-                    key_ = other.key_;
-                    onChanged();
-                }
-                if (!other.getValue().isEmpty()) {
-                    value_ = other.value_;
-                    onChanged();
-                }
-                if (other.getTimestamp() != 0L) {
-                    setTimestamp(other.getTimestamp());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                com.grpc.sample.KvStore.Row parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (com.grpc.sample.KvStore.Row) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <code>string key = 1;</code>
-             */
-            public java.lang.String getKey() {
-                java.lang.Object ref = key_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    key_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string key = 1;</code>
-             */
-            public Builder setKey(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                key_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string key = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getKeyBytes() {
-                java.lang.Object ref = key_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    key_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string key = 1;</code>
-             */
-            public Builder setKeyBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                key_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string key = 1;</code>
-             */
-            public Builder clearKey() {
-
-                key_ = getDefaultInstance().getKey();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string value = 2;</code>
-             */
-            public java.lang.String getValue() {
-                java.lang.Object ref = value_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    value_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string value = 2;</code>
-             */
-            public Builder setValue(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                value_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string value = 2;</code>
-             */
-            public com.google.protobuf.ByteString
-            getValueBytes() {
-                java.lang.Object ref = value_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    value_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string value = 2;</code>
-             */
-            public Builder setValueBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-
-                value_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string value = 2;</code>
-             */
-            public Builder clearValue() {
-
-                value_ = getDefaultInstance().getValue();
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 timestamp = 3;</code>
-             */
-            public long getTimestamp() {
-                return timestamp_;
-            }
-
-            /**
-             * <code>int64 timestamp = 3;</code>
-             */
-            public Builder setTimestamp(long value) {
-
-                timestamp_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 timestamp = 3;</code>
-             */
-            public Builder clearTimestamp() {
-
-                timestamp_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:Row)
-        }
-
+      }
+      /**
+       * <code>string value = 2;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 2;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 2;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 timestamp = 3;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 timestamp = 3;</code>
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 timestamp = 3;</code>
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Row)
     }
 
+    // @@protoc_insertion_point(class_scope:Row)
+    private static final com.grpc.sample.KvStore.Row DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.Row();
+    }
+
+    public static com.grpc.sample.KvStore.Row getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Row>
+        PARSER = new com.google.protobuf.AbstractParser<Row>() {
+      @java.lang.Override
+      public Row parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Row(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Row> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Row> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.Row getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SyncMessageRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SyncMessageRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 syncTimestamp = 1;</code>
+     */
+    long getSyncTimestamp();
+  }
+  /**
+   * Protobuf type {@code SyncMessageRequest}
+   */
+  public  static final class SyncMessageRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SyncMessageRequest)
+      SyncMessageRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SyncMessageRequest.newBuilder() to construct.
+    private SyncMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SyncMessageRequest() {
+      syncTimestamp_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SyncMessageRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              syncTimestamp_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.SyncMessageRequest.class, com.grpc.sample.KvStore.SyncMessageRequest.Builder.class);
+    }
+
+    public static final int SYNCTIMESTAMP_FIELD_NUMBER = 1;
+    private long syncTimestamp_;
+    /**
+     * <code>int64 syncTimestamp = 1;</code>
+     */
+    public long getSyncTimestamp() {
+      return syncTimestamp_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (syncTimestamp_ != 0L) {
+        output.writeInt64(1, syncTimestamp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (syncTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, syncTimestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.SyncMessageRequest)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.SyncMessageRequest other = (com.grpc.sample.KvStore.SyncMessageRequest) obj;
+
+      boolean result = true;
+      result = result && (getSyncTimestamp()
+          == other.getSyncTimestamp());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SYNCTIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSyncTimestamp());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.SyncMessageRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code SyncMessageRequest}
      */
-    public static final class SyncMessageRequest extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:SyncMessageRequest)
-            SyncMessageRequestOrBuilder {
-        public static final int SYNCTIMESTAMP_FIELD_NUMBER = 1;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:SyncMessageRequest)
-        private static final com.grpc.sample.KvStore.SyncMessageRequest DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<SyncMessageRequest>
-                PARSER = new com.google.protobuf.AbstractParser<SyncMessageRequest>() {
-            @java.lang.Override
-            public SyncMessageRequest parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new SyncMessageRequest(input, extensionRegistry);
-            }
-        };
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SyncMessageRequest)
+        com.grpc.sample.KvStore.SyncMessageRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new com.grpc.sample.KvStore.SyncMessageRequest();
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.SyncMessageRequest.class, com.grpc.sample.KvStore.SyncMessageRequest.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.SyncMessageRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        syncTimestamp_ = 0L;
 
-        private long syncTimestamp_;
-        private byte memoizedIsInitialized = -1;
+        return this;
+      }
 
-        // Use SyncMessageRequest.newBuilder() to construct.
-        private SyncMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.SyncMessageRequest getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.SyncMessageRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.SyncMessageRequest build() {
+        com.grpc.sample.KvStore.SyncMessageRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private SyncMessageRequest() {
-            syncTimestamp_ = 0L;
+      @java.lang.Override
+      public com.grpc.sample.KvStore.SyncMessageRequest buildPartial() {
+        com.grpc.sample.KvStore.SyncMessageRequest result = new com.grpc.sample.KvStore.SyncMessageRequest(this);
+        result.syncTimestamp_ = syncTimestamp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.SyncMessageRequest) {
+          return mergeFrom((com.grpc.sample.KvStore.SyncMessageRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private SyncMessageRequest(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 8: {
-
-                            syncTimestamp_ = input.readInt64();
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownFieldProto3(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(com.grpc.sample.KvStore.SyncMessageRequest other) {
+        if (other == com.grpc.sample.KvStore.SyncMessageRequest.getDefaultInstance()) return this;
+        if (other.getSyncTimestamp() != 0L) {
+          setSyncTimestamp(other.getSyncTimestamp());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_descriptor;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.SyncMessageRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.SyncMessageRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.SyncMessageRequest prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        public static com.grpc.sample.KvStore.SyncMessageRequest getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        public static com.google.protobuf.Parser<SyncMessageRequest> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.grpc.sample.KvStore.SyncMessageRequest.class, com.grpc.sample.KvStore.SyncMessageRequest.Builder.class);
-        }
-
-        /**
-         * <code>int64 syncTimestamp = 1;</code>
-         */
-        public long getSyncTimestamp() {
-            return syncTimestamp_;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (syncTimestamp_ != 0L) {
-                output.writeInt64(1, syncTimestamp_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (syncTimestamp_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt64Size(1, syncTimestamp_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.grpc.sample.KvStore.SyncMessageRequest)) {
-                return super.equals(obj);
-            }
-            com.grpc.sample.KvStore.SyncMessageRequest other = (com.grpc.sample.KvStore.SyncMessageRequest) obj;
-
-            boolean result = true;
-            result = result && (getSyncTimestamp()
-                    == other.getSyncTimestamp());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + SYNCTIMESTAMP_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-                    getSyncTimestamp());
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<SyncMessageRequest> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.SyncMessageRequest getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code SyncMessageRequest}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:SyncMessageRequest)
-                com.grpc.sample.KvStore.SyncMessageRequestOrBuilder {
-            private long syncTimestamp_;
-
-            // Construct using com.grpc.sample.KvStore.SyncMessageRequest.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.SyncMessageRequest.class, com.grpc.sample.KvStore.SyncMessageRequest.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                syncTimestamp_ = 0L;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_SyncMessageRequest_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.SyncMessageRequest getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.SyncMessageRequest.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.SyncMessageRequest build() {
-                com.grpc.sample.KvStore.SyncMessageRequest result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.SyncMessageRequest buildPartial() {
-                com.grpc.sample.KvStore.SyncMessageRequest result = new com.grpc.sample.KvStore.SyncMessageRequest(this);
-                result.syncTimestamp_ = syncTimestamp_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.SyncMessageRequest) {
-                    return mergeFrom((com.grpc.sample.KvStore.SyncMessageRequest) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(com.grpc.sample.KvStore.SyncMessageRequest other) {
-                if (other == com.grpc.sample.KvStore.SyncMessageRequest.getDefaultInstance()) return this;
-                if (other.getSyncTimestamp() != 0L) {
-                    setSyncTimestamp(other.getSyncTimestamp());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                com.grpc.sample.KvStore.SyncMessageRequest parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (com.grpc.sample.KvStore.SyncMessageRequest) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            /**
-             * <code>int64 syncTimestamp = 1;</code>
-             */
-            public long getSyncTimestamp() {
-                return syncTimestamp_;
-            }
-
-            /**
-             * <code>int64 syncTimestamp = 1;</code>
-             */
-            public Builder setSyncTimestamp(long value) {
-
-                syncTimestamp_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>int64 syncTimestamp = 1;</code>
-             */
-            public Builder clearSyncTimestamp() {
-
-                syncTimestamp_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:SyncMessageRequest)
-        }
-
+        return this;
+      }
+
+      private long syncTimestamp_ ;
+      /**
+       * <code>int64 syncTimestamp = 1;</code>
+       */
+      public long getSyncTimestamp() {
+        return syncTimestamp_;
+      }
+      /**
+       * <code>int64 syncTimestamp = 1;</code>
+       */
+      public Builder setSyncTimestamp(long value) {
+        
+        syncTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 syncTimestamp = 1;</code>
+       */
+      public Builder clearSyncTimestamp() {
+        
+        syncTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SyncMessageRequest)
     }
 
+    // @@protoc_insertion_point(class_scope:SyncMessageRequest)
+    private static final com.grpc.sample.KvStore.SyncMessageRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.SyncMessageRequest();
+    }
+
+    public static com.grpc.sample.KvStore.SyncMessageRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SyncMessageRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SyncMessageRequest>() {
+      @java.lang.Override
+      public SyncMessageRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SyncMessageRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SyncMessageRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SyncMessageRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.SyncMessageRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SyncMessageResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SyncMessageResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    java.util.List<com.grpc.sample.KvStore.Row> 
+        getRowList();
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    com.grpc.sample.KvStore.Row getRow(int index);
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    int getRowCount();
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    java.util.List<? extends com.grpc.sample.KvStore.RowOrBuilder> 
+        getRowOrBuilderList();
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    com.grpc.sample.KvStore.RowOrBuilder getRowOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code SyncMessageResponse}
+   */
+  public  static final class SyncMessageResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SyncMessageResponse)
+      SyncMessageResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SyncMessageResponse.newBuilder() to construct.
+    private SyncMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SyncMessageResponse() {
+      row_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SyncMessageResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                row_ = new java.util.ArrayList<com.grpc.sample.KvStore.Row>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              row_.add(
+                  input.readMessage(com.grpc.sample.KvStore.Row.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          row_ = java.util.Collections.unmodifiableList(row_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.grpc.sample.KvStore.SyncMessageResponse.class, com.grpc.sample.KvStore.SyncMessageResponse.Builder.class);
+    }
+
+    public static final int ROW_FIELD_NUMBER = 1;
+    private java.util.List<com.grpc.sample.KvStore.Row> row_;
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    public java.util.List<com.grpc.sample.KvStore.Row> getRowList() {
+      return row_;
+    }
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    public java.util.List<? extends com.grpc.sample.KvStore.RowOrBuilder> 
+        getRowOrBuilderList() {
+      return row_;
+    }
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    public int getRowCount() {
+      return row_.size();
+    }
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    public com.grpc.sample.KvStore.Row getRow(int index) {
+      return row_.get(index);
+    }
+    /**
+     * <code>repeated .Row row = 1;</code>
+     */
+    public com.grpc.sample.KvStore.RowOrBuilder getRowOrBuilder(
+        int index) {
+      return row_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < row_.size(); i++) {
+        output.writeMessage(1, row_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < row_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, row_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.grpc.sample.KvStore.SyncMessageResponse)) {
+        return super.equals(obj);
+      }
+      com.grpc.sample.KvStore.SyncMessageResponse other = (com.grpc.sample.KvStore.SyncMessageResponse) obj;
+
+      boolean result = true;
+      result = result && getRowList()
+          .equals(other.getRowList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRowCount() > 0) {
+        hash = (37 * hash) + ROW_FIELD_NUMBER;
+        hash = (53 * hash) + getRowList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.grpc.sample.KvStore.SyncMessageResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code SyncMessageResponse}
      */
-    public static final class SyncMessageResponse extends
-            com.google.protobuf.GeneratedMessageV3 implements
-            // @@protoc_insertion_point(message_implements:SyncMessageResponse)
-            SyncMessageResponseOrBuilder {
-        public static final int ROW_FIELD_NUMBER = 1;
-        private static final long serialVersionUID = 0L;
-        // @@protoc_insertion_point(class_scope:SyncMessageResponse)
-        private static final com.grpc.sample.KvStore.SyncMessageResponse DEFAULT_INSTANCE;
-        private static final com.google.protobuf.Parser<SyncMessageResponse>
-                PARSER = new com.google.protobuf.AbstractParser<SyncMessageResponse>() {
-            @java.lang.Override
-            public SyncMessageResponse parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return new SyncMessageResponse(input, extensionRegistry);
-            }
-        };
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SyncMessageResponse)
+        com.grpc.sample.KvStore.SyncMessageResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_descriptor;
+      }
 
-        static {
-            DEFAULT_INSTANCE = new com.grpc.sample.KvStore.SyncMessageResponse();
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.grpc.sample.KvStore.SyncMessageResponse.class, com.grpc.sample.KvStore.SyncMessageResponse.Builder.class);
+      }
+
+      // Construct using com.grpc.sample.KvStore.SyncMessageResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRowFieldBuilder();
         }
-
-        private java.util.List<com.grpc.sample.KvStore.Row> row_;
-        private byte memoizedIsInitialized = -1;
-
-        // Use SyncMessageResponse.newBuilder() to construct.
-        private SyncMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (rowBuilder_ == null) {
+          row_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          rowBuilder_.clear();
         }
+        return this;
+      }
 
-        private SyncMessageResponse() {
-            row_ = java.util.Collections.emptyList();
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.SyncMessageResponse getDefaultInstanceForType() {
+        return com.grpc.sample.KvStore.SyncMessageResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.grpc.sample.KvStore.SyncMessageResponse build() {
+        com.grpc.sample.KvStore.SyncMessageResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private SyncMessageResponse(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 10: {
-                            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                                row_ = new java.util.ArrayList<com.grpc.sample.KvStore.Row>();
-                                mutable_bitField0_ |= 0x00000001;
-                            }
-                            row_.add(
-                                    input.readMessage(com.grpc.sample.KvStore.Row.parser(), extensionRegistry));
-                            break;
-                        }
-                        default: {
-                            if (!parseUnknownFieldProto3(
-                                    input, unknownFields, extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e).setUnfinishedMessage(this);
-            } finally {
-                if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                    row_ = java.util.Collections.unmodifiableList(row_);
-                }
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      @java.lang.Override
+      public com.grpc.sample.KvStore.SyncMessageResponse buildPartial() {
+        com.grpc.sample.KvStore.SyncMessageResponse result = new com.grpc.sample.KvStore.SyncMessageResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (rowBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            row_ = java.util.Collections.unmodifiableList(row_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.row_ = row_;
+        } else {
+          result.row_ = rowBuilder_.build();
         }
+        onBuilt();
+        return result;
+      }
 
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_descriptor;
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.grpc.sample.KvStore.SyncMessageResponse) {
+          return mergeFrom((com.grpc.sample.KvStore.SyncMessageResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      public Builder mergeFrom(com.grpc.sample.KvStore.SyncMessageResponse other) {
+        if (other == com.grpc.sample.KvStore.SyncMessageResponse.getDefaultInstance()) return this;
+        if (rowBuilder_ == null) {
+          if (!other.row_.isEmpty()) {
+            if (row_.isEmpty()) {
+              row_ = other.row_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRowIsMutable();
+              row_.addAll(other.row_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.row_.isEmpty()) {
+            if (rowBuilder_.isEmpty()) {
+              rowBuilder_.dispose();
+              rowBuilder_ = null;
+              row_ = other.row_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              rowBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRowFieldBuilder() : null;
+            } else {
+              rowBuilder_.addAllMessages(other.row_);
+            }
+          }
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.grpc.sample.KvStore.SyncMessageResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.grpc.sample.KvStore.SyncMessageResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
+        return this;
+      }
+      private int bitField0_;
 
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      private java.util.List<com.grpc.sample.KvStore.Row> row_ =
+        java.util.Collections.emptyList();
+      private void ensureRowIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          row_ = new java.util.ArrayList<com.grpc.sample.KvStore.Row>(row_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.grpc.sample.KvStore.Row, com.grpc.sample.KvStore.Row.Builder, com.grpc.sample.KvStore.RowOrBuilder> rowBuilder_;
+
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public java.util.List<com.grpc.sample.KvStore.Row> getRowList() {
+        if (rowBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(row_);
+        } else {
+          return rowBuilder_.getMessageList();
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public int getRowCount() {
+        if (rowBuilder_ == null) {
+          return row_.size();
+        } else {
+          return rowBuilder_.getCount();
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public com.grpc.sample.KvStore.Row getRow(int index) {
+        if (rowBuilder_ == null) {
+          return row_.get(index);
+        } else {
+          return rowBuilder_.getMessage(index);
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder setRow(
+          int index, com.grpc.sample.KvStore.Row value) {
+        if (rowBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowIsMutable();
+          row_.set(index, value);
+          onChanged();
+        } else {
+          rowBuilder_.setMessage(index, value);
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder setRow(
+          int index, com.grpc.sample.KvStore.Row.Builder builderForValue) {
+        if (rowBuilder_ == null) {
+          ensureRowIsMutable();
+          row_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rowBuilder_.setMessage(index, builderForValue.build());
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder addRow(com.grpc.sample.KvStore.Row value) {
+        if (rowBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowIsMutable();
+          row_.add(value);
+          onChanged();
+        } else {
+          rowBuilder_.addMessage(value);
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input);
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder addRow(
+          int index, com.grpc.sample.KvStore.Row value) {
+        if (rowBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRowIsMutable();
+          row_.add(index, value);
+          onChanged();
+        } else {
+          rowBuilder_.addMessage(index, value);
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder addRow(
+          com.grpc.sample.KvStore.Row.Builder builderForValue) {
+        if (rowBuilder_ == null) {
+          ensureRowIsMutable();
+          row_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rowBuilder_.addMessage(builderForValue.build());
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input);
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder addRow(
+          int index, com.grpc.sample.KvStore.Row.Builder builderForValue) {
+        if (rowBuilder_ == null) {
+          ensureRowIsMutable();
+          row_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rowBuilder_.addMessage(index, builderForValue.build());
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3
-                    .parseWithIOException(PARSER, input, extensionRegistry);
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder addAllRow(
+          java.lang.Iterable<? extends com.grpc.sample.KvStore.Row> values) {
+        if (rowBuilder_ == null) {
+          ensureRowIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, row_);
+          onChanged();
+        } else {
+          rowBuilder_.addAllMessages(values);
         }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder clearRow() {
+        if (rowBuilder_ == null) {
+          row_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          rowBuilder_.clear();
         }
-
-        public static Builder newBuilder(com.grpc.sample.KvStore.SyncMessageResponse prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public Builder removeRow(int index) {
+        if (rowBuilder_ == null) {
+          ensureRowIsMutable();
+          row_.remove(index);
+          onChanged();
+        } else {
+          rowBuilder_.remove(index);
         }
-
-        public static com.grpc.sample.KvStore.SyncMessageResponse getDefaultInstance() {
-            return DEFAULT_INSTANCE;
+        return this;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public com.grpc.sample.KvStore.Row.Builder getRowBuilder(
+          int index) {
+        return getRowFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public com.grpc.sample.KvStore.RowOrBuilder getRowOrBuilder(
+          int index) {
+        if (rowBuilder_ == null) {
+          return row_.get(index);  } else {
+          return rowBuilder_.getMessageOrBuilder(index);
         }
-
-        public static com.google.protobuf.Parser<SyncMessageResponse> parser() {
-            return PARSER;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public java.util.List<? extends com.grpc.sample.KvStore.RowOrBuilder> 
+           getRowOrBuilderList() {
+        if (rowBuilder_ != null) {
+          return rowBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(row_);
         }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public com.grpc.sample.KvStore.Row.Builder addRowBuilder() {
+        return getRowFieldBuilder().addBuilder(
+            com.grpc.sample.KvStore.Row.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public com.grpc.sample.KvStore.Row.Builder addRowBuilder(
+          int index) {
+        return getRowFieldBuilder().addBuilder(
+            index, com.grpc.sample.KvStore.Row.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Row row = 1;</code>
+       */
+      public java.util.List<com.grpc.sample.KvStore.Row.Builder> 
+           getRowBuilderList() {
+        return getRowFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.grpc.sample.KvStore.Row, com.grpc.sample.KvStore.Row.Builder, com.grpc.sample.KvStore.RowOrBuilder> 
+          getRowFieldBuilder() {
+        if (rowBuilder_ == null) {
+          rowBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.grpc.sample.KvStore.Row, com.grpc.sample.KvStore.Row.Builder, com.grpc.sample.KvStore.RowOrBuilder>(
+                  row_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          row_ = null;
         }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.grpc.sample.KvStore.SyncMessageResponse.class, com.grpc.sample.KvStore.SyncMessageResponse.Builder.class);
-        }
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        public java.util.List<com.grpc.sample.KvStore.Row> getRowList() {
-            return row_;
-        }
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        public java.util.List<? extends com.grpc.sample.KvStore.RowOrBuilder>
-        getRowOrBuilderList() {
-            return row_;
-        }
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        public int getRowCount() {
-            return row_.size();
-        }
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        public com.grpc.sample.KvStore.Row getRow(int index) {
-            return row_.get(index);
-        }
-
-        /**
-         * <code>repeated .Row row = 1;</code>
-         */
-        public com.grpc.sample.KvStore.RowOrBuilder getRowOrBuilder(
-                int index) {
-            return row_.get(index);
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            for (int i = 0; i < row_.size(); i++) {
-                output.writeMessage(1, row_.get(i));
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            for (int i = 0; i < row_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(1, row_.get(i));
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.grpc.sample.KvStore.SyncMessageResponse)) {
-                return super.equals(obj);
-            }
-            com.grpc.sample.KvStore.SyncMessageResponse other = (com.grpc.sample.KvStore.SyncMessageResponse) obj;
-
-            boolean result = true;
-            result = result && getRowList()
-                    .equals(other.getRowList());
-            result = result && unknownFields.equals(other.unknownFields);
-            return result;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (getRowCount() > 0) {
-                hash = (37 * hash) + ROW_FIELD_NUMBER;
-                hash = (53 * hash) + getRowList().hashCode();
-            }
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<SyncMessageResponse> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.grpc.sample.KvStore.SyncMessageResponse getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-        /**
-         * Protobuf type {@code SyncMessageResponse}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-                // @@protoc_insertion_point(builder_implements:SyncMessageResponse)
-                com.grpc.sample.KvStore.SyncMessageResponseOrBuilder {
-            private int bitField0_;
-            private java.util.List<com.grpc.sample.KvStore.Row> row_ =
-                    java.util.Collections.emptyList();
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    com.grpc.sample.KvStore.Row, com.grpc.sample.KvStore.Row.Builder, com.grpc.sample.KvStore.RowOrBuilder> rowBuilder_;
-
-            // Construct using com.grpc.sample.KvStore.SyncMessageResponse.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.grpc.sample.KvStore.SyncMessageResponse.class, com.grpc.sample.KvStore.SyncMessageResponse.Builder.class);
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3
-                        .alwaysUseFieldBuilders) {
-                    getRowFieldBuilder();
-                }
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                if (rowBuilder_ == null) {
-                    row_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                } else {
-                    rowBuilder_.clear();
-                }
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.grpc.sample.KvStore.internal_static_SyncMessageResponse_descriptor;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.SyncMessageResponse getDefaultInstanceForType() {
-                return com.grpc.sample.KvStore.SyncMessageResponse.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.SyncMessageResponse build() {
-                com.grpc.sample.KvStore.SyncMessageResponse result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.grpc.sample.KvStore.SyncMessageResponse buildPartial() {
-                com.grpc.sample.KvStore.SyncMessageResponse result = new com.grpc.sample.KvStore.SyncMessageResponse(this);
-                int from_bitField0_ = bitField0_;
-                if (rowBuilder_ == null) {
-                    if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                        row_ = java.util.Collections.unmodifiableList(row_);
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    }
-                    result.row_ = row_;
-                } else {
-                    result.row_ = rowBuilder_.build();
-                }
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(
-                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index, java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.grpc.sample.KvStore.SyncMessageResponse) {
-                    return mergeFrom((com.grpc.sample.KvStore.SyncMessageResponse) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(com.grpc.sample.KvStore.SyncMessageResponse other) {
-                if (other == com.grpc.sample.KvStore.SyncMessageResponse.getDefaultInstance()) return this;
-                if (rowBuilder_ == null) {
-                    if (!other.row_.isEmpty()) {
-                        if (row_.isEmpty()) {
-                            row_ = other.row_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                        } else {
-                            ensureRowIsMutable();
-                            row_.addAll(other.row_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.row_.isEmpty()) {
-                        if (rowBuilder_.isEmpty()) {
-                            rowBuilder_.dispose();
-                            rowBuilder_ = null;
-                            row_ = other.row_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                            rowBuilder_ =
-                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                                            getRowFieldBuilder() : null;
-                        } else {
-                            rowBuilder_.addAllMessages(other.row_);
-                        }
-                    }
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                com.grpc.sample.KvStore.SyncMessageResponse parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (com.grpc.sample.KvStore.SyncMessageResponse) e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private void ensureRowIsMutable() {
-                if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-                    row_ = new java.util.ArrayList<com.grpc.sample.KvStore.Row>(row_);
-                    bitField0_ |= 0x00000001;
-                }
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public java.util.List<com.grpc.sample.KvStore.Row> getRowList() {
-                if (rowBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(row_);
-                } else {
-                    return rowBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public int getRowCount() {
-                if (rowBuilder_ == null) {
-                    return row_.size();
-                } else {
-                    return rowBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public com.grpc.sample.KvStore.Row getRow(int index) {
-                if (rowBuilder_ == null) {
-                    return row_.get(index);
-                } else {
-                    return rowBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder setRow(
-                    int index, com.grpc.sample.KvStore.Row value) {
-                if (rowBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureRowIsMutable();
-                    row_.set(index, value);
-                    onChanged();
-                } else {
-                    rowBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder setRow(
-                    int index, com.grpc.sample.KvStore.Row.Builder builderForValue) {
-                if (rowBuilder_ == null) {
-                    ensureRowIsMutable();
-                    row_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    rowBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder addRow(com.grpc.sample.KvStore.Row value) {
-                if (rowBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureRowIsMutable();
-                    row_.add(value);
-                    onChanged();
-                } else {
-                    rowBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder addRow(
-                    int index, com.grpc.sample.KvStore.Row value) {
-                if (rowBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureRowIsMutable();
-                    row_.add(index, value);
-                    onChanged();
-                } else {
-                    rowBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder addRow(
-                    com.grpc.sample.KvStore.Row.Builder builderForValue) {
-                if (rowBuilder_ == null) {
-                    ensureRowIsMutable();
-                    row_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    rowBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder addRow(
-                    int index, com.grpc.sample.KvStore.Row.Builder builderForValue) {
-                if (rowBuilder_ == null) {
-                    ensureRowIsMutable();
-                    row_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    rowBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder addAllRow(
-                    java.lang.Iterable<? extends com.grpc.sample.KvStore.Row> values) {
-                if (rowBuilder_ == null) {
-                    ensureRowIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, row_);
-                    onChanged();
-                } else {
-                    rowBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder clearRow() {
-                if (rowBuilder_ == null) {
-                    row_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    onChanged();
-                } else {
-                    rowBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public Builder removeRow(int index) {
-                if (rowBuilder_ == null) {
-                    ensureRowIsMutable();
-                    row_.remove(index);
-                    onChanged();
-                } else {
-                    rowBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public com.grpc.sample.KvStore.Row.Builder getRowBuilder(
-                    int index) {
-                return getRowFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public com.grpc.sample.KvStore.RowOrBuilder getRowOrBuilder(
-                    int index) {
-                if (rowBuilder_ == null) {
-                    return row_.get(index);
-                } else {
-                    return rowBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public java.util.List<? extends com.grpc.sample.KvStore.RowOrBuilder>
-            getRowOrBuilderList() {
-                if (rowBuilder_ != null) {
-                    return rowBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(row_);
-                }
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public com.grpc.sample.KvStore.Row.Builder addRowBuilder() {
-                return getRowFieldBuilder().addBuilder(
-                        com.grpc.sample.KvStore.Row.getDefaultInstance());
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public com.grpc.sample.KvStore.Row.Builder addRowBuilder(
-                    int index) {
-                return getRowFieldBuilder().addBuilder(
-                        index, com.grpc.sample.KvStore.Row.getDefaultInstance());
-            }
-
-            /**
-             * <code>repeated .Row row = 1;</code>
-             */
-            public java.util.List<com.grpc.sample.KvStore.Row.Builder>
-            getRowBuilderList() {
-                return getRowFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                    com.grpc.sample.KvStore.Row, com.grpc.sample.KvStore.Row.Builder, com.grpc.sample.KvStore.RowOrBuilder>
-            getRowFieldBuilder() {
-                if (rowBuilder_ == null) {
-                    rowBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                            com.grpc.sample.KvStore.Row, com.grpc.sample.KvStore.Row.Builder, com.grpc.sample.KvStore.RowOrBuilder>(
-                            row_,
-                            ((bitField0_ & 0x00000001) == 0x00000001),
-                            getParentForChildren(),
-                            isClean());
-                    row_ = null;
-                }
-                return rowBuilder_;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFieldsProto3(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-
-            // @@protoc_insertion_point(builder_scope:SyncMessageResponse)
-        }
-
+        return rowBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SyncMessageResponse)
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(class_scope:SyncMessageResponse)
+    private static final com.grpc.sample.KvStore.SyncMessageResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.grpc.sample.KvStore.SyncMessageResponse();
+    }
+
+    public static com.grpc.sample.KvStore.SyncMessageResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SyncMessageResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SyncMessageResponse>() {
+      @java.lang.Override
+      public SyncMessageResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SyncMessageResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SyncMessageResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SyncMessageResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.grpc.sample.KvStore.SyncMessageResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PutRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PutRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PutResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PutResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PushMessageRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PushMessageRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PushMessageResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PushMessageResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateNodeRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateNodeRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateNodeResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateNodeResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Row_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Row_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SyncMessageRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SyncMessageRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SyncMessageResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SyncMessageResponse_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\rkvStore.proto\"6\n\nGetRequest\022\022\n\nrequest" +
+      "Key\030\001 \001(\t\022\024\n\014requestValue\030\002 \001(\t\"I\n\013GetRe" +
+      "sponse\022\023\n\013responseKey\030\001 \001(\t\022\025\n\rresponseV" +
+      "alue\030\002 \001(\t\022\016\n\006status\030\003 \001(\005\"\226\001\n\nPutReques" +
+      "t\022\022\n\nrequestKey\030\001 \001(\t\022\027\n\017requestNewValue" +
+      "\030\002 \001(\t\022\027\n\017requestOldValue\030\003 \001(\t\022\022\n\nupdat" +
+      "eNode\030\004 \001(\005\022\033\n\023updateNodeTimestamp\030\005 \001(\003" +
+      "\022\021\n\tdeadRanks\030\006 \003(\005\"f\n\013PutResponse\022\023\n\013re" +
+      "sponseKey\030\001 \001(\t\022\030\n\020responseNewValue\030\002 \001(" +
+      "\t\022\030\n\020responseOldValue\030\003 \001(\t\022\016\n\006status\030\004 " +
+      "\001(\005\"\223\001\n\022PushMessageRequest\022\017\n\007pushKey\030\001 " +
+      "\001(\t\022\021\n\tpushValue\030\002 \001(\t\022\025\n\rpushTimestamp\030" +
+      "\003 \001(\003\022\022\n\nupdateNode\030\004 \001(\005\022\033\n\023updateNodeT" +
+      "imestamp\030\005 \001(\003\022\021\n\tdeadRanks\030\006 \003(\005\"h\n\023Pus" +
+      "hMessageResponse\022\027\n\017pushResponseKey\030\001 \001(" +
+      "\t\022\031\n\021pushResponseValue\030\002 \001(\t\022\035\n\025pushResp" +
+      "onseTimestamp\030\003 \001(\003\"X\n\021UpdateNodeRequest" +
+      "\022\022\n\nupdateNode\030\001 \001(\005\022\033\n\023updateNodeTimest" +
+      "amp\030\002 \001(\003\022\022\n\nsourceNode\030\003 \001(\005\"E\n\022UpdateN" +
+      "odeResponse\022\022\n\nupdateNode\030\001 \001(\005\022\033\n\023updat" +
+      "eNodeTimestamp\030\002 \001(\003\"4\n\003Row\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"+\n\022Sy" +
+      "ncMessageRequest\022\025\n\rsyncTimestamp\030\001 \001(\003\"" +
+      "(\n\023SyncMessageResponse\022\021\n\003row\030\001 \003(\0132\004.Ro" +
+      "w2\373\001\n\007kvStore\022 \n\003get\022\013.GetRequest\032\014.GetR" +
+      "esponse\022 \n\003put\022\013.PutRequest\032\014.PutRespons" +
+      "e\0228\n\013pushMessage\022\023.PushMessageRequest\032\024." +
+      "PushMessageResponse\0228\n\rgetUpdateNode\022\022.U" +
+      "pdateNodeRequest\032\023.UpdateNodeResponse\0228\n" +
+      "\013syncMessage\022\023.SyncMessageRequest\032\024.Sync" +
+      "MessageResponseB\021\n\017com.grpc.sampleb\006prot" +
+      "o3"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        }, assigner);
+    internal_static_GetRequest_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_GetRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetRequest_descriptor,
+        new java.lang.String[] { "RequestKey", "RequestValue", });
+    internal_static_GetResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_GetResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetResponse_descriptor,
+        new java.lang.String[] { "ResponseKey", "ResponseValue", "Status", });
+    internal_static_PutRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_PutRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PutRequest_descriptor,
+        new java.lang.String[] { "RequestKey", "RequestNewValue", "RequestOldValue", "UpdateNode", "UpdateNodeTimestamp", "DeadRanks", });
+    internal_static_PutResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_PutResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PutResponse_descriptor,
+        new java.lang.String[] { "ResponseKey", "ResponseNewValue", "ResponseOldValue", "Status", });
+    internal_static_PushMessageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_PushMessageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PushMessageRequest_descriptor,
+        new java.lang.String[] { "PushKey", "PushValue", "PushTimestamp", "UpdateNode", "UpdateNodeTimestamp", "DeadRanks", });
+    internal_static_PushMessageResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_PushMessageResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PushMessageResponse_descriptor,
+        new java.lang.String[] { "PushResponseKey", "PushResponseValue", "PushResponseTimestamp", });
+    internal_static_UpdateNodeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_UpdateNodeRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateNodeRequest_descriptor,
+        new java.lang.String[] { "UpdateNode", "UpdateNodeTimestamp", "SourceNode", });
+    internal_static_UpdateNodeResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_UpdateNodeResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateNodeResponse_descriptor,
+        new java.lang.String[] { "UpdateNode", "UpdateNodeTimestamp", });
+    internal_static_Row_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_Row_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Row_descriptor,
+        new java.lang.String[] { "Key", "Value", "Timestamp", });
+    internal_static_SyncMessageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_SyncMessageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SyncMessageRequest_descriptor,
+        new java.lang.String[] { "SyncTimestamp", });
+    internal_static_SyncMessageResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_SyncMessageResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SyncMessageResponse_descriptor,
+        new java.lang.String[] { "Row", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

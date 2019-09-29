@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
@@ -91,19 +93,21 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
     }
 
-//    public boolean validateInput(String key, String value) {
-//        if(key.length() > 128 || value.length() > 2048)
-//            return false;
-//
-//        String keyRegex = "^[a-zA-Z0-9]+$";
-//        Pattern keyPattern = Pattern.compile(keyRegex);
-//        Matcher KeyMatcher = keyPattern.matcher(keyPattern);
-//
-//        String valueRegex = "^$";
-//        Pattern valuePattern = Pattern.compile(valueRegex);
-//        Matcher valueMatcher = valuePattern.matcher(valuePattern);
-//        return KeyMatcher && valueMatcher;
-//    }
+    public boolean validateInput(String key, String value) {
+        if(key.length() > 128 || value.length() > 2048)
+            return false;
+
+        String regex = "[^a-zA-Z0-9]";
+        Pattern keyPattern = Pattern.compile(regex);
+        Matcher KeyMatcher = keyPattern.matcher(key);
+        boolean keyValidation = KeyMatcher.find();
+        
+        Pattern valuePattern = Pattern.compile(regex);
+        Matcher valueMatcher = valuePattern.matcher(value);
+        boolean valueValidation = valueMatcher.find();
+
+        return !keyValidation && !valueValidation;
+    }
 
 
     @Override
@@ -124,6 +128,8 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
     @Override
     public void getUpdateNode(KvStore.UpdateNodeRequest request, StreamObserver<KvStore.UpdateNodeResponse> responseObserver) {
+        System.out.println("Server: " + rank + "Remove node from deadset - Src node: " + request.getSourceNode());
+
         deadSet.remove(request.getSourceNode());
         KvStore.UpdateNodeResponse.Builder response = KvStore.UpdateNodeResponse.newBuilder();
         response.setUpdateNode(updateNode);
@@ -137,7 +143,14 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
         System.out.println("Server: " + rank + " PUT");
         String key = request.getRequestKey();
         String newValue = request.getRequestNewValue();
-
+        boolean validate = validateInput(key, newValue);
+        if(!validate) {
+            KvStore.PutResponse.Builder putResponseBuilder = KvStore.PutResponse.newBuilder();
+            putResponseBuilder.setStatus(-1);
+            responseObserver.onNext(putResponseBuilder.build());
+            responseObserver.onCompleted();
+            return;
+        }
         boolean isFailed = false;
 
         if (request.getUpdateNode() == -1) {
@@ -165,7 +178,7 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
             while (updateNode != rank) {
                 try {
                     System.out.println("Server: " + rank + " Calling update node: " + updateNode);
-                    putResponse = kvStub.withDeadlineAfter(5, TimeUnit.SECONDS).put(request);
+                    putResponse = kvStub.withDeadlineAfter(12000, TimeUnit.MILLISECONDS).put(request);
 
                     break;
                 } catch (StatusRuntimeException timeoutException) {
@@ -287,8 +300,15 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
 
                 //TODO : update node timestamp
-                kvStub.pushMessage(pushMessageRequestBuilder.build());
-                System.out.println("DONE!! - Server: " + rank + " broadcast to: " + i);
+                try {
+                    kvStub.withDeadlineAfter(1000, TimeUnit.MILLISECONDS).pushMessage(pushMessageRequestBuilder.build());
+                    System.out.println("DONE!! - Server: " + rank + " broadcast to: " + i);
+                } catch (StatusRuntimeException timeoutException) {
+
+                    deadSet.add(i);
+                    System.out.println("Server: " + rank + ": failed to contact: " + i);
+                    System.out.println("Exception is : " + timeoutException.getMessage());
+                }
             }
         }
         return putResponse;
