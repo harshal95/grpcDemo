@@ -18,7 +18,6 @@ public class GRPCServer {
         int rank = Integer.parseInt(args[1]);
         int updateNode = Integer.parseInt(args[2]);
         int port = Integer.parseInt(args[3]);
-        System.out.println("In GRPC Server: n=" + n + " rank=" + rank + " port=" + port);
         if(args.length < 4) {
             System.out.println("Invalid Arguments passed - GO BACK and CHECK");
             return;
@@ -34,18 +33,15 @@ public class GRPCServer {
         Server server = ServerBuilder.forPort(port).addService(kvStoreService).build();
         server.start();
         System.out.println("Server started at " + server.getPort());
-        System.out.println("Server: " + rank + " Pid: " + ManagementFactory.getRuntimeMXBean().getName());
 
         int basePort = port - rank;
         for(int i = 0; i < n; i++) {
             if(i != rank) {
-                //System.out.println("Server: " + rank + "Connecting to stub of: " + i);
                 ManagedChannel managedChannel = ManagedChannelBuilder.forAddress("localhost", basePort + i).usePlaintext().build();
                 kvStoreGrpc.kvStoreBlockingStub kvStub = kvStoreGrpc.newBlockingStub(managedChannel).withWaitForReady();
                 stubHashMap.put(i, kvStub);
             }
         }
-        System.out.println("Server: " + rank + " Stub creation done");
         kvStoreService.setStubHashMap(stubHashMap);
         int resUpdateNode = updateNodeInfo.getKey();
         long resTimestamp = updateNodeInfo.getValue();
@@ -53,16 +49,13 @@ public class GRPCServer {
         //TODO: handle fault : Send update node I have to all others
         int i = 0;
         while(i < n) {
-            System.out.println("GRPC Server Main:" + rank + " Inside While of send update node to all ");
             if (i != rank) {
-                System.out.println("GRPC Server Main: " + rank + "Inside IF Sending to: " + i);
                 kvStoreGrpc.kvStoreBlockingStub kvGetUpdateStub = stubHashMap.get(i);
                 KvStore.UpdateNodeRequest.Builder requestBuilder = KvStore.UpdateNodeRequest.newBuilder();
                 requestBuilder.setUpdateNode(updateNodeInfo.getKey());
                 requestBuilder.setUpdateNodeTimestamp(updateNodeInfo.getValue());
                 requestBuilder.setSourceNode(rank);
                 try {
-                    System.out.println("GRPC Server Main: " + rank + "Inside TRY Sending to: " + i);
                     KvStore.UpdateNodeResponse response = kvGetUpdateStub.withDeadlineAfter(5, TimeUnit.SECONDS).getUpdateNode(requestBuilder.build());
                     System.out.println("Server : " + rank + " Sent update node request to: " + i);
                     if (response.getUpdateNode() != resUpdateNode
@@ -78,8 +71,8 @@ public class GRPCServer {
             i++;
         }
         kvStoreService.setUpdateNodeAndTimestampDB(resUpdateNode, resTimestamp);
-        System.out.println("Server : " + rank + " Update node propagation done");
         //TODO: handle fault here if sync from update node fails
+        //Handled for now
         if (resUpdateNode != rank) {
             System.out.println("Server : " + rank + " Res update node is : " + resUpdateNode);
             kvStoreGrpc.kvStoreBlockingStub kvSyncStub = stubHashMap.get(resUpdateNode);

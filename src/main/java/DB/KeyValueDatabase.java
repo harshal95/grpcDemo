@@ -104,7 +104,6 @@ public class KeyValueDatabase {
 
 
     public void insetIntoUpdateNodeTable(String operation, int updateNode, long timestamp) {
-        System.out.println("inside insert of update Node table");
         String sql = "INSERT INTO updateNodeTable(operation, node, timestamp) VALUES(?,?,?)";
         PreparedStatement pstmt = null;
 
@@ -178,7 +177,6 @@ public class KeyValueDatabase {
     }
 
     public void updateUpdateNodeTable(int updateNode, long timestamp) {
-        System.out.println("inside update updatenode table");
         String sql = "UPDATE updateNodeTable SET node = ? ,"
                 + "timestamp = ? "
                 + "WHERE operation = ? ";
@@ -196,7 +194,6 @@ public class KeyValueDatabase {
 
     }
     public void insertIntoTable(String key, String value, long timestamp) {
-        System.out.println("inside insert");
         String sql = "INSERT INTO kvtable(key, value, timestamp) VALUES(?,?,?)";
         PreparedStatement pstmt = null;
 
@@ -212,7 +209,6 @@ public class KeyValueDatabase {
     }
 
     public void updateKeyIfExistsInTable(String key, String value, long timestamp) {
-        System.out.println("inside update");
         String sql = "UPDATE kvtable SET value = ? ,"
                 + "timestamp = ? "
                 + "WHERE key = ? ";

@@ -70,7 +70,6 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
         for (KvStore.Row record : records) {
             this.kvMap.put(record.getKey(), record.getValue());
         }
-        System.out.println("Server : " + rank + " printing hashtable " + kvMap.toString());
     }
 
     @Override
@@ -112,10 +111,8 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
     @Override
     public void syncMessage(KvStore.SyncMessageRequest request, StreamObserver<KvStore.SyncMessageResponse> responseObserver) {
-        System.out.println("Server: " + rank + " inside syncMessage");
         long timestamp = request.getSyncTimestamp();
         List<KvStore.Row> records = keyValueDatabase.getRecordsSince(timestamp);
-        System.out.println("Server: " + rank + " syncRecords : " + records.toString());
         KvStore.SyncMessageResponse.Builder response = KvStore.SyncMessageResponse.newBuilder();
         response.addAllRow(records);
         responseObserver.onNext(response.build());
@@ -128,7 +125,6 @@ public class KVStoreService extends kvStoreGrpc.kvStoreImplBase {
 
     @Override
     public void getUpdateNode(KvStore.UpdateNodeRequest request, StreamObserver<KvStore.UpdateNodeResponse> responseObserver) {
-        System.out.println("Server: " + rank + "Remove node from deadset - Src node: " + request.getSourceNode());
 
         deadSet.remove(request.getSourceNode());
         KvStore.UpdateNodeResponse.Builder response = KvStore.UpdateNodeResponse.newBuilder();
