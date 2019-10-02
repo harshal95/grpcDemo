@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KeyValueDatabase {
+
     private static final String URL = "jdbc:sqlite:/Users/sangeethasampathkumar/test/";
+//    private static final String URL = "jdbc:sqlite:./";
     Integer rank;
     Connection conn;
 
